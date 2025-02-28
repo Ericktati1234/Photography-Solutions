@@ -42,6 +42,8 @@ Partial Class NuevoUsuario
         FotógrafoChBx = New CheckBox()
         ContadorChBx = New CheckBox()
         DataGridView1 = New DataGridView()
+        Modificar = New Button()
+        Eliminar = New Button()
         CType(Logo, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -212,18 +214,38 @@ Partial Class NuevoUsuario
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(444, 424)
+        DataGridView1.Location = New Point(432, 354)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
         DataGridView1.Size = New Size(300, 188)
         DataGridView1.TabIndex = 19
         ' 
+        ' Modificar
+        ' 
+        Modificar.Location = New Point(354, 594)
+        Modificar.Name = "Modificar"
+        Modificar.Size = New Size(94, 29)
+        Modificar.TabIndex = 20
+        Modificar.Text = "Modificar"
+        Modificar.UseVisualStyleBackColor = True
+        ' 
+        ' Eliminar
+        ' 
+        Eliminar.Location = New Point(573, 557)
+        Eliminar.Name = "Eliminar"
+        Eliminar.Size = New Size(94, 73)
+        Eliminar.TabIndex = 21
+        Eliminar.Text = "Eliminar"
+        Eliminar.UseVisualStyleBackColor = True
+        ' 
         ' NuevoUsuario
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(975, 642)
+        Controls.Add(Eliminar)
+        Controls.Add(Modificar)
         Controls.Add(DataGridView1)
         Controls.Add(ContadorChBx)
         Controls.Add(FotógrafoChBx)
@@ -245,7 +267,7 @@ Partial Class NuevoUsuario
         Controls.Add(Logo)
         Controls.Add(AltasyBajas)
         Name = "NuevoUsuario"
-        Text = "Nuevo Usuario"
+        Text = "Alta y Baja de Empleados"
         CType(Logo, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -272,4 +294,6 @@ Partial Class NuevoUsuario
     Friend WithEvents FotógrafoChBx As CheckBox
     Friend WithEvents ContadorChBx As CheckBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Modificar As Button
+    Friend WithEvents Eliminar As Button
 End Class
