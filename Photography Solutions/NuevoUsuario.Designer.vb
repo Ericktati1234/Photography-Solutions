@@ -32,7 +32,7 @@ Partial Class NuevoUsuario
         Nombre = New Label()
         ApellidoPaterno = New Label()
         ApellidoMaterno = New Label()
-        Name = New TextBox()
+        NameTxBx = New TextBox()
         Paterno = New TextBox()
         Materno = New TextBox()
         Verificar = New Button()
@@ -135,10 +135,10 @@ Partial Class NuevoUsuario
         ' 
         ' Name
         ' 
-        Name.Location = New Point(487, 130)
-        Name.Name = "Name"
-        Name.Size = New Size(125, 27)
-        Name.TabIndex = 10
+        NameTxBx.Location = New Point(487, 130)
+        NameTxBx.Name = "NameTxBx"
+        NameTxBx.Size = New Size(125, 27)
+        NameTxBx.TabIndex = 10
         ' 
         ' Paterno
         ' 
@@ -255,7 +255,7 @@ Partial Class NuevoUsuario
         Controls.Add(Verificar)
         Controls.Add(Materno)
         Controls.Add(Paterno)
-        Controls.Add(Name)
+        Controls.Add(NameTxBx)
         Controls.Add(ApellidoMaterno)
         Controls.Add(ApellidoPaterno)
         Controls.Add(Nombre)
@@ -284,7 +284,7 @@ Partial Class NuevoUsuario
     Friend WithEvents Nombre As Label
     Friend WithEvents ApellidoPaterno As Label
     Friend WithEvents ApellidoMaterno As Label
-    Friend WithEvents Name As TextBox
+    Friend WithEvents NameTxBx As TextBox
     Friend WithEvents Paterno As TextBox
     Friend WithEvents Materno As TextBox
     Friend WithEvents Verificar As Button
