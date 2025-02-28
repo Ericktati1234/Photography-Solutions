@@ -30,7 +30,20 @@ Partial Class NuevoUsuario
         UsNuevoContraseñaTxBx = New TextBox()
         DatosPersonales = New Label()
         Nombre = New Label()
+        ApellidoPaterno = New Label()
+        ApellidoMaterno = New Label()
+        Name = New TextBox()
+        Paterno = New TextBox()
+        Materno = New TextBox()
+        Verificar = New Button()
+        CambiarUsuario = New Button()
+        Alta = New Button()
+        AdministradorChBx = New CheckBox()
+        FotógrafoChBx = New CheckBox()
+        ContadorChBx = New CheckBox()
+        DataGridView1 = New DataGridView()
         CType(Logo, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' AltasyBajas
@@ -100,11 +113,129 @@ Partial Class NuevoUsuario
         Nombre.TabIndex = 7
         Nombre.Text = "Nombre"
         ' 
+        ' ApellidoPaterno
+        ' 
+        ApellidoPaterno.AutoSize = True
+        ApellidoPaterno.Location = New Point(643, 94)
+        ApellidoPaterno.Name = "ApellidoPaterno"
+        ApellidoPaterno.Size = New Size(120, 20)
+        ApellidoPaterno.TabIndex = 8
+        ApellidoPaterno.Text = "Apellido Paterno"
+        ' 
+        ' ApellidoMaterno
+        ' 
+        ApellidoMaterno.AutoSize = True
+        ApellidoMaterno.Location = New Point(808, 94)
+        ApellidoMaterno.Name = "ApellidoMaterno"
+        ApellidoMaterno.Size = New Size(126, 20)
+        ApellidoMaterno.TabIndex = 9
+        ApellidoMaterno.Text = "Apellido Materno"
+        ' 
+        ' Name
+        ' 
+        Name.Location = New Point(487, 130)
+        Name.Name = "Name"
+        Name.Size = New Size(125, 27)
+        Name.TabIndex = 10
+        ' 
+        ' Paterno
+        ' 
+        Paterno.Location = New Point(643, 130)
+        Paterno.Name = "Paterno"
+        Paterno.Size = New Size(125, 27)
+        Paterno.TabIndex = 11
+        ' 
+        ' Materno
+        ' 
+        Materno.Location = New Point(809, 130)
+        Materno.Name = "Materno"
+        Materno.Size = New Size(125, 27)
+        Materno.TabIndex = 12
+        ' 
+        ' Verificar
+        ' 
+        Verificar.Location = New Point(170, 186)
+        Verificar.Name = "Verificar"
+        Verificar.Size = New Size(119, 45)
+        Verificar.TabIndex = 13
+        Verificar.Text = "Verificar"
+        Verificar.UseVisualStyleBackColor = True
+        ' 
+        ' CambiarUsuario
+        ' 
+        CambiarUsuario.Location = New Point(160, 249)
+        CambiarUsuario.Name = "CambiarUsuario"
+        CambiarUsuario.Size = New Size(119, 79)
+        CambiarUsuario.TabIndex = 14
+        CambiarUsuario.Text = "Cambiar Usuario"
+        CambiarUsuario.UseVisualStyleBackColor = True
+        ' 
+        ' Alta
+        ' 
+        Alta.Location = New Point(27, 345)
+        Alta.Name = "Alta"
+        Alta.Size = New Size(338, 79)
+        Alta.TabIndex = 15
+        Alta.Text = "DAR DE ALTA EMPLEADO"
+        Alta.UseVisualStyleBackColor = True
+        ' 
+        ' AdministradorChBx
+        ' 
+        AdministradorChBx.AutoSize = True
+        AdministradorChBx.Location = New Point(444, 218)
+        AdministradorChBx.Name = "AdministradorChBx"
+        AdministradorChBx.Size = New Size(126, 24)
+        AdministradorChBx.TabIndex = 16
+        AdministradorChBx.Text = "Administrador"
+        AdministradorChBx.UseVisualStyleBackColor = True
+        ' 
+        ' FotógrafoChBx
+        ' 
+        FotógrafoChBx.AutoSize = True
+        FotógrafoChBx.Location = New Point(432, 264)
+        FotógrafoChBx.Name = "FotógrafoChBx"
+        FotógrafoChBx.Size = New Size(97, 24)
+        FotógrafoChBx.TabIndex = 17
+        FotógrafoChBx.Text = "Fotógrafo"
+        FotógrafoChBx.UseVisualStyleBackColor = True
+        ' 
+        ' ContadorChBx
+        ' 
+        ContadorChBx.AutoSize = True
+        ContadorChBx.Location = New Point(461, 304)
+        ContadorChBx.Name = "ContadorChBx"
+        ContadorChBx.Size = New Size(93, 24)
+        ContadorChBx.TabIndex = 18
+        ContadorChBx.Text = "Contador"
+        ContadorChBx.UseVisualStyleBackColor = True
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(444, 424)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.RowTemplate.Height = 29
+        DataGridView1.Size = New Size(300, 188)
+        DataGridView1.TabIndex = 19
+        ' 
         ' NuevoUsuario
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1470, 642)
+        ClientSize = New Size(975, 642)
+        Controls.Add(DataGridView1)
+        Controls.Add(ContadorChBx)
+        Controls.Add(FotógrafoChBx)
+        Controls.Add(AdministradorChBx)
+        Controls.Add(Alta)
+        Controls.Add(CambiarUsuario)
+        Controls.Add(Verificar)
+        Controls.Add(Materno)
+        Controls.Add(Paterno)
+        Controls.Add(Name)
+        Controls.Add(ApellidoMaterno)
+        Controls.Add(ApellidoPaterno)
         Controls.Add(Nombre)
         Controls.Add(DatosPersonales)
         Controls.Add(UsNuevoContraseñaTxBx)
@@ -114,8 +245,9 @@ Partial Class NuevoUsuario
         Controls.Add(Logo)
         Controls.Add(AltasyBajas)
         Name = "NuevoUsuario"
-        Text = "NuevoUsuario"
+        Text = "Nuevo Usuario"
         CType(Logo, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -128,4 +260,16 @@ Partial Class NuevoUsuario
     Friend WithEvents UsNuevoContraseñaTxBx As TextBox
     Friend WithEvents DatosPersonales As Label
     Friend WithEvents Nombre As Label
+    Friend WithEvents ApellidoPaterno As Label
+    Friend WithEvents ApellidoMaterno As Label
+    Friend WithEvents Name As TextBox
+    Friend WithEvents Paterno As TextBox
+    Friend WithEvents Materno As TextBox
+    Friend WithEvents Verificar As Button
+    Friend WithEvents CambiarUsuario As Button
+    Friend WithEvents Alta As Button
+    Friend WithEvents AdministradorChBx As CheckBox
+    Friend WithEvents FotógrafoChBx As CheckBox
+    Friend WithEvents ContadorChBx As CheckBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
