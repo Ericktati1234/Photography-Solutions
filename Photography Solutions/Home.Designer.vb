@@ -27,6 +27,7 @@ Partial Class Home
         PictureAltaBaja = New PictureBox()
         PictureVentas = New PictureBox()
         PictureSesiones = New PictureBox()
+        Label1 = New Label()
         FlowLayoutPanel1.SuspendLayout()
         CType(PictureAlmacen, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureAltaBaja, ComponentModel.ISupportInitialize).BeginInit()
@@ -77,11 +78,21 @@ Partial Class Home
         PictureSesiones.TabIndex = 3
         PictureSesiones.TabStop = False
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(255, 27)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(96, 20)
+        Label1.TabIndex = 1
+        Label1.Text = "Texto default"
+        ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Label1)
         Controls.Add(FlowLayoutPanel1)
         Name = "Home"
         Text = "Home"
@@ -91,6 +102,7 @@ Partial Class Home
         CType(PictureVentas, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureSesiones, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
@@ -98,4 +110,5 @@ Partial Class Home
     Friend WithEvents PictureAltaBaja As PictureBox
     Friend WithEvents PictureVentas As PictureBox
     Friend WithEvents PictureSesiones As PictureBox
+    Friend WithEvents Label1 As Label
 End Class

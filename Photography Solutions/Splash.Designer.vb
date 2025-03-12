@@ -13,11 +13,11 @@ Partial Class Splash
             MyBase.Dispose(disposing)
         End Try
     End Sub
-    Friend WithEvents ApplicationTitle As System.Windows.Forms.Label
-    Friend WithEvents Version As System.Windows.Forms.Label
-    Friend WithEvents Copyright As System.Windows.Forms.Label
-    Friend WithEvents MainLayoutPanel As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents DetailsLayoutPanel As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents ApplicationTitle As Label
+    Friend WithEvents Version As Label
+    Friend WithEvents Copyright As Label
+    Friend WithEvents MainLayoutPanel As TableLayoutPanel
+    Friend WithEvents DetailsLayoutPanel As TableLayoutPanel
 
     'Requerido por el Diseñador de Windows Forms
     Private components As System.ComponentModel.IContainer
@@ -27,12 +27,14 @@ Partial Class Splash
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Splash))
+        components = New ComponentModel.Container()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Splash))
         MainLayoutPanel = New TableLayoutPanel()
         DetailsLayoutPanel = New TableLayoutPanel()
         Version = New Label()
         Copyright = New Label()
         ApplicationTitle = New Label()
+        Timer1 = New Timer(components)
         MainLayoutPanel.SuspendLayout()
         DetailsLayoutPanel.SuspendLayout()
         SuspendLayout()
@@ -104,6 +106,9 @@ Partial Class Splash
         ApplicationTitle.Text = "Photography Solutions"
         ApplicationTitle.TextAlign = ContentAlignment.BottomLeft
         ' 
+        ' Timer1
+        ' 
+        ' 
         ' Splash
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -120,7 +125,7 @@ Partial Class Splash
         MainLayoutPanel.ResumeLayout(False)
         DetailsLayoutPanel.ResumeLayout(False)
         ResumeLayout(False)
-
     End Sub
 
+    Friend WithEvents Timer1 As Timer
 End Class

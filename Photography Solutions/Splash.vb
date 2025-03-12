@@ -4,7 +4,7 @@
     '  del Diseñador de proyectos ("Propiedades" bajo el menú "Proyecto").
 
 
-    Private Sub Splash_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub Splash_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Configure el texto del cuadro de diálogo en tiempo de ejecución según la información del ensamblado de la aplicación.  
 
         'TODO: Personalice la información del ensamblado de la aplicación en el panel "Aplicación" del cuadro de diálogo 
@@ -30,9 +30,20 @@
 
         'Información de Copyright
         Copyright.Text = My.Application.Info.Copyright
+        Timer1.Interval = 3000
+        Timer1.Start()
+
     End Sub
 
-    Private Sub ApplicationTitle_Click(sender As Object, e As EventArgs) Handles ApplicationTitle.Click
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Stop()
+        Home.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub SplashScreen1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
 
     End Sub
 End Class
