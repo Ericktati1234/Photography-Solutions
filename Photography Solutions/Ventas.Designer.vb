@@ -34,9 +34,9 @@ Partial Class Ventas
         Pago = New Label()
         Cambio = New Label()
         SplitContainer1 = New SplitContainer()
-        Totallbl = New Label()
-        Cambiolbl = New Label()
         PagoTxBx = New TextBox()
+        Cambiolbl = New Label()
+        Totallbl = New Label()
         MXN = New Label()
         MXN2 = New Label()
         MXN3 = New Label()
@@ -92,7 +92,7 @@ Partial Class Ventas
         ' 
         ' NombreSearch
         ' 
-        NombreSearch.Location = New Point(12, 154)
+        NombreSearch.Location = New Point(22, 152)
         NombreSearch.Name = "NombreSearch"
         NombreSearch.Size = New Size(121, 57)
         NombreSearch.TabIndex = 5
@@ -101,7 +101,7 @@ Partial Class Ventas
         ' 
         ' EliminarSelección
         ' 
-        EliminarSelección.Location = New Point(12, 231)
+        EliminarSelección.Location = New Point(22, 231)
         EliminarSelección.Name = "EliminarSelección"
         EliminarSelección.Size = New Size(121, 57)
         EliminarSelección.TabIndex = 6
@@ -164,14 +164,12 @@ Partial Class Ventas
         SplitContainer1.SplitterDistance = 79
         SplitContainer1.TabIndex = 11
         ' 
-        ' Totallbl
+        ' PagoTxBx
         ' 
-        Totallbl.AutoSize = True
-        Totallbl.Location = New Point(42, 18)
-        Totallbl.Name = "Totallbl"
-        Totallbl.Size = New Size(17, 20)
-        Totallbl.TabIndex = 12
-        Totallbl.Text = "0"
+        PagoTxBx.Location = New Point(3, 61)
+        PagoTxBx.Name = "PagoTxBx"
+        PagoTxBx.Size = New Size(125, 27)
+        PagoTxBx.TabIndex = 12
         ' 
         ' Cambiolbl
         ' 
@@ -182,12 +180,14 @@ Partial Class Ventas
         Cambiolbl.TabIndex = 12
         Cambiolbl.Text = "0"
         ' 
-        ' PagoTxBx
+        ' Totallbl
         ' 
-        PagoTxBx.Location = New Point(3, 61)
-        PagoTxBx.Name = "PagoTxBx"
-        PagoTxBx.Size = New Size(125, 27)
-        PagoTxBx.TabIndex = 12
+        Totallbl.AutoSize = True
+        Totallbl.Location = New Point(42, 18)
+        Totallbl.Name = "Totallbl"
+        Totallbl.Size = New Size(17, 20)
+        Totallbl.TabIndex = 12
+        Totallbl.Text = "0"
         ' 
         ' MXN
         ' 
