@@ -22,47 +22,47 @@ Partial Class IniciarSesión
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Correo = New TextBox()
-        Contraseña = New TextBox()
-        LCorreo = New Label()
-        LContraseña = New Label()
+        TxtUsuario = New TextBox()
+        TxtContrasena = New TextBox()
+        LblUsuario = New Label()
+        LblContraseña = New Label()
         Ingresar = New Button()
         Label1 = New Label()
         SuspendLayout()
         ' 
-        ' Correo
+        ' TxtUsuario
         ' 
-        Correo.Location = New Point(167, 100)
-        Correo.Margin = New Padding(3, 4, 3, 4)
-        Correo.Name = "Correo"
-        Correo.Size = New Size(190, 27)
-        Correo.TabIndex = 0
+        TxtUsuario.Location = New Point(167, 100)
+        TxtUsuario.Margin = New Padding(3, 4, 3, 4)
+        TxtUsuario.Name = "TxtUsuario"
+        TxtUsuario.Size = New Size(190, 27)
+        TxtUsuario.TabIndex = 0
         ' 
-        ' Contraseña
+        ' TxtContrasena
         ' 
-        Contraseña.Location = New Point(167, 159)
-        Contraseña.Margin = New Padding(3, 4, 3, 4)
-        Contraseña.Name = "Contraseña"
-        Contraseña.Size = New Size(190, 27)
-        Contraseña.TabIndex = 1
+        TxtContrasena.Location = New Point(167, 159)
+        TxtContrasena.Margin = New Padding(3, 4, 3, 4)
+        TxtContrasena.Name = "TxtContrasena"
+        TxtContrasena.Size = New Size(190, 27)
+        TxtContrasena.TabIndex = 1
         ' 
-        ' LCorreo
+        ' LblUsuario
         ' 
-        LCorreo.AutoSize = True
-        LCorreo.Location = New Point(79, 111)
-        LCorreo.Name = "LCorreo"
-        LCorreo.Size = New Size(54, 20)
-        LCorreo.TabIndex = 2
-        LCorreo.Text = "Correo"
+        LblUsuario.AutoSize = True
+        LblUsuario.Location = New Point(79, 111)
+        LblUsuario.Name = "LblUsuario"
+        LblUsuario.Size = New Size(59, 20)
+        LblUsuario.TabIndex = 2
+        LblUsuario.Text = "Usuario"
         ' 
-        ' LContraseña
+        ' LblContraseña
         ' 
-        LContraseña.AutoSize = True
-        LContraseña.Location = New Point(79, 163)
-        LContraseña.Name = "LContraseña"
-        LContraseña.Size = New Size(83, 20)
-        LContraseña.TabIndex = 3
-        LContraseña.Text = "Contraseña"
+        LblContraseña.AutoSize = True
+        LblContraseña.Location = New Point(79, 163)
+        LblContraseña.Name = "LblContraseña"
+        LblContraseña.Size = New Size(83, 20)
+        LblContraseña.TabIndex = 3
+        LblContraseña.Text = "Contraseña"
         ' 
         ' Ingresar
         ' 
@@ -90,20 +90,20 @@ Partial Class IniciarSesión
         ClientSize = New Size(547, 375)
         Controls.Add(Label1)
         Controls.Add(Ingresar)
-        Controls.Add(LContraseña)
-        Controls.Add(LCorreo)
-        Controls.Add(Contraseña)
-        Controls.Add(Correo)
+        Controls.Add(LblContraseña)
+        Controls.Add(LblUsuario)
+        Controls.Add(TxtContrasena)
+        Controls.Add(TxtUsuario)
         Name = "IniciarSesión"
         Text = "Photografy Solutions"
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Correo As TextBox
-    Friend WithEvents Contraseña As TextBox
-    Friend WithEvents LCorreo As Label
-    Friend WithEvents LContraseña As Label
+    Friend WithEvents TxtUsuario As TextBox
+    Friend WithEvents TxtContrasena As TextBox
+    Friend WithEvents LblUsuario As Label
+    Friend WithEvents LblContraseña As Label
     Friend WithEvents Ingresar As Button
     Friend WithEvents Label1 As Label
 End Class
