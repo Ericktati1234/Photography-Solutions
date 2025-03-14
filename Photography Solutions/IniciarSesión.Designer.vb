@@ -27,60 +27,73 @@ Partial Class IniciarSesión
         LCorreo = New Label()
         LContraseña = New Label()
         Ingresar = New Button()
+        Label1 = New Label()
         SuspendLayout()
         ' 
         ' Correo
         ' 
-        Correo.Location = New Point(146, 75)
+        Correo.Location = New Point(167, 100)
+        Correo.Margin = New Padding(3, 4, 3, 4)
         Correo.Name = "Correo"
-        Correo.Size = New Size(167, 23)
+        Correo.Size = New Size(190, 27)
         Correo.TabIndex = 0
         ' 
         ' Contraseña
         ' 
-        Contraseña.Location = New Point(146, 119)
+        Contraseña.Location = New Point(167, 159)
+        Contraseña.Margin = New Padding(3, 4, 3, 4)
         Contraseña.Name = "Contraseña"
-        Contraseña.Size = New Size(167, 23)
+        Contraseña.Size = New Size(190, 27)
         Contraseña.TabIndex = 1
         ' 
         ' LCorreo
         ' 
         LCorreo.AutoSize = True
-        LCorreo.Location = New Point(69, 83)
+        LCorreo.Location = New Point(79, 111)
         LCorreo.Name = "LCorreo"
-        LCorreo.Size = New Size(43, 15)
+        LCorreo.Size = New Size(54, 20)
         LCorreo.TabIndex = 2
         LCorreo.Text = "Correo"
         ' 
         ' LContraseña
         ' 
         LContraseña.AutoSize = True
-        LContraseña.Location = New Point(69, 122)
+        LContraseña.Location = New Point(79, 163)
         LContraseña.Name = "LContraseña"
-        LContraseña.Size = New Size(67, 15)
+        LContraseña.Size = New Size(83, 20)
         LContraseña.TabIndex = 3
         LContraseña.Text = "Contraseña"
         ' 
         ' Ingresar
         ' 
-        Ingresar.Location = New Point(191, 181)
+        Ingresar.Location = New Point(218, 241)
+        Ingresar.Margin = New Padding(3, 4, 3, 4)
         Ingresar.Name = "Ingresar"
-        Ingresar.Size = New Size(75, 23)
+        Ingresar.Size = New Size(86, 31)
         Ingresar.TabIndex = 4
         Ingresar.Text = "Ingresar"
         Ingresar.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(110, 45)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(298, 20)
+        Label1.TabIndex = 5
+        Label1.Text = "BIENVENIDO A PHOTOGRAPHY SOLUTIONS"
+        ' 
         ' IniciarSesión
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(479, 281)
+        ClientSize = New Size(547, 375)
+        Controls.Add(Label1)
         Controls.Add(Ingresar)
         Controls.Add(LContraseña)
         Controls.Add(LCorreo)
         Controls.Add(Contraseña)
         Controls.Add(Correo)
-        Margin = New Padding(3, 2, 3, 2)
         Name = "IniciarSesión"
         Text = "Photografy Solutions"
         ResumeLayout(False)
@@ -92,4 +105,5 @@ Partial Class IniciarSesión
     Friend WithEvents LCorreo As Label
     Friend WithEvents LContraseña As Label
     Friend WithEvents Ingresar As Button
+    Friend WithEvents Label1 As Label
 End Class
