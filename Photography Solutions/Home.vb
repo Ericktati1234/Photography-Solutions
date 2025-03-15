@@ -27,5 +27,23 @@ Public Class Home
 
     End Sub
 
+    Private Sub AltaDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeUsuariosToolStripMenuItem.Click
+        Dim nuevoUsuarioForm As New NuevoUsuario()
+        nuevoUsuarioForm.Show()
+    End Sub
 
+    Private Sub AltaDePaquetesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDePaquetesToolStripMenuItem.Click
+        Dim almacenForm As New Almacen()
+        almacenForm.Show()
+    End Sub
+
+    Private Sub ManejoDeSesionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManejoDeSesionesToolStripMenuItem.Click
+        Dim ManejoDeSesionesForm As New ManejoDeSesiones()
+        ManejoDeSesiones.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+        Dim ventasForm As New Ventas()
+        ventasForm.Show()
+    End Sub
 End Class

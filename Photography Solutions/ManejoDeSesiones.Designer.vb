@@ -31,39 +31,41 @@ Partial Class ManejoDeSesiones
         ' MSNombre
         ' 
         MSNombre.AutoSize = True
-        MSNombre.Location = New Point(55, 49)
+        MSNombre.Location = New Point(48, 37)
         MSNombre.Name = "MSNombre"
-        MSNombre.Size = New Size(137, 20)
+        MSNombre.Size = New Size(108, 15)
         MSNombre.TabIndex = 0
         MSNombre.Text = "Nombre del cliente"
         ' 
         ' MSFecha
         ' 
         MSFecha.AutoSize = True
-        MSFecha.Location = New Point(55, 93)
+        MSFecha.Location = New Point(48, 66)
         MSFecha.Name = "MSFecha"
-        MSFecha.Size = New Size(123, 20)
+        MSFecha.Size = New Size(97, 15)
         MSFecha.TabIndex = 1
         MSFecha.Text = "Fecha de entrega"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(30, 136)
+        DataGridView1.Location = New Point(26, 102)
+        DataGridView1.Margin = New Padding(3, 2, 3, 2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(713, 266)
+        DataGridView1.Size = New Size(624, 200)
         DataGridView1.TabIndex = 2
         ' 
         ' ManejoDeSesiones
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(700, 338)
         Controls.Add(DataGridView1)
         Controls.Add(MSFecha)
         Controls.Add(MSNombre)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "ManejoDeSesiones"
         Text = "ManejoDeSesiones"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
