@@ -19,6 +19,7 @@ Public Class IniciarSesión
         Dim sqldrDatos As SqlClient.SqlDataReader
         sqldrDatos = sqlcmdComando.ExecuteReader
         sqldrDatos.Read()
+        IdUsuario = sqldrDatos.GetValue(0)
         Dim Nombre As String = sqldrDatos.GetValue(2).ToString
         Dim Rol As String = sqldrDatos.GetValue(3).ToString
         If Nombre <> "" And Rol <> "" Then

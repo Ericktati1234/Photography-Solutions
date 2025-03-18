@@ -3,17 +3,7 @@ Imports System.Globalization
 
 Module Modulo
     Public NombrePaciente As String
-    Public PaternoPaciente As String
-    Public MaternoPaciente As String
-    Public GeneroPaciente As String
-    Public NacimientoPaciente As String
-    Public IdPaciente As Integer
-    Public NombreUsuario As String
-    Public CedulaUsuario As String
-    Public EspecialidadUsuario As String
     Public IdUsuario As Integer
-    Public idReceta As Integer
-    Public idDoctor As Integer
 
     Public Function EsEntero(valor As String) As Boolean
         Dim numero As Integer
