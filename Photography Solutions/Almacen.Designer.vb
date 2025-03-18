@@ -41,128 +41,138 @@ Partial Class Almacen
         ' 
         ' Nuevo
         ' 
-        Nuevo.Location = New Point(27, 34)
+        Nuevo.Location = New Point(24, 26)
+        Nuevo.Margin = New Padding(3, 2, 3, 2)
         Nuevo.Name = "Nuevo"
-        Nuevo.Size = New Size(94, 29)
+        Nuevo.Size = New Size(82, 22)
         Nuevo.TabIndex = 0
         Nuevo.Text = "Nuevo"
         Nuevo.UseVisualStyleBackColor = True
         ' 
         ' Guardar
         ' 
-        Guardar.Location = New Point(27, 78)
+        Guardar.Location = New Point(24, 58)
+        Guardar.Margin = New Padding(3, 2, 3, 2)
         Guardar.Name = "Guardar"
-        Guardar.Size = New Size(94, 29)
+        Guardar.Size = New Size(82, 22)
         Guardar.TabIndex = 1
         Guardar.Text = "Guardar"
         Guardar.UseVisualStyleBackColor = True
         ' 
         ' Editar
         ' 
-        Editar.Location = New Point(27, 125)
+        Editar.Location = New Point(24, 94)
+        Editar.Margin = New Padding(3, 2, 3, 2)
         Editar.Name = "Editar"
-        Editar.Size = New Size(94, 29)
+        Editar.Size = New Size(82, 22)
         Editar.TabIndex = 2
         Editar.Text = "Editar"
         Editar.UseVisualStyleBackColor = True
         ' 
         ' Eliminar
         ' 
-        Eliminar.Location = New Point(12, 182)
+        Eliminar.Location = New Point(24, 131)
+        Eliminar.Margin = New Padding(3, 2, 3, 2)
         Eliminar.Name = "Eliminar"
-        Eliminar.Size = New Size(94, 29)
+        Eliminar.Size = New Size(82, 22)
         Eliminar.TabIndex = 3
         Eliminar.Text = "Eliminar"
         Eliminar.UseVisualStyleBackColor = True
         ' 
         ' Cancelar
         ' 
-        Cancelar.Location = New Point(12, 230)
+        Cancelar.Location = New Point(24, 168)
+        Cancelar.Margin = New Padding(3, 2, 3, 2)
         Cancelar.Name = "Cancelar"
-        Cancelar.Size = New Size(94, 29)
+        Cancelar.Size = New Size(82, 22)
         Cancelar.TabIndex = 4
         Cancelar.Text = "Cancelar"
         Cancelar.UseVisualStyleBackColor = True
         ' 
         ' IDPackTxBx
         ' 
-        IDPackTxBx.Location = New Point(183, 59)
+        IDPackTxBx.Location = New Point(160, 44)
+        IDPackTxBx.Margin = New Padding(3, 2, 3, 2)
         IDPackTxBx.Name = "IDPackTxBx"
-        IDPackTxBx.Size = New Size(125, 27)
+        IDPackTxBx.Size = New Size(110, 23)
         IDPackTxBx.TabIndex = 5
         ' 
         ' IDPack
         ' 
         IDPack.AutoSize = True
-        IDPack.Location = New Point(205, 36)
+        IDPack.Location = New Point(179, 27)
         IDPack.Name = "IDPack"
-        IDPack.Size = New Size(81, 20)
+        IDPack.Size = New Size(63, 15)
         IDPack.TabIndex = 6
         IDPack.Text = "Id paquete"
         ' 
         ' CategoryTxBx
         ' 
-        CategoryTxBx.Location = New Point(332, 59)
+        CategoryTxBx.Location = New Point(290, 44)
+        CategoryTxBx.Margin = New Padding(3, 2, 3, 2)
         CategoryTxBx.Name = "CategoryTxBx"
-        CategoryTxBx.Size = New Size(125, 27)
+        CategoryTxBx.Size = New Size(110, 23)
         CategoryTxBx.TabIndex = 7
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(332, 34)
+        Label1.Location = New Point(290, 26)
         Label1.Name = "Label1"
-        Label1.Size = New Size(74, 20)
+        Label1.Size = New Size(58, 15)
         Label1.TabIndex = 8
         Label1.Text = "Categoría"
         ' 
         ' ClienteTxBx
         ' 
-        ClienteTxBx.Location = New Point(494, 59)
+        ClienteTxBx.Location = New Point(432, 44)
+        ClienteTxBx.Margin = New Padding(3, 2, 3, 2)
         ClienteTxBx.Name = "ClienteTxBx"
-        ClienteTxBx.Size = New Size(125, 27)
+        ClienteTxBx.Size = New Size(110, 23)
         ClienteTxBx.TabIndex = 9
         ' 
         ' Cliente
         ' 
         Cliente.AutoSize = True
-        Cliente.Location = New Point(511, 34)
+        Cliente.Location = New Point(447, 26)
         Cliente.Name = "Cliente"
-        Cliente.Size = New Size(55, 20)
+        Cliente.Size = New Size(44, 15)
         Cliente.TabIndex = 10
         Cliente.Text = "Cliente"
         ' 
         ' UnidadesTxBx
         ' 
-        UnidadesTxBx.Location = New Point(648, 59)
+        UnidadesTxBx.Location = New Point(567, 44)
+        UnidadesTxBx.Margin = New Padding(3, 2, 3, 2)
         UnidadesTxBx.Name = "UnidadesTxBx"
-        UnidadesTxBx.Size = New Size(125, 27)
+        UnidadesTxBx.Size = New Size(110, 23)
         UnidadesTxBx.TabIndex = 11
         ' 
         ' Unidades
         ' 
         Unidades.AutoSize = True
-        Unidades.Location = New Point(681, 36)
+        Unidades.Location = New Point(596, 27)
         Unidades.Name = "Unidades"
-        Unidades.Size = New Size(71, 20)
+        Unidades.Size = New Size(56, 15)
         Unidades.TabIndex = 12
         Unidades.Text = "Unidades"
         ' 
         ' DataGridPack
         ' 
         DataGridPack.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridPack.Location = New Point(319, 157)
+        DataGridPack.Location = New Point(279, 118)
+        DataGridPack.Margin = New Padding(3, 2, 3, 2)
         DataGridPack.Name = "DataGridPack"
         DataGridPack.RowHeadersWidth = 51
         DataGridPack.RowTemplate.Height = 29
-        DataGridPack.Size = New Size(300, 188)
+        DataGridPack.Size = New Size(262, 141)
         DataGridPack.TabIndex = 13
         ' 
         ' Almacen
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(828, 450)
+        ClientSize = New Size(724, 338)
         Controls.Add(DataGridPack)
         Controls.Add(Unidades)
         Controls.Add(UnidadesTxBx)
@@ -177,6 +187,7 @@ Partial Class Almacen
         Controls.Add(Editar)
         Controls.Add(Guardar)
         Controls.Add(Nuevo)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "Almacen"
         Text = "Almacen"
         CType(DataGridPack, ComponentModel.ISupportInitialize).EndInit()
