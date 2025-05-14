@@ -22,67 +22,147 @@ Partial Class AltaClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        TableLayoutPanel4 = New TableLayoutPanel()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
+        TableLayoutPanel2 = New TableLayoutPanel()
+        Nuevo = New Button()
+        Guardar = New Button()
+        Editar = New Button()
+        Cancelar = New Button()
+        Eliminar = New Button()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        IDPackTxBx = New TextBox()
+        CategoryTxBx = New TextBox()
         Unidades = New Label()
         ClienteTxBx = New TextBox()
         UnidadesTxBx = New TextBox()
-        Label3 = New Label()
-        Label4 = New Label()
+        IDPack = New Label()
+        Label1 = New Label()
         Cliente = New Label()
-        TableLayoutPanel4.SuspendLayout()
+        DataGridPack = New DataGridView()
+        TableLayoutPanel2.SuspendLayout()
+        TableLayoutPanel1.SuspendLayout()
+        CType(DataGridPack, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' TableLayoutPanel4
+        ' TableLayoutPanel2
         ' 
-        TableLayoutPanel4.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel4.ColumnCount = 4
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel4.Controls.Add(TextBox1, 0, 1)
-        TableLayoutPanel4.Controls.Add(TextBox2, 1, 1)
-        TableLayoutPanel4.Controls.Add(Unidades, 3, 0)
-        TableLayoutPanel4.Controls.Add(ClienteTxBx, 2, 1)
-        TableLayoutPanel4.Controls.Add(UnidadesTxBx, 3, 1)
-        TableLayoutPanel4.Controls.Add(Label3, 0, 0)
-        TableLayoutPanel4.Controls.Add(Label4, 1, 0)
-        TableLayoutPanel4.Controls.Add(Cliente, 2, 0)
-        TableLayoutPanel4.Location = New Point(92, 133)
-        TableLayoutPanel4.Name = "TableLayoutPanel4"
-        TableLayoutPanel4.RowCount = 2
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel4.Size = New Size(845, 50)
-        TableLayoutPanel4.TabIndex = 25
+        TableLayoutPanel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        TableLayoutPanel2.ColumnCount = 1
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        TableLayoutPanel2.Controls.Add(Nuevo, 0, 0)
+        TableLayoutPanel2.Controls.Add(Guardar, 0, 1)
+        TableLayoutPanel2.Controls.Add(Editar, 0, 2)
+        TableLayoutPanel2.Controls.Add(Cancelar, 0, 4)
+        TableLayoutPanel2.Controls.Add(Eliminar, 0, 3)
+        TableLayoutPanel2.Location = New Point(25, 37)
+        TableLayoutPanel2.Margin = New Padding(3, 4, 3, 4)
+        TableLayoutPanel2.Name = "TableLayoutPanel2"
+        TableLayoutPanel2.RowCount = 5
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.Size = New Size(131, 473)
+        TableLayoutPanel2.TabIndex = 18
         ' 
-        ' TextBox1
+        ' Nuevo
         ' 
-        TextBox1.Dock = DockStyle.Fill
-        TextBox1.Location = New Point(3, 27)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(78, 23)
-        TextBox1.TabIndex = 5
+        Nuevo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Nuevo.Location = New Point(3, 3)
+        Nuevo.Name = "Nuevo"
+        Nuevo.Size = New Size(125, 88)
+        Nuevo.TabIndex = 0
+        Nuevo.Text = "Nuevo"
+        Nuevo.UseVisualStyleBackColor = True
         ' 
-        ' TextBox2
+        ' Guardar
         ' 
-        TextBox2.Dock = DockStyle.Fill
-        TextBox2.Location = New Point(87, 27)
-        TextBox2.Margin = New Padding(3, 2, 3, 2)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(205, 23)
-        TextBox2.TabIndex = 7
+        Guardar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Guardar.Location = New Point(3, 97)
+        Guardar.Name = "Guardar"
+        Guardar.Size = New Size(125, 88)
+        Guardar.TabIndex = 1
+        Guardar.Text = "Guardar"
+        Guardar.UseVisualStyleBackColor = True
+        ' 
+        ' Editar
+        ' 
+        Editar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Editar.Location = New Point(3, 191)
+        Editar.Name = "Editar"
+        Editar.Size = New Size(125, 88)
+        Editar.TabIndex = 2
+        Editar.Text = "Editar"
+        Editar.UseVisualStyleBackColor = True
+        ' 
+        ' Cancelar
+        ' 
+        Cancelar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Cancelar.Location = New Point(3, 379)
+        Cancelar.Name = "Cancelar"
+        Cancelar.Size = New Size(125, 91)
+        Cancelar.TabIndex = 4
+        Cancelar.Text = "Cancelar"
+        Cancelar.UseVisualStyleBackColor = True
+        ' 
+        ' Eliminar
+        ' 
+        Eliminar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Eliminar.Location = New Point(3, 285)
+        Eliminar.Name = "Eliminar"
+        Eliminar.Size = New Size(125, 88)
+        Eliminar.TabIndex = 3
+        Eliminar.Text = "Eliminar"
+        Eliminar.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel1
+        ' 
+        TableLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        TableLayoutPanel1.ColumnCount = 4
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.Controls.Add(IDPackTxBx, 0, 1)
+        TableLayoutPanel1.Controls.Add(CategoryTxBx, 1, 1)
+        TableLayoutPanel1.Controls.Add(Unidades, 3, 0)
+        TableLayoutPanel1.Controls.Add(ClienteTxBx, 2, 1)
+        TableLayoutPanel1.Controls.Add(UnidadesTxBx, 3, 1)
+        TableLayoutPanel1.Controls.Add(IDPack, 0, 0)
+        TableLayoutPanel1.Controls.Add(Label1, 1, 0)
+        TableLayoutPanel1.Controls.Add(Cliente, 2, 0)
+        TableLayoutPanel1.Location = New Point(206, 24)
+        TableLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 2
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(689, 67)
+        TableLayoutPanel1.TabIndex = 17
+        ' 
+        ' IDPackTxBx
+        ' 
+        IDPackTxBx.Dock = DockStyle.Fill
+        IDPackTxBx.Location = New Point(3, 36)
+        IDPackTxBx.Name = "IDPackTxBx"
+        IDPackTxBx.Size = New Size(62, 27)
+        IDPackTxBx.TabIndex = 5
+        ' 
+        ' CategoryTxBx
+        ' 
+        CategoryTxBx.Dock = DockStyle.Fill
+        CategoryTxBx.Location = New Point(71, 36)
+        CategoryTxBx.Name = "CategoryTxBx"
+        CategoryTxBx.Size = New Size(166, 27)
+        CategoryTxBx.TabIndex = 7
         ' 
         ' Unidades
         ' 
         Unidades.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Unidades.AutoSize = True
-        Unidades.Location = New Point(678, 0)
+        Unidades.Location = New Point(553, 0)
         Unidades.Name = "Unidades"
-        Unidades.Size = New Size(164, 25)
+        Unidades.Size = New Size(133, 33)
         Unidades.TabIndex = 12
         Unidades.Text = "Unidades"
         Unidades.TextAlign = ContentAlignment.MiddleCenter
@@ -90,74 +170,95 @@ Partial Class AltaClientes
         ' ClienteTxBx
         ' 
         ClienteTxBx.Dock = DockStyle.Fill
-        ClienteTxBx.Location = New Point(298, 27)
-        ClienteTxBx.Margin = New Padding(3, 2, 3, 2)
+        ClienteTxBx.Location = New Point(243, 36)
         ClienteTxBx.Name = "ClienteTxBx"
-        ClienteTxBx.Size = New Size(374, 23)
+        ClienteTxBx.Size = New Size(304, 27)
         ClienteTxBx.TabIndex = 9
         ' 
         ' UnidadesTxBx
         ' 
         UnidadesTxBx.Dock = DockStyle.Fill
-        UnidadesTxBx.Location = New Point(678, 27)
-        UnidadesTxBx.Margin = New Padding(3, 2, 3, 2)
+        UnidadesTxBx.Location = New Point(553, 36)
         UnidadesTxBx.Name = "UnidadesTxBx"
-        UnidadesTxBx.Size = New Size(164, 23)
+        UnidadesTxBx.Size = New Size(133, 27)
         UnidadesTxBx.TabIndex = 11
         ' 
-        ' Label3
+        ' IDPack
         ' 
-        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label3.AutoSize = True
-        Label3.Location = New Point(3, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(78, 25)
-        Label3.TabIndex = 6
-        Label3.Text = "ID"
-        Label3.TextAlign = ContentAlignment.MiddleCenter
+        IDPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        IDPack.AutoSize = True
+        IDPack.Location = New Point(3, 0)
+        IDPack.Name = "IDPack"
+        IDPack.Size = New Size(62, 33)
+        IDPack.TabIndex = 6
+        IDPack.Text = "ID"
+        IDPack.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label4
+        ' Label1
         ' 
-        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label4.AutoSize = True
-        Label4.Location = New Point(87, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(205, 25)
-        Label4.TabIndex = 8
-        Label4.Text = "Nombre"
-        Label4.TextAlign = ContentAlignment.MiddleCenter
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Label1.AutoSize = True
+        Label1.Location = New Point(71, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(166, 33)
+        Label1.TabIndex = 8
+        Label1.Text = "Categoría"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Cliente
         ' 
         Cliente.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Cliente.AutoSize = True
-        Cliente.Location = New Point(298, 0)
+        Cliente.Location = New Point(243, 0)
         Cliente.Name = "Cliente"
-        Cliente.Size = New Size(374, 25)
+        Cliente.Size = New Size(304, 33)
         Cliente.TabIndex = 10
-        Cliente.Text = "Fecha de nacimiento"
+        Cliente.Text = "Cliente"
         Cliente.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' DataGridPack
+        ' 
+        DataGridPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridPack.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridPack.Location = New Point(185, 116)
+        DataGridPack.Name = "DataGridPack"
+        DataGridPack.RowHeadersWidth = 51
+        DataGridPack.RowTemplate.Height = 29
+        DataGridPack.Size = New Size(730, 428)
+        DataGridPack.TabIndex = 16
         ' 
         ' AltaClientes
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(TableLayoutPanel4)
+        ClientSize = New Size(941, 568)
+        Controls.Add(TableLayoutPanel2)
+        Controls.Add(TableLayoutPanel1)
+        Controls.Add(DataGridPack)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "AltaClientes"
         Text = "AltaClientes"
-        TableLayoutPanel4.ResumeLayout(False)
-        TableLayoutPanel4.PerformLayout()
+        TableLayoutPanel2.ResumeLayout(False)
+        TableLayoutPanel1.ResumeLayout(False)
+        TableLayoutPanel1.PerformLayout()
+        CType(DataGridPack, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Nuevo As Button
+    Friend WithEvents Guardar As Button
+    Friend WithEvents Editar As Button
+    Friend WithEvents Cancelar As Button
+    Friend WithEvents Eliminar As Button
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents IDPackTxBx As TextBox
+    Friend WithEvents CategoryTxBx As TextBox
     Friend WithEvents Unidades As Label
     Friend WithEvents ClienteTxBx As TextBox
     Friend WithEvents UnidadesTxBx As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents IDPack As Label
+    Friend WithEvents Label1 As Label
     Friend WithEvents Cliente As Label
+    Friend WithEvents DataGridPack As DataGridView
 End Class

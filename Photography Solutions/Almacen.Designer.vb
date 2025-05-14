@@ -46,10 +46,9 @@ Partial Class Almacen
         ' Nuevo
         ' 
         Nuevo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Nuevo.Location = New Point(3, 2)
-        Nuevo.Margin = New Padding(3, 2, 3, 2)
+        Nuevo.Location = New Point(3, 3)
         Nuevo.Name = "Nuevo"
-        Nuevo.Size = New Size(109, 67)
+        Nuevo.Size = New Size(125, 88)
         Nuevo.TabIndex = 0
         Nuevo.Text = "Nuevo"
         Nuevo.UseVisualStyleBackColor = True
@@ -57,10 +56,9 @@ Partial Class Almacen
         ' Guardar
         ' 
         Guardar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Guardar.Location = New Point(3, 73)
-        Guardar.Margin = New Padding(3, 2, 3, 2)
+        Guardar.Location = New Point(3, 97)
         Guardar.Name = "Guardar"
-        Guardar.Size = New Size(109, 67)
+        Guardar.Size = New Size(125, 88)
         Guardar.TabIndex = 1
         Guardar.Text = "Guardar"
         Guardar.UseVisualStyleBackColor = True
@@ -68,10 +66,9 @@ Partial Class Almacen
         ' Editar
         ' 
         Editar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Editar.Location = New Point(3, 144)
-        Editar.Margin = New Padding(3, 2, 3, 2)
+        Editar.Location = New Point(3, 191)
         Editar.Name = "Editar"
-        Editar.Size = New Size(109, 67)
+        Editar.Size = New Size(125, 88)
         Editar.TabIndex = 2
         Editar.Text = "Editar"
         Editar.UseVisualStyleBackColor = True
@@ -79,10 +76,9 @@ Partial Class Almacen
         ' Eliminar
         ' 
         Eliminar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Eliminar.Location = New Point(3, 215)
-        Eliminar.Margin = New Padding(3, 2, 3, 2)
+        Eliminar.Location = New Point(3, 285)
         Eliminar.Name = "Eliminar"
-        Eliminar.Size = New Size(109, 67)
+        Eliminar.Size = New Size(125, 88)
         Eliminar.TabIndex = 3
         Eliminar.Text = "Eliminar"
         Eliminar.UseVisualStyleBackColor = True
@@ -90,10 +86,9 @@ Partial Class Almacen
         ' Cancelar
         ' 
         Cancelar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Cancelar.Location = New Point(3, 286)
-        Cancelar.Margin = New Padding(3, 2, 3, 2)
+        Cancelar.Location = New Point(3, 379)
         Cancelar.Name = "Cancelar"
-        Cancelar.Size = New Size(109, 67)
+        Cancelar.Size = New Size(125, 91)
         Cancelar.TabIndex = 4
         Cancelar.Text = "Cancelar"
         Cancelar.UseVisualStyleBackColor = True
@@ -101,10 +96,9 @@ Partial Class Almacen
         ' IDPackTxBx
         ' 
         IDPackTxBx.Dock = DockStyle.Fill
-        IDPackTxBx.Location = New Point(3, 27)
-        IDPackTxBx.Margin = New Padding(3, 2, 3, 2)
+        IDPackTxBx.Location = New Point(3, 36)
         IDPackTxBx.Name = "IDPackTxBx"
-        IDPackTxBx.Size = New Size(54, 23)
+        IDPackTxBx.Size = New Size(62, 27)
         IDPackTxBx.TabIndex = 5
         ' 
         ' IDPack
@@ -113,7 +107,7 @@ Partial Class Almacen
         IDPack.AutoSize = True
         IDPack.Location = New Point(3, 0)
         IDPack.Name = "IDPack"
-        IDPack.Size = New Size(54, 25)
+        IDPack.Size = New Size(62, 33)
         IDPack.TabIndex = 6
         IDPack.Text = "ID"
         IDPack.TextAlign = ContentAlignment.MiddleCenter
@@ -121,19 +115,18 @@ Partial Class Almacen
         ' CategoryTxBx
         ' 
         CategoryTxBx.Dock = DockStyle.Fill
-        CategoryTxBx.Location = New Point(63, 27)
-        CategoryTxBx.Margin = New Padding(3, 2, 3, 2)
+        CategoryTxBx.Location = New Point(71, 36)
         CategoryTxBx.Name = "CategoryTxBx"
-        CategoryTxBx.Size = New Size(144, 23)
+        CategoryTxBx.Size = New Size(166, 27)
         CategoryTxBx.TabIndex = 7
         ' 
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
-        Label1.Location = New Point(63, 0)
+        Label1.Location = New Point(71, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(144, 25)
+        Label1.Size = New Size(166, 33)
         Label1.TabIndex = 8
         Label1.Text = "Categoría"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -141,19 +134,18 @@ Partial Class Almacen
         ' ClienteTxBx
         ' 
         ClienteTxBx.Dock = DockStyle.Fill
-        ClienteTxBx.Location = New Point(213, 27)
-        ClienteTxBx.Margin = New Padding(3, 2, 3, 2)
+        ClienteTxBx.Location = New Point(243, 36)
         ClienteTxBx.Name = "ClienteTxBx"
-        ClienteTxBx.Size = New Size(265, 23)
+        ClienteTxBx.Size = New Size(304, 27)
         ClienteTxBx.TabIndex = 9
         ' 
         ' Cliente
         ' 
         Cliente.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Cliente.AutoSize = True
-        Cliente.Location = New Point(213, 0)
+        Cliente.Location = New Point(243, 0)
         Cliente.Name = "Cliente"
-        Cliente.Size = New Size(265, 25)
+        Cliente.Size = New Size(304, 33)
         Cliente.TabIndex = 10
         Cliente.Text = "Cliente"
         Cliente.TextAlign = ContentAlignment.MiddleCenter
@@ -161,19 +153,18 @@ Partial Class Almacen
         ' UnidadesTxBx
         ' 
         UnidadesTxBx.Dock = DockStyle.Fill
-        UnidadesTxBx.Location = New Point(484, 27)
-        UnidadesTxBx.Margin = New Padding(3, 2, 3, 2)
+        UnidadesTxBx.Location = New Point(553, 36)
         UnidadesTxBx.Name = "UnidadesTxBx"
-        UnidadesTxBx.Size = New Size(116, 23)
+        UnidadesTxBx.Size = New Size(133, 27)
         UnidadesTxBx.TabIndex = 11
         ' 
         ' Unidades
         ' 
         Unidades.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Unidades.AutoSize = True
-        Unidades.Location = New Point(484, 0)
+        Unidades.Location = New Point(553, 0)
         Unidades.Name = "Unidades"
-        Unidades.Size = New Size(116, 25)
+        Unidades.Size = New Size(133, 33)
         Unidades.TabIndex = 12
         Unidades.Text = "Unidades"
         Unidades.TextAlign = ContentAlignment.MiddleCenter
@@ -182,12 +173,11 @@ Partial Class Almacen
         ' 
         DataGridPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DataGridPack.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridPack.Location = New Point(157, 81)
-        DataGridPack.Margin = New Padding(3, 2, 3, 2)
+        DataGridPack.Location = New Point(179, 108)
         DataGridPack.Name = "DataGridPack"
         DataGridPack.RowHeadersWidth = 51
         DataGridPack.RowTemplate.Height = 29
-        DataGridPack.Size = New Size(639, 321)
+        DataGridPack.Size = New Size(730, 428)
         DataGridPack.TabIndex = 13
         ' 
         ' TableLayoutPanel1
@@ -206,12 +196,13 @@ Partial Class Almacen
         TableLayoutPanel1.Controls.Add(IDPack, 0, 0)
         TableLayoutPanel1.Controls.Add(Label1, 1, 0)
         TableLayoutPanel1.Controls.Add(Cliente, 2, 0)
-        TableLayoutPanel1.Location = New Point(175, 12)
+        TableLayoutPanel1.Location = New Point(200, 16)
+        TableLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 2
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.Size = New Size(603, 50)
+        TableLayoutPanel1.Size = New Size(689, 67)
         TableLayoutPanel1.TabIndex = 14
         ' 
         ' TableLayoutPanel2
@@ -224,7 +215,8 @@ Partial Class Almacen
         TableLayoutPanel2.Controls.Add(Editar, 0, 2)
         TableLayoutPanel2.Controls.Add(Cancelar, 0, 4)
         TableLayoutPanel2.Controls.Add(Eliminar, 0, 3)
-        TableLayoutPanel2.Location = New Point(17, 22)
+        TableLayoutPanel2.Location = New Point(19, 29)
+        TableLayoutPanel2.Margin = New Padding(3, 4, 3, 4)
         TableLayoutPanel2.Name = "TableLayoutPanel2"
         TableLayoutPanel2.RowCount = 5
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
@@ -232,19 +224,18 @@ Partial Class Almacen
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        TableLayoutPanel2.Size = New Size(115, 355)
+        TableLayoutPanel2.Size = New Size(131, 473)
         TableLayoutPanel2.TabIndex = 15
         ' 
         ' Almacen
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(823, 426)
+        ClientSize = New Size(941, 568)
         Controls.Add(TableLayoutPanel2)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(DataGridPack)
-        Margin = New Padding(3, 2, 3, 2)
-        MinimumSize = New Size(839, 465)
+        MinimumSize = New Size(956, 604)
         Name = "Almacen"
         Text = "Almacen"
         CType(DataGridPack, ComponentModel.ISupportInitialize).EndInit()

@@ -24,15 +24,17 @@ Partial Class IniciarSesión
     Private Sub InitializeComponent()
         TxtUsuario = New TextBox()
         TxtContrasena = New TextBox()
-        LblUsuario = New Label()
-        LblContraseña = New Label()
-        Ingresar = New Button()
-        Label1 = New Label()
+        lblTituloUsuario = New Label()
+        lblTituloContrasena = New Label()
+        BtnIngresar = New Button()
+        lblTitulo = New Label()
+        PictureBox1 = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TxtUsuario
         ' 
-        TxtUsuario.Location = New Point(167, 100)
+        TxtUsuario.Location = New Point(241, 60)
         TxtUsuario.Margin = New Padding(3, 4, 3, 4)
         TxtUsuario.Name = "TxtUsuario"
         TxtUsuario.Size = New Size(190, 27)
@@ -40,70 +42,85 @@ Partial Class IniciarSesión
         ' 
         ' TxtContrasena
         ' 
-        TxtContrasena.Location = New Point(167, 159)
+        TxtContrasena.Location = New Point(241, 101)
         TxtContrasena.Margin = New Padding(3, 4, 3, 4)
         TxtContrasena.Name = "TxtContrasena"
         TxtContrasena.Size = New Size(190, 27)
         TxtContrasena.TabIndex = 1
         ' 
-        ' LblUsuario
+        ' lblTituloUsuario
         ' 
-        LblUsuario.AutoSize = True
-        LblUsuario.Location = New Point(79, 111)
-        LblUsuario.Name = "LblUsuario"
-        LblUsuario.Size = New Size(59, 20)
-        LblUsuario.TabIndex = 2
-        LblUsuario.Text = "Usuario"
+        lblTituloUsuario.AutoSize = True
+        lblTituloUsuario.Location = New Point(152, 63)
+        lblTituloUsuario.Name = "lblTituloUsuario"
+        lblTituloUsuario.Size = New Size(59, 20)
+        lblTituloUsuario.TabIndex = 2
+        lblTituloUsuario.Text = "Usuario"
+        lblTituloUsuario.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' LblContraseña
+        ' lblTituloContrasena
         ' 
-        LblContraseña.AutoSize = True
-        LblContraseña.Location = New Point(79, 163)
-        LblContraseña.Name = "LblContraseña"
-        LblContraseña.Size = New Size(83, 20)
-        LblContraseña.TabIndex = 3
-        LblContraseña.Text = "Contraseña"
+        lblTituloContrasena.AutoSize = True
+        lblTituloContrasena.Location = New Point(152, 101)
+        lblTituloContrasena.Name = "lblTituloContrasena"
+        lblTituloContrasena.Size = New Size(83, 20)
+        lblTituloContrasena.TabIndex = 3
+        lblTituloContrasena.Text = "Contraseña"
+        lblTituloContrasena.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' Ingresar
+        ' BtnIngresar
         ' 
-        Ingresar.Location = New Point(218, 241)
-        Ingresar.Margin = New Padding(3, 4, 3, 4)
-        Ingresar.Name = "Ingresar"
-        Ingresar.Size = New Size(86, 31)
-        Ingresar.TabIndex = 4
-        Ingresar.Text = "Ingresar"
-        Ingresar.UseVisualStyleBackColor = True
+        BtnIngresar.Location = New Point(194, 145)
+        BtnIngresar.Margin = New Padding(3, 4, 3, 4)
+        BtnIngresar.Name = "BtnIngresar"
+        BtnIngresar.Size = New Size(176, 50)
+        BtnIngresar.TabIndex = 4
+        BtnIngresar.Text = "Ingresar"
+        BtnIngresar.UseVisualStyleBackColor = True
         ' 
-        ' Label1
+        ' lblTitulo
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(110, 45)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(298, 20)
-        Label1.TabIndex = 5
-        Label1.Text = "BIENVENIDO A PHOTOGRAPHY SOLUTIONS"
+        lblTitulo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lblTitulo.AutoSize = True
+        lblTitulo.Location = New Point(152, 25)
+        lblTitulo.Name = "lblTitulo"
+        lblTitulo.Size = New Size(298, 20)
+        lblTitulo.TabIndex = 5
+        lblTitulo.Text = "BIENVENIDO A PHOTOGRAPHY SOLUTIONS"
+        lblTitulo.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(29, 25)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(96, 96)
+        PictureBox1.TabIndex = 8
+        PictureBox1.TabStop = False
         ' 
         ' IniciarSesión
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(547, 375)
-        Controls.Add(Label1)
-        Controls.Add(Ingresar)
-        Controls.Add(LblContraseña)
-        Controls.Add(LblUsuario)
+        ClientSize = New Size(472, 219)
+        Controls.Add(BtnIngresar)
+        Controls.Add(PictureBox1)
         Controls.Add(TxtContrasena)
         Controls.Add(TxtUsuario)
+        Controls.Add(lblTituloUsuario)
+        Controls.Add(lblTituloContrasena)
+        Controls.Add(lblTitulo)
         Name = "IniciarSesión"
         Text = "Photografy Solutions"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents TxtContrasena As TextBox
-    Friend WithEvents LblUsuario As Label
-    Friend WithEvents LblContraseña As Label
-    Friend WithEvents Ingresar As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTituloUsuario As Label
+    Friend WithEvents lblTituloContrasena As Label
+    Friend WithEvents BtnIngresar As Button
+    Friend WithEvents lblTitulo As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

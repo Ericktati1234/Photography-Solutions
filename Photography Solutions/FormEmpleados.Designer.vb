@@ -22,9 +22,15 @@ Partial Class FormEmpleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
+        SuspendLayout()
+        ' 
+        ' FormEmpleados
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Text = "Form1"
+        Name = "FormEmpleados"
+        Text = ".69"
+        ResumeLayout(False)
     End Sub
 End Class
