@@ -34,9 +34,10 @@ Partial Class FormEmpleado
         ' 
         ' Verificar
         ' 
-        Verificar.Location = New Point(79, 251)
+        Verificar.Location = New Point(69, 188)
+        Verificar.Margin = New Padding(3, 2, 3, 2)
         Verificar.Name = "Verificar"
-        Verificar.Size = New Size(119, 39)
+        Verificar.Size = New Size(104, 29)
         Verificar.TabIndex = 21
         Verificar.Text = "Verificar"
         Verificar.UseVisualStyleBackColor = True
@@ -44,18 +45,19 @@ Partial Class FormEmpleado
         ' UsNuevoContraseñaTxBx
         ' 
         UsNuevoContraseñaTxBx.Dock = DockStyle.Fill
-        UsNuevoContraseñaTxBx.Location = New Point(3, 117)
+        UsNuevoContraseñaTxBx.Location = New Point(3, 86)
+        UsNuevoContraseñaTxBx.Margin = New Padding(3, 2, 3, 2)
         UsNuevoContraseñaTxBx.Name = "UsNuevoContraseñaTxBx"
-        UsNuevoContraseñaTxBx.Size = New Size(176, 27)
+        UsNuevoContraseñaTxBx.Size = New Size(153, 23)
         UsNuevoContraseñaTxBx.TabIndex = 20
         ' 
         ' UsNuevoContraseña
         ' 
         UsNuevoContraseña.AutoSize = True
         UsNuevoContraseña.Dock = DockStyle.Fill
-        UsNuevoContraseña.Location = New Point(3, 76)
+        UsNuevoContraseña.Location = New Point(3, 56)
         UsNuevoContraseña.Name = "UsNuevoContraseña"
-        UsNuevoContraseña.Size = New Size(176, 38)
+        UsNuevoContraseña.Size = New Size(153, 28)
         UsNuevoContraseña.TabIndex = 19
         UsNuevoContraseña.Text = "Contraseña"
         UsNuevoContraseña.TextAlign = ContentAlignment.MiddleCenter
@@ -63,9 +65,10 @@ Partial Class FormEmpleado
         ' UsNuevoTxBx
         ' 
         UsNuevoTxBx.Dock = DockStyle.Fill
-        UsNuevoTxBx.Location = New Point(3, 41)
+        UsNuevoTxBx.Location = New Point(3, 30)
+        UsNuevoTxBx.Margin = New Padding(3, 2, 3, 2)
         UsNuevoTxBx.Name = "UsNuevoTxBx"
-        UsNuevoTxBx.Size = New Size(176, 27)
+        UsNuevoTxBx.Size = New Size(153, 23)
         UsNuevoTxBx.TabIndex = 18
         ' 
         ' UsuarioNuevo
@@ -74,7 +77,7 @@ Partial Class FormEmpleado
         UsuarioNuevo.Dock = DockStyle.Fill
         UsuarioNuevo.Location = New Point(3, 0)
         UsuarioNuevo.Name = "UsuarioNuevo"
-        UsuarioNuevo.Size = New Size(176, 38)
+        UsuarioNuevo.Size = New Size(153, 28)
         UsuarioNuevo.TabIndex = 17
         UsuarioNuevo.Text = "Usuario Nuevo:"
         UsuarioNuevo.TextAlign = ContentAlignment.MiddleCenter
@@ -82,9 +85,9 @@ Partial Class FormEmpleado
         ' AltasyBajas
         ' 
         AltasyBajas.AutoSize = True
-        AltasyBajas.Location = New Point(57, 35)
+        AltasyBajas.Location = New Point(50, 26)
         AltasyBajas.Name = "AltasyBajas"
-        AltasyBajas.Size = New Size(182, 20)
+        AltasyBajas.Size = New Size(145, 15)
         AltasyBajas.TabIndex = 15
         AltasyBajas.Text = "USUARIO Y CONTRASEÑA"
         ' 
@@ -96,29 +99,27 @@ Partial Class FormEmpleado
         TableLayoutPanel1.Controls.Add(UsNuevoTxBx, 0, 1)
         TableLayoutPanel1.Controls.Add(UsNuevoContraseñaTxBx, 0, 3)
         TableLayoutPanel1.Controls.Add(UsNuevoContraseña, 0, 2)
-        TableLayoutPanel1.Location = New Point(49, 79)
-        TableLayoutPanel1.Margin = New Padding(3, 4, 3, 4)
+        TableLayoutPanel1.Location = New Point(43, 59)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 4
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 25F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 24.9999962F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 24.9999962F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 25F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 27F))
-        TableLayoutPanel1.Size = New Size(182, 153)
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel1.Size = New Size(159, 115)
         TableLayoutPanel1.TabIndex = 22
         ' 
         ' FormEmpleado
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(281, 308)
+        ClientSize = New Size(248, 236)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(AltasyBajas)
         Controls.Add(Verificar)
-        Margin = New Padding(3, 4, 3, 4)
-        MaximumSize = New Size(299, 355)
-        MinimumSize = New Size(299, 354)
+        MaximumSize = New Size(264, 276)
+        MinimumSize = New Size(264, 275)
         Name = "FormEmpleado"
         Text = "Form1"
         TableLayoutPanel1.ResumeLayout(False)

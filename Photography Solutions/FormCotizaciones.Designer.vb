@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Ventas
+Partial Class FormCotizaciones
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,13 +22,13 @@ Partial Class Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        LeAtiende = New Label()
-        ClienteV = New Label()
+        lblTituloUsuario = New Label()
+        lblTituloCliente = New Label()
         NombreSearch = New Button()
         EliminarSelección = New Button()
-        MXN = New Label()
-        Label1 = New Label()
-        Label2 = New Label()
+        FaltanteAnticipo = New Label()
+        lblUsuario = New Label()
+        lblCliente = New Label()
         TableLayoutPanel1 = New TableLayoutPanel()
         TableLayoutPanel2 = New TableLayoutPanel()
         Label3 = New Label()
@@ -36,19 +36,19 @@ Partial Class Ventas
         TableLayoutPanel3 = New TableLayoutPanel()
         Label6 = New Label()
         Label5 = New Label()
-        Label7 = New Label()
+        lblTotalAnticipo = New Label()
         Label8 = New Label()
-        TextBox1 = New TextBox()
+        txtAnticipo = New TextBox()
         Label9 = New Label()
         TableLayoutPanel5 = New TableLayoutPanel()
-        Label18 = New Label()
-        Label17 = New Label()
-        Label16 = New Label()
-        Label15 = New Label()
-        Label14 = New Label()
-        Label13 = New Label()
-        Label12 = New Label()
-        Label11 = New Label()
+        lblDescripcion = New Label()
+        lblPrecio = New Label()
+        lblTituloDescripcion = New Label()
+        lblTituloPrecio = New Label()
+        lblNombre = New Label()
+        lblNumPaquete = New Label()
+        lblTituloNombrePaquete = New Label()
+        lblTituloPaquete = New Label()
         RichTextBox1 = New RichTextBox()
         Label10 = New Label()
         TableLayoutPanel6 = New TableLayoutPanel()
@@ -56,11 +56,11 @@ Partial Class Ventas
         Button1 = New Button()
         Label19 = New Label()
         TableLayoutPanel7 = New TableLayoutPanel()
-        MonthCalendar1 = New MonthCalendar()
-        Label20 = New Label()
+        CalendarioFechasLibres = New MonthCalendar()
+        lblTituloFecha = New Label()
         TableLayoutPanel8 = New TableLayoutPanel()
-        Label21 = New Label()
-        TableLayoutPanel9 = New TableLayoutPanel()
+        lblFecha = New Label()
+        layoutFecha = New TableLayoutPanel()
         TableLayoutPanel10 = New TableLayoutPanel()
         Label22 = New Label()
         TableLayoutPanel11 = New TableLayoutPanel()
@@ -85,15 +85,16 @@ Partial Class Ventas
         Label35 = New Label()
         Label36 = New Label()
         Label38 = New Label()
-        TextBox4 = New TextBox()
-        Label39 = New Label()
-        TextBox5 = New TextBox()
+        txtAnticipoExtra = New TextBox()
+        lblFaltanteExtra = New Label()
+        txtTotalExtra = New TextBox()
         TableLayoutPanel16 = New TableLayoutPanel()
         TableLayoutPanel17 = New TableLayoutPanel()
-        TableLayoutPanel18 = New TableLayoutPanel()
-        TableLayoutPanel19 = New TableLayoutPanel()
+        btnCambiarCliente = New Button()
+        layoutDetalles = New TableLayoutPanel()
+        LayoutPagos = New TableLayoutPanel()
         TableLayoutPanel20 = New TableLayoutPanel()
-        TableLayoutPanel21 = New TableLayoutPanel()
+        LayoutGeneral = New TableLayoutPanel()
         TableLayoutPanel1.SuspendLayout()
         TableLayoutPanel2.SuspendLayout()
         TableLayoutPanel3.SuspendLayout()
@@ -102,7 +103,7 @@ Partial Class Ventas
         TableLayoutPanel4.SuspendLayout()
         TableLayoutPanel7.SuspendLayout()
         TableLayoutPanel8.SuspendLayout()
-        TableLayoutPanel9.SuspendLayout()
+        layoutFecha.SuspendLayout()
         TableLayoutPanel10.SuspendLayout()
         TableLayoutPanel11.SuspendLayout()
         TableLayoutPanel12.SuspendLayout()
@@ -111,41 +112,39 @@ Partial Class Ventas
         TableLayoutPanel15.SuspendLayout()
         TableLayoutPanel16.SuspendLayout()
         TableLayoutPanel17.SuspendLayout()
-        TableLayoutPanel18.SuspendLayout()
-        TableLayoutPanel19.SuspendLayout()
+        layoutDetalles.SuspendLayout()
+        LayoutPagos.SuspendLayout()
         TableLayoutPanel20.SuspendLayout()
-        TableLayoutPanel21.SuspendLayout()
+        LayoutGeneral.SuspendLayout()
         SuspendLayout()
         ' 
-        ' LeAtiende
+        ' lblTituloUsuario
         ' 
-        LeAtiende.AutoSize = True
-        LeAtiende.Dock = DockStyle.Fill
-        LeAtiende.Location = New Point(3, 0)
-        LeAtiende.Name = "LeAtiende"
-        LeAtiende.Size = New Size(168, 32)
-        LeAtiende.TabIndex = 0
-        LeAtiende.Text = "USUARIO"
-        LeAtiende.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloUsuario.AutoSize = True
+        lblTituloUsuario.Location = New Point(503, 0)
+        lblTituloUsuario.Name = "lblTituloUsuario"
+        lblTituloUsuario.Size = New Size(56, 15)
+        lblTituloUsuario.TabIndex = 0
+        lblTituloUsuario.Text = "USUARIO"
+        lblTituloUsuario.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' ClienteV
+        ' lblTituloCliente
         ' 
-        ClienteV.AutoSize = True
-        ClienteV.Dock = DockStyle.Fill
-        ClienteV.Location = New Point(3, 32)
-        ClienteV.Name = "ClienteV"
-        ClienteV.Size = New Size(168, 32)
-        ClienteV.TabIndex = 1
-        ClienteV.Text = "CLIENTE"
-        ClienteV.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloCliente.AutoSize = True
+        lblTituloCliente.Dock = DockStyle.Fill
+        lblTituloCliente.Location = New Point(3, 0)
+        lblTituloCliente.Name = "lblTituloCliente"
+        lblTituloCliente.Size = New Size(143, 64)
+        lblTituloCliente.TabIndex = 1
+        lblTituloCliente.Text = "CLIENTE"
+        lblTituloCliente.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' NombreSearch
         ' 
-        NombreSearch.Dock = DockStyle.Fill
-        NombreSearch.Location = New Point(879, 2)
+        NombreSearch.Location = New Point(1004, 2)
         NombreSearch.Margin = New Padding(3, 2, 3, 2)
         NombreSearch.Name = "NombreSearch"
-        NombreSearch.Size = New Size(370, 66)
+        NombreSearch.Size = New Size(245, 66)
         NombreSearch.TabIndex = 5
         NombreSearch.Text = "SELECCIONAR PAQUETE"
         NombreSearch.UseVisualStyleBackColor = True
@@ -161,37 +160,36 @@ Partial Class Ventas
         EliminarSelección.Text = "CONFIRMAR ORDEN"
         EliminarSelección.UseVisualStyleBackColor = True
         ' 
-        ' MXN
+        ' FaltanteAnticipo
         ' 
-        MXN.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        MXN.AutoSize = True
-        MXN.Location = New Point(87, 54)
-        MXN.Name = "MXN"
-        MXN.Size = New Size(193, 38)
-        MXN.TabIndex = 12
-        MXN.Text = "0"
+        FaltanteAnticipo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        FaltanteAnticipo.AutoSize = True
+        FaltanteAnticipo.Location = New Point(87, 54)
+        FaltanteAnticipo.Name = "FaltanteAnticipo"
+        FaltanteAnticipo.Size = New Size(193, 38)
+        FaltanteAnticipo.TabIndex = 12
+        FaltanteAnticipo.Text = "0"
         ' 
-        ' Label1
+        ' lblUsuario
         ' 
-        Label1.AutoSize = True
-        Label1.Dock = DockStyle.Fill
-        Label1.Location = New Point(177, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(690, 32)
-        Label1.TabIndex = 17
-        Label1.Text = "Label1"
-        Label1.TextAlign = ContentAlignment.MiddleLeft
+        lblUsuario.AutoSize = True
+        lblUsuario.Location = New Point(753, 0)
+        lblUsuario.Name = "lblUsuario"
+        lblUsuario.Size = New Size(45, 15)
+        lblUsuario.TabIndex = 17
+        lblUsuario.Text = "Default"
+        lblUsuario.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label2
+        ' lblCliente
         ' 
-        Label2.AutoSize = True
-        Label2.Dock = DockStyle.Fill
-        Label2.Location = New Point(177, 32)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(690, 32)
-        Label2.TabIndex = 18
-        Label2.Text = "Label2"
-        Label2.TextAlign = ContentAlignment.MiddleLeft
+        lblCliente.AutoSize = True
+        lblCliente.Dock = DockStyle.Fill
+        lblCliente.Location = New Point(152, 0)
+        lblCliente.Name = "lblCliente"
+        lblCliente.Size = New Size(590, 64)
+        lblCliente.TabIndex = 18
+        lblCliente.Text = "Default"
+        lblCliente.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' TableLayoutPanel1
         ' 
@@ -199,17 +197,14 @@ Partial Class Ventas
         TableLayoutPanel1.ColumnCount = 2
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 80F))
-        TableLayoutPanel1.Controls.Add(LeAtiende, 0, 0)
-        TableLayoutPanel1.Controls.Add(Label2, 1, 1)
-        TableLayoutPanel1.Controls.Add(Label1, 1, 0)
-        TableLayoutPanel1.Controls.Add(ClienteV, 0, 1)
+        TableLayoutPanel1.Controls.Add(lblTituloCliente, 0, 0)
+        TableLayoutPanel1.Controls.Add(lblCliente, 1, 0)
         TableLayoutPanel1.Location = New Point(3, 3)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
-        TableLayoutPanel1.RowCount = 2
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowCount = 1
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.Size = New Size(870, 64)
+        TableLayoutPanel1.Size = New Size(745, 64)
         TableLayoutPanel1.TabIndex = 19
         ' 
         ' TableLayoutPanel2
@@ -250,10 +245,10 @@ Partial Class Ventas
         TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70F))
         TableLayoutPanel3.Controls.Add(Label6, 0, 2)
         TableLayoutPanel3.Controls.Add(Label5, 0, 0)
-        TableLayoutPanel3.Controls.Add(Label7, 1, 0)
+        TableLayoutPanel3.Controls.Add(lblTotalAnticipo, 1, 0)
         TableLayoutPanel3.Controls.Add(Label8, 0, 1)
-        TableLayoutPanel3.Controls.Add(TextBox1, 1, 1)
-        TableLayoutPanel3.Controls.Add(MXN, 1, 2)
+        TableLayoutPanel3.Controls.Add(txtAnticipo, 1, 1)
+        TableLayoutPanel3.Controls.Add(FaltanteAnticipo, 1, 2)
         TableLayoutPanel3.Dock = DockStyle.Fill
         TableLayoutPanel3.Location = New Point(3, 20)
         TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -286,16 +281,16 @@ Partial Class Ventas
         Label5.Text = "TOTAL"
         Label5.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label7
+        ' lblTotalAnticipo
         ' 
-        Label7.AutoSize = True
-        Label7.Dock = DockStyle.Fill
-        Label7.Location = New Point(87, 0)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(193, 27)
-        Label7.TabIndex = 17
-        Label7.Text = "0"
-        Label7.TextAlign = ContentAlignment.MiddleLeft
+        lblTotalAnticipo.AutoSize = True
+        lblTotalAnticipo.Dock = DockStyle.Fill
+        lblTotalAnticipo.Location = New Point(87, 0)
+        lblTotalAnticipo.Name = "lblTotalAnticipo"
+        lblTotalAnticipo.Size = New Size(193, 27)
+        lblTotalAnticipo.TabIndex = 17
+        lblTotalAnticipo.Text = "0"
+        lblTotalAnticipo.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label8
         ' 
@@ -308,13 +303,13 @@ Partial Class Ventas
         Label8.Text = "ANTICIPO"
         Label8.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' TextBox1
+        ' txtAnticipo
         ' 
-        TextBox1.Dock = DockStyle.Fill
-        TextBox1.Location = New Point(87, 30)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(193, 23)
-        TextBox1.TabIndex = 18
+        txtAnticipo.Dock = DockStyle.Fill
+        txtAnticipo.Location = New Point(87, 30)
+        txtAnticipo.Name = "txtAnticipo"
+        txtAnticipo.Size = New Size(193, 23)
+        txtAnticipo.TabIndex = 18
         ' 
         ' Label9
         ' 
@@ -322,7 +317,7 @@ Partial Class Ventas
         Label9.AutoSize = True
         Label9.Location = New Point(3, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(1245, 15)
+        Label9.Size = New Size(494, 15)
         Label9.TabIndex = 28
         Label9.Text = "COTIZACION DE EVENTO"
         ' 
@@ -331,14 +326,14 @@ Partial Class Ventas
         TableLayoutPanel5.ColumnCount = 2
         TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 15F))
         TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 85F))
-        TableLayoutPanel5.Controls.Add(Label18, 1, 3)
-        TableLayoutPanel5.Controls.Add(Label17, 1, 2)
-        TableLayoutPanel5.Controls.Add(Label16, 0, 3)
-        TableLayoutPanel5.Controls.Add(Label15, 0, 2)
-        TableLayoutPanel5.Controls.Add(Label14, 1, 1)
-        TableLayoutPanel5.Controls.Add(Label13, 1, 0)
-        TableLayoutPanel5.Controls.Add(Label12, 0, 1)
-        TableLayoutPanel5.Controls.Add(Label11, 0, 0)
+        TableLayoutPanel5.Controls.Add(lblDescripcion, 1, 3)
+        TableLayoutPanel5.Controls.Add(lblPrecio, 1, 2)
+        TableLayoutPanel5.Controls.Add(lblTituloDescripcion, 0, 3)
+        TableLayoutPanel5.Controls.Add(lblTituloPrecio, 0, 2)
+        TableLayoutPanel5.Controls.Add(lblNombre, 1, 1)
+        TableLayoutPanel5.Controls.Add(lblNumPaquete, 1, 0)
+        TableLayoutPanel5.Controls.Add(lblTituloNombrePaquete, 0, 1)
+        TableLayoutPanel5.Controls.Add(lblTituloPaquete, 0, 0)
         TableLayoutPanel5.Dock = DockStyle.Fill
         TableLayoutPanel5.Location = New Point(3, 3)
         TableLayoutPanel5.Name = "TableLayoutPanel5"
@@ -351,93 +346,93 @@ Partial Class Ventas
         TableLayoutPanel5.Size = New Size(602, 163)
         TableLayoutPanel5.TabIndex = 29
         ' 
-        ' Label18
+        ' lblDescripcion
         ' 
-        Label18.AutoSize = True
-        Label18.Dock = DockStyle.Fill
-        Label18.Location = New Point(93, 96)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(506, 67)
-        Label18.TabIndex = 32
-        Label18.Text = "Label18"
-        Label18.TextAlign = ContentAlignment.MiddleLeft
+        lblDescripcion.AutoSize = True
+        lblDescripcion.Dock = DockStyle.Fill
+        lblDescripcion.Location = New Point(93, 96)
+        lblDescripcion.Name = "lblDescripcion"
+        lblDescripcion.Size = New Size(506, 67)
+        lblDescripcion.TabIndex = 32
+        lblDescripcion.Text = "Default"
+        lblDescripcion.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label17
+        ' lblPrecio
         ' 
-        Label17.AutoSize = True
-        Label17.Dock = DockStyle.Fill
-        Label17.Location = New Point(93, 64)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(506, 32)
-        Label17.TabIndex = 31
-        Label17.Text = "Label17"
-        Label17.TextAlign = ContentAlignment.MiddleLeft
+        lblPrecio.AutoSize = True
+        lblPrecio.Dock = DockStyle.Fill
+        lblPrecio.Location = New Point(93, 64)
+        lblPrecio.Name = "lblPrecio"
+        lblPrecio.Size = New Size(506, 32)
+        lblPrecio.TabIndex = 31
+        lblPrecio.Text = "Default"
+        lblPrecio.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label16
+        ' lblTituloDescripcion
         ' 
-        Label16.AutoSize = True
-        Label16.Dock = DockStyle.Fill
-        Label16.Location = New Point(3, 96)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(84, 67)
-        Label16.TabIndex = 31
-        Label16.Text = "DESCRIPCION"
-        Label16.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloDescripcion.AutoSize = True
+        lblTituloDescripcion.Dock = DockStyle.Fill
+        lblTituloDescripcion.Location = New Point(3, 96)
+        lblTituloDescripcion.Name = "lblTituloDescripcion"
+        lblTituloDescripcion.Size = New Size(84, 67)
+        lblTituloDescripcion.TabIndex = 31
+        lblTituloDescripcion.Text = "DESCRIPCION"
+        lblTituloDescripcion.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label15
+        ' lblTituloPrecio
         ' 
-        Label15.AutoSize = True
-        Label15.Dock = DockStyle.Fill
-        Label15.Location = New Point(3, 64)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(84, 32)
-        Label15.TabIndex = 31
-        Label15.Text = "PRECIO MXN"
-        Label15.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloPrecio.AutoSize = True
+        lblTituloPrecio.Dock = DockStyle.Fill
+        lblTituloPrecio.Location = New Point(3, 64)
+        lblTituloPrecio.Name = "lblTituloPrecio"
+        lblTituloPrecio.Size = New Size(84, 32)
+        lblTituloPrecio.TabIndex = 31
+        lblTituloPrecio.Text = "PRECIO MXN"
+        lblTituloPrecio.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label14
+        ' lblNombre
         ' 
-        Label14.AutoSize = True
-        Label14.Dock = DockStyle.Fill
-        Label14.Location = New Point(93, 32)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(506, 32)
-        Label14.TabIndex = 31
-        Label14.Text = "Label14"
-        Label14.TextAlign = ContentAlignment.MiddleLeft
+        lblNombre.AutoSize = True
+        lblNombre.Dock = DockStyle.Fill
+        lblNombre.Location = New Point(93, 32)
+        lblNombre.Name = "lblNombre"
+        lblNombre.Size = New Size(506, 32)
+        lblNombre.TabIndex = 31
+        lblNombre.Text = "Default"
+        lblNombre.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label13
+        ' lblNumPaquete
         ' 
-        Label13.AutoSize = True
-        Label13.Dock = DockStyle.Fill
-        Label13.Location = New Point(93, 0)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(506, 32)
-        Label13.TabIndex = 31
-        Label13.Text = "Label13"
-        Label13.TextAlign = ContentAlignment.MiddleLeft
+        lblNumPaquete.AutoSize = True
+        lblNumPaquete.Dock = DockStyle.Fill
+        lblNumPaquete.Location = New Point(93, 0)
+        lblNumPaquete.Name = "lblNumPaquete"
+        lblNumPaquete.Size = New Size(506, 32)
+        lblNumPaquete.TabIndex = 31
+        lblNumPaquete.Text = "Default"
+        lblNumPaquete.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label12
+        ' lblTituloNombrePaquete
         ' 
-        Label12.AutoSize = True
-        Label12.Dock = DockStyle.Fill
-        Label12.Location = New Point(3, 32)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(84, 32)
-        Label12.TabIndex = 31
-        Label12.Text = "NOMBRE "
-        Label12.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloNombrePaquete.AutoSize = True
+        lblTituloNombrePaquete.Dock = DockStyle.Fill
+        lblTituloNombrePaquete.Location = New Point(3, 32)
+        lblTituloNombrePaquete.Name = "lblTituloNombrePaquete"
+        lblTituloNombrePaquete.Size = New Size(84, 32)
+        lblTituloNombrePaquete.TabIndex = 31
+        lblTituloNombrePaquete.Text = "NOMBRE "
+        lblTituloNombrePaquete.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label11
+        ' lblTituloPaquete
         ' 
-        Label11.AutoSize = True
-        Label11.Dock = DockStyle.Fill
-        Label11.Location = New Point(3, 0)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(84, 32)
-        Label11.TabIndex = 31
-        Label11.Text = "PAQUETE #"
-        Label11.TextAlign = ContentAlignment.MiddleLeft
+        lblTituloPaquete.AutoSize = True
+        lblTituloPaquete.Dock = DockStyle.Fill
+        lblTituloPaquete.Location = New Point(3, 0)
+        lblTituloPaquete.Name = "lblTituloPaquete"
+        lblTituloPaquete.Size = New Size(84, 32)
+        lblTituloPaquete.TabIndex = 31
+        lblTituloPaquete.Text = "PAQUETE #"
+        lblTituloPaquete.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' RichTextBox1
         ' 
@@ -527,22 +522,24 @@ Partial Class Ventas
         TableLayoutPanel7.Size = New Size(289, 115)
         TableLayoutPanel7.TabIndex = 35
         ' 
-        ' MonthCalendar1
+        ' CalendarioFechasLibres
         ' 
-        MonthCalendar1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        MonthCalendar1.Location = New Point(9, 9)
-        MonthCalendar1.Name = "MonthCalendar1"
-        MonthCalendar1.TabIndex = 36
+        CalendarioFechasLibres.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        CalendarioFechasLibres.Location = New Point(9, 9)
+        CalendarioFechasLibres.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        CalendarioFechasLibres.MinDate = New Date(2025, 5, 20, 0, 0, 0, 0)
+        CalendarioFechasLibres.Name = "CalendarioFechasLibres"
+        CalendarioFechasLibres.TabIndex = 36
         ' 
-        ' Label20
+        ' lblTituloFecha
         ' 
-        Label20.AutoSize = True
-        Label20.Dock = DockStyle.Fill
-        Label20.Location = New Point(3, 0)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(51, 43)
-        Label20.TabIndex = 37
-        Label20.Text = "Fecha"
+        lblTituloFecha.AutoSize = True
+        lblTituloFecha.Dock = DockStyle.Fill
+        lblTituloFecha.Location = New Point(3, 0)
+        lblTituloFecha.Name = "lblTituloFecha"
+        lblTituloFecha.Size = New Size(51, 43)
+        lblTituloFecha.TabIndex = 37
+        lblTituloFecha.Text = "Fecha"
         ' 
         ' TableLayoutPanel8
         ' 
@@ -550,8 +547,8 @@ Partial Class Ventas
         TableLayoutPanel8.ColumnCount = 2
         TableLayoutPanel8.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel8.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 80F))
-        TableLayoutPanel8.Controls.Add(Label21, 1, 0)
-        TableLayoutPanel8.Controls.Add(Label20, 0, 0)
+        TableLayoutPanel8.Controls.Add(lblFecha, 1, 0)
+        TableLayoutPanel8.Controls.Add(lblTituloFecha, 0, 0)
         TableLayoutPanel8.Location = New Point(3, 197)
         TableLayoutPanel8.Name = "TableLayoutPanel8"
         TableLayoutPanel8.RowCount = 1
@@ -559,30 +556,31 @@ Partial Class Ventas
         TableLayoutPanel8.Size = New Size(289, 43)
         TableLayoutPanel8.TabIndex = 38
         ' 
-        ' Label21
+        ' lblFecha
         ' 
-        Label21.AutoSize = True
-        Label21.Dock = DockStyle.Fill
-        Label21.Location = New Point(60, 0)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(226, 43)
-        Label21.TabIndex = 39
-        Label21.Text = "Fecha"
+        lblFecha.AutoSize = True
+        lblFecha.Dock = DockStyle.Fill
+        lblFecha.Location = New Point(60, 0)
+        lblFecha.Name = "lblFecha"
+        lblFecha.Size = New Size(226, 43)
+        lblFecha.TabIndex = 39
+        lblFecha.Text = "Fecha"
         ' 
-        ' TableLayoutPanel9
+        ' layoutFecha
         ' 
-        TableLayoutPanel9.ColumnCount = 1
-        TableLayoutPanel9.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel9.Controls.Add(MonthCalendar1, 0, 0)
-        TableLayoutPanel9.Controls.Add(TableLayoutPanel8, 0, 1)
-        TableLayoutPanel9.Dock = DockStyle.Fill
-        TableLayoutPanel9.Location = New Point(3, 3)
-        TableLayoutPanel9.Name = "TableLayoutPanel9"
-        TableLayoutPanel9.RowCount = 2
-        TableLayoutPanel9.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
-        TableLayoutPanel9.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        TableLayoutPanel9.Size = New Size(295, 243)
-        TableLayoutPanel9.TabIndex = 39
+        layoutFecha.ColumnCount = 1
+        layoutFecha.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        layoutFecha.Controls.Add(CalendarioFechasLibres, 0, 0)
+        layoutFecha.Controls.Add(TableLayoutPanel8, 0, 1)
+        layoutFecha.Dock = DockStyle.Fill
+        layoutFecha.Enabled = False
+        layoutFecha.Location = New Point(3, 3)
+        layoutFecha.Name = "layoutFecha"
+        layoutFecha.RowCount = 2
+        layoutFecha.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
+        layoutFecha.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        layoutFecha.Size = New Size(295, 243)
+        layoutFecha.TabIndex = 39
         ' 
         ' TableLayoutPanel10
         ' 
@@ -831,9 +829,9 @@ Partial Class Ventas
         TableLayoutPanel15.Controls.Add(Label35, 0, 2)
         TableLayoutPanel15.Controls.Add(Label36, 0, 0)
         TableLayoutPanel15.Controls.Add(Label38, 0, 1)
-        TableLayoutPanel15.Controls.Add(TextBox4, 1, 1)
-        TableLayoutPanel15.Controls.Add(Label39, 1, 2)
-        TableLayoutPanel15.Controls.Add(TextBox5, 1, 0)
+        TableLayoutPanel15.Controls.Add(txtAnticipoExtra, 1, 1)
+        TableLayoutPanel15.Controls.Add(lblFaltanteExtra, 1, 2)
+        TableLayoutPanel15.Controls.Add(txtTotalExtra, 1, 0)
         TableLayoutPanel15.Dock = DockStyle.Fill
         TableLayoutPanel15.Location = New Point(3, 20)
         TableLayoutPanel15.Name = "TableLayoutPanel15"
@@ -877,53 +875,59 @@ Partial Class Ventas
         Label38.Text = "ANTICIPO"
         Label38.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' TextBox4
+        ' txtAnticipoExtra
         ' 
-        TextBox4.Dock = DockStyle.Fill
-        TextBox4.Location = New Point(87, 30)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(193, 23)
-        TextBox4.TabIndex = 18
+        txtAnticipoExtra.Dock = DockStyle.Fill
+        txtAnticipoExtra.Location = New Point(87, 30)
+        txtAnticipoExtra.Name = "txtAnticipoExtra"
+        txtAnticipoExtra.Size = New Size(193, 23)
+        txtAnticipoExtra.TabIndex = 18
         ' 
-        ' Label39
+        ' lblFaltanteExtra
         ' 
-        Label39.AutoSize = True
-        Label39.Dock = DockStyle.Fill
-        Label39.Location = New Point(87, 54)
-        Label39.Name = "Label39"
-        Label39.Size = New Size(193, 39)
-        Label39.TabIndex = 12
-        Label39.Text = "0"
+        lblFaltanteExtra.AutoSize = True
+        lblFaltanteExtra.Dock = DockStyle.Fill
+        lblFaltanteExtra.Location = New Point(87, 54)
+        lblFaltanteExtra.Name = "lblFaltanteExtra"
+        lblFaltanteExtra.Size = New Size(193, 39)
+        lblFaltanteExtra.TabIndex = 12
+        lblFaltanteExtra.Text = "0"
         ' 
-        ' TextBox5
+        ' txtTotalExtra
         ' 
-        TextBox5.Dock = DockStyle.Fill
-        TextBox5.Location = New Point(87, 3)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(193, 23)
-        TextBox5.TabIndex = 20
+        txtTotalExtra.Dock = DockStyle.Fill
+        txtTotalExtra.Location = New Point(87, 3)
+        txtTotalExtra.Name = "txtTotalExtra"
+        txtTotalExtra.Size = New Size(193, 23)
+        txtTotalExtra.TabIndex = 20
         ' 
         ' TableLayoutPanel16
         ' 
         TableLayoutPanel16.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel16.ColumnCount = 1
-        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel16.ColumnCount = 3
+        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        TableLayoutPanel16.Controls.Add(lblTituloUsuario, 1, 0)
+        TableLayoutPanel16.Controls.Add(lblUsuario, 2, 0)
         TableLayoutPanel16.Controls.Add(Label9, 0, 0)
         TableLayoutPanel16.Location = New Point(12, 12)
         TableLayoutPanel16.Name = "TableLayoutPanel16"
         TableLayoutPanel16.RowCount = 1
-        TableLayoutPanel16.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel16.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
         TableLayoutPanel16.Size = New Size(1251, 39)
         TableLayoutPanel16.TabIndex = 41
         ' 
         ' TableLayoutPanel17
         ' 
         TableLayoutPanel17.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel17.ColumnCount = 2
-        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70F))
-        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 30F))
+        TableLayoutPanel17.ColumnCount = 3
+        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 60F))
+        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel17.Controls.Add(TableLayoutPanel1, 0, 0)
-        TableLayoutPanel17.Controls.Add(NombreSearch, 1, 0)
+        TableLayoutPanel17.Controls.Add(NombreSearch, 2, 0)
+        TableLayoutPanel17.Controls.Add(btnCambiarCliente, 1, 0)
         TableLayoutPanel17.Location = New Point(12, 66)
         TableLayoutPanel17.Name = "TableLayoutPanel17"
         TableLayoutPanel17.RowCount = 1
@@ -931,43 +935,55 @@ Partial Class Ventas
         TableLayoutPanel17.Size = New Size(1252, 70)
         TableLayoutPanel17.TabIndex = 42
         ' 
-        ' TableLayoutPanel18
+        ' btnCambiarCliente
         ' 
-        TableLayoutPanel18.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel18.ColumnCount = 1
-        TableLayoutPanel18.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel18.Controls.Add(TableLayoutPanel6, 0, 0)
-        TableLayoutPanel18.Controls.Add(TableLayoutPanel4, 0, 1)
-        TableLayoutPanel18.Location = New Point(637, 155)
-        TableLayoutPanel18.Name = "TableLayoutPanel18"
-        TableLayoutPanel18.RowCount = 2
-        TableLayoutPanel18.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
-        TableLayoutPanel18.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
-        TableLayoutPanel18.Size = New Size(626, 424)
-        TableLayoutPanel18.TabIndex = 43
+        btnCambiarCliente.Dock = DockStyle.Fill
+        btnCambiarCliente.Location = New Point(754, 3)
+        btnCambiarCliente.Name = "btnCambiarCliente"
+        btnCambiarCliente.Size = New Size(244, 64)
+        btnCambiarCliente.TabIndex = 20
+        btnCambiarCliente.Text = "Modificar Cliente"
+        btnCambiarCliente.UseVisualStyleBackColor = True
         ' 
-        ' TableLayoutPanel19
+        ' layoutDetalles
         ' 
-        TableLayoutPanel19.ColumnCount = 1
-        TableLayoutPanel19.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TableLayoutPanel19.Controls.Add(TableLayoutPanel7, 0, 0)
-        TableLayoutPanel19.Controls.Add(TableLayoutPanel14, 0, 1)
-        TableLayoutPanel19.Dock = DockStyle.Fill
-        TableLayoutPanel19.Location = New Point(304, 3)
-        TableLayoutPanel19.Name = "TableLayoutPanel19"
-        TableLayoutPanel19.RowCount = 2
-        TableLayoutPanel19.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel19.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel19.Size = New Size(295, 243)
-        TableLayoutPanel19.TabIndex = 44
+        layoutDetalles.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        layoutDetalles.ColumnCount = 1
+        layoutDetalles.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        layoutDetalles.Controls.Add(TableLayoutPanel6, 0, 0)
+        layoutDetalles.Controls.Add(TableLayoutPanel4, 0, 1)
+        layoutDetalles.Enabled = False
+        layoutDetalles.Location = New Point(637, 155)
+        layoutDetalles.Name = "layoutDetalles"
+        layoutDetalles.RowCount = 2
+        layoutDetalles.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
+        layoutDetalles.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
+        layoutDetalles.Size = New Size(626, 424)
+        layoutDetalles.TabIndex = 43
+        ' 
+        ' LayoutPagos
+        ' 
+        LayoutPagos.ColumnCount = 1
+        LayoutPagos.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        LayoutPagos.Controls.Add(TableLayoutPanel7, 0, 0)
+        LayoutPagos.Controls.Add(TableLayoutPanel14, 0, 1)
+        LayoutPagos.Dock = DockStyle.Fill
+        LayoutPagos.Enabled = False
+        LayoutPagos.Location = New Point(304, 3)
+        LayoutPagos.Name = "LayoutPagos"
+        LayoutPagos.RowCount = 2
+        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        LayoutPagos.Size = New Size(295, 243)
+        LayoutPagos.TabIndex = 44
         ' 
         ' TableLayoutPanel20
         ' 
         TableLayoutPanel20.ColumnCount = 2
         TableLayoutPanel20.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel20.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TableLayoutPanel20.Controls.Add(TableLayoutPanel9, 0, 0)
-        TableLayoutPanel20.Controls.Add(TableLayoutPanel19, 1, 0)
+        TableLayoutPanel20.Controls.Add(layoutFecha, 0, 0)
+        TableLayoutPanel20.Controls.Add(LayoutPagos, 1, 0)
         TableLayoutPanel20.Dock = DockStyle.Fill
         TableLayoutPanel20.Location = New Point(3, 172)
         TableLayoutPanel20.Name = "TableLayoutPanel20"
@@ -976,33 +992,33 @@ Partial Class Ventas
         TableLayoutPanel20.Size = New Size(602, 249)
         TableLayoutPanel20.TabIndex = 45
         ' 
-        ' TableLayoutPanel21
+        ' LayoutGeneral
         ' 
-        TableLayoutPanel21.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
-        TableLayoutPanel21.ColumnCount = 1
-        TableLayoutPanel21.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel21.Controls.Add(TableLayoutPanel5, 0, 0)
-        TableLayoutPanel21.Controls.Add(TableLayoutPanel20, 0, 1)
-        TableLayoutPanel21.Location = New Point(12, 155)
-        TableLayoutPanel21.Name = "TableLayoutPanel21"
-        TableLayoutPanel21.RowCount = 2
-        TableLayoutPanel21.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
-        TableLayoutPanel21.RowStyles.Add(New RowStyle(SizeType.Percent, 60F))
-        TableLayoutPanel21.Size = New Size(608, 424)
-        TableLayoutPanel21.TabIndex = 46
+        LayoutGeneral.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
+        LayoutGeneral.ColumnCount = 1
+        LayoutGeneral.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        LayoutGeneral.Controls.Add(TableLayoutPanel5, 0, 0)
+        LayoutGeneral.Controls.Add(TableLayoutPanel20, 0, 1)
+        LayoutGeneral.Location = New Point(12, 155)
+        LayoutGeneral.Name = "LayoutGeneral"
+        LayoutGeneral.RowCount = 2
+        LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
+        LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 60F))
+        LayoutGeneral.Size = New Size(608, 424)
+        LayoutGeneral.TabIndex = 46
         ' 
-        ' Ventas
+        ' FormCotizaciones
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1285, 610)
-        Controls.Add(TableLayoutPanel21)
-        Controls.Add(TableLayoutPanel18)
+        Controls.Add(LayoutGeneral)
+        Controls.Add(layoutDetalles)
         Controls.Add(TableLayoutPanel17)
         Controls.Add(TableLayoutPanel16)
         Margin = New Padding(3, 2, 3, 2)
         MinimumSize = New Size(1301, 649)
-        Name = "Ventas"
+        Name = "FormCotizaciones"
         Text = "Ventas"
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
@@ -1019,7 +1035,7 @@ Partial Class Ventas
         TableLayoutPanel7.PerformLayout()
         TableLayoutPanel8.ResumeLayout(False)
         TableLayoutPanel8.PerformLayout()
-        TableLayoutPanel9.ResumeLayout(False)
+        layoutFecha.ResumeLayout(False)
         TableLayoutPanel10.ResumeLayout(False)
         TableLayoutPanel10.PerformLayout()
         TableLayoutPanel11.ResumeLayout(False)
@@ -1035,20 +1051,20 @@ Partial Class Ventas
         TableLayoutPanel16.ResumeLayout(False)
         TableLayoutPanel16.PerformLayout()
         TableLayoutPanel17.ResumeLayout(False)
-        TableLayoutPanel18.ResumeLayout(False)
-        TableLayoutPanel19.ResumeLayout(False)
+        layoutDetalles.ResumeLayout(False)
+        LayoutPagos.ResumeLayout(False)
         TableLayoutPanel20.ResumeLayout(False)
-        TableLayoutPanel21.ResumeLayout(False)
+        LayoutGeneral.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents LeAtiende As Label
-    Friend WithEvents ClienteV As Label
+    Friend WithEvents lblTituloUsuario As Label
+    Friend WithEvents lblTituloCliente As Label
     Friend WithEvents NombreSearch As Button
     Friend WithEvents EliminarSelección As Button
     Friend WithEvents MXN As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblUsuario As Label
+    Friend WithEvents lblCliente As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label3 As Label
@@ -1061,26 +1077,26 @@ Partial Class Ventas
     Friend WithEvents Label6 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents lblNombre As Label
+    Friend WithEvents lblNumPaquete As Label
+    Friend WithEvents lblTituloNombrePaquete As Label
+    Friend WithEvents lblTituloPaquete As Label
+    Friend WithEvents lblDescripcion As Label
+    Friend WithEvents lblPrecio As Label
+    Friend WithEvents lblTituloDescripcion As Label
+    Friend WithEvents lblTituloPrecio As Label
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Label19 As Label
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
-    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents CalendarioFechasLibres As MonthCalendar
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label20 As Label
+    Friend WithEvents lblTituloFecha As Label
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
-    Friend WithEvents Label21 As Label
-    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents lblFecha As Label
+    Friend WithEvents layoutFecha As TableLayoutPanel
     Friend WithEvents TableLayoutPanel10 As TableLayoutPanel
     Friend WithEvents Label22 As Label
     Friend WithEvents TableLayoutPanel11 As TableLayoutPanel
@@ -1110,8 +1126,15 @@ Partial Class Ventas
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TableLayoutPanel16 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel17 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel18 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel19 As TableLayoutPanel
+    Friend WithEvents layoutDetalles As TableLayoutPanel
+    Friend WithEvents LayoutPagos As TableLayoutPanel
     Friend WithEvents TableLayoutPanel20 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel21 As TableLayoutPanel
+    Friend WithEvents LayoutGeneral As TableLayoutPanel
+    Friend WithEvents btnCambiarCliente As Button
+    Friend WithEvents FaltanteAnticipo As Label
+    Friend WithEvents lblTotalAnticipo As Label
+    Friend WithEvents txtAnticipo As TextBox
+    Friend WithEvents txtAnticipoExtra As TextBox
+    Friend WithEvents lblFaltanteExtra As Label
+    Friend WithEvents txtTotalExtra As TextBox
 End Class

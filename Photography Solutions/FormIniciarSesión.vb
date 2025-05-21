@@ -1,11 +1,12 @@
 ﻿
 Imports System.Net
+Imports System.Security.Cryptography.X509Certificates
 
-Public Class IniciarSesión
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
+Public Class FormIniciarSesión
+    Private Sub LimpiarVentana()
+        Me.TxtUsuario.ResetText()
+        Me.TxtContrasena.ResetText()
     End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlConexion = New SqlClient.SqlConnection
         sqlConexion.ConnectionString = "workstation id = " & Dns.GetHostName & "; packet size = 8192; user id = AdminPS; data source = localhost; persist security info = False; initial catalog = PhotographySolutions; password= Admin123!; pooling =FALSE"
@@ -19,23 +20,27 @@ Public Class IniciarSesión
         Dim sqldrDatos As SqlClient.SqlDataReader
         sqldrDatos = sqlcmdComando.ExecuteReader
         sqldrDatos.Read()
-        Dim Rol = sqldrDatos.GetValue(0)
-        Dim Nombre As String = sqldrDatos.GetValue(1).ToString
+        Rol = sqldrDatos.GetValue(0)
+        NombreUsuario = sqldrDatos.GetValue(1).ToString
         IdUsuario = sqldrDatos.GetValue(2).ToString
         Dim Mensaje = sqldrDatos.GetValue(3).ToString
+        sqldrDatos.Close()
         If Rol <> 0 Then
             If Rol = 1 Then
-                MessageBox.Show("Bienvenido " & Nombre & ", " & Mensaje, "ATENCION")
+                MessageBox.Show("Bienvenido " & NombreUsuario & ", " & Mensaje, "ATENCION")
                 Home.Show()
                 Home.TSMIHome.Visible = True
+                LimpiarVentana()
                 Me.Hide()
             ElseIf Rol = 2 Then
-                MessageBox.Show("Bienvenido " & Nombre & ", " & Mensaje, "ATENCION")
+                MessageBox.Show("Bienvenido " & NombreUsuario & ", " & Mensaje, "ATENCION")
                 Home.Show()
+                LimpiarVentana()
                 Me.Hide()
             ElseIf Rol = 3 Then
-                MessageBox.Show("Bienvenido " & Nombre & ", " & Mensaje, "ATENCION")
+                MessageBox.Show("Bienvenido " & NombreUsuario & ", " & Mensaje, "ATENCION")
                 Home.Show()
+                LimpiarVentana()
                 Home.TSMIHome.Visible = True
                 Home.TSMIHome.DropDownItems(0).Visible = False
                 Home.TSMIHome.DropDownItems(1).Visible = False
@@ -44,8 +49,10 @@ Public Class IniciarSesión
         Else
             MessageBox.Show(Mensaje, "ERROR")
         End If
-        sqldrDatos.Close()
+
     End Sub
 
-
+    Private Sub FormIniciarSesión_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        System.Environment.Exit(0)
+    End Sub
 End Class

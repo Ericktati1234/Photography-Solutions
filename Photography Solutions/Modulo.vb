@@ -2,8 +2,36 @@
 Imports System.Globalization
 
 Module Modulo
-    Public NombrePaciente As String
+
+    'Paquete'
+    Public IdPaquete As Integer
+    Public NombrePaquete As String
+    Public DescripcionPaquete As String
+    Public precioPaquete As Double
+
+    'Usuario'
+    Public NombreUsuario As String
     Public IdUsuario As Integer
+    Public Rol As Integer
+
+    'Cliente'
+    Public IdCliente As Integer
+    Public NombreCliente As String
+    Public FechaNacimientoCliente As Date
+    Public NumeroTelefonicoCliente As String
+    Public CorreoCliente As String
+
+    Public Sub LimpiarRegistros()
+        IdPaquete = -1
+        NombrePaquete = ""
+        DescripcionPaquete = ""
+        precioPaquete = -1
+        IdCliente = -1
+        NombreCliente = ""
+        FechaNacimientoCliente = "01/01/1900"
+        NumeroTelefonicoCliente = 0
+        CorreoCliente = ""
+    End Sub
 
     Public Function EsEntero(valor As String) As Boolean
         Dim numero As Integer
