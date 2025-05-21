@@ -81,7 +81,7 @@ Public Class Home
         Me.Hide()
     End Sub
 
-    Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub Home_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         FormIniciarSesión.Show()
     End Sub
 
@@ -114,5 +114,10 @@ Public Class Home
     Private Sub btnGestionImagenes_Click(sender As Object, e As EventArgs) Handles btnGestionImagenes.Click
         Me.Enabled = False
         GestorImagenesForm.Show()
+    End Sub
+
+    Private Sub OptPaquetes_Click(sender As Object, e As EventArgs) Handles OptPaquetes.Click
+        FormPaquetesVisualizar.Show()
+        Me.Enabled = False
     End Sub
 End Class

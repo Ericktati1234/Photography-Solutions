@@ -45,4 +45,23 @@
     Private Sub CalendarioNacimiento_DateSelected(sender As Object, e As DateRangeEventArgs) Handles CalendarioNacimiento.DateSelected
         lblFecha.Text = e.Start.Date
     End Sub
+
+    Private Sub DatosPersonales_Click(sender As Object, e As EventArgs) Handles DatosPersonales.Click
+
+    End Sub
+
+    Private Sub CalendarioNacimiento_DateChanged(sender As Object, e As DateRangeEventArgs) Handles CalendarioNacimiento.DateChanged
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    End Sub
+
+    Private Sub lblFecha_Click(sender As Object, e As EventArgs) Handles lblFecha.Click
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+    End Sub
 End Class

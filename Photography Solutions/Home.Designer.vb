@@ -22,7 +22,7 @@ Partial Class Home
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Home))
         MenuStrip1 = New MenuStrip()
         TSMIHome = New ToolStripMenuItem()
         OptUsuarios = New ToolStripMenuItem()
@@ -57,9 +57,9 @@ Partial Class Home
         TableLayoutPanel6 = New TableLayoutPanel()
         TableLayoutPanel7 = New TableLayoutPanel()
         TableLayoutPanel1 = New TableLayoutPanel()
+        btnGestionImagenes = New Button()
         Button1 = New Button()
         PictureBox1 = New PictureBox()
-        btnGestionImagenes = New Button()
         MenuStrip1.SuspendLayout()
         CType(DgvAgendados, ComponentModel.ISupportInitialize).BeginInit()
         CType(DgvFinalizados, ComponentModel.ISupportInitialize).BeginInit()
@@ -95,25 +95,25 @@ Partial Class Home
         ' OptUsuarios
         ' 
         OptUsuarios.Name = "OptUsuarios"
-        OptUsuarios.Size = New Size(122, 22)
+        OptUsuarios.Size = New Size(180, 22)
         OptUsuarios.Text = "Usuarios"
         ' 
         ' OptPaquetes
         ' 
         OptPaquetes.Name = "OptPaquetes"
-        OptPaquetes.Size = New Size(122, 22)
+        OptPaquetes.Size = New Size(180, 22)
         OptPaquetes.Text = "Paquetes"
         ' 
         ' OptReportes
         ' 
         OptReportes.Name = "OptReportes"
-        OptReportes.Size = New Size(122, 22)
+        OptReportes.Size = New Size(180, 22)
         OptReportes.Text = "Reportes"
         ' 
         ' ClientesToolStripMenuItem
         ' 
         ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        ClientesToolStripMenuItem.Size = New Size(122, 22)
+        ClientesToolStripMenuItem.Size = New Size(180, 22)
         ClientesToolStripMenuItem.Text = "Clientes"
         ' 
         ' Lb_Sesiones_Pasadas
@@ -509,6 +509,18 @@ Partial Class Home
         TableLayoutPanel1.Size = New Size(194, 246)
         TableLayoutPanel1.TabIndex = 29
         ' 
+        ' btnGestionImagenes
+        ' 
+        btnGestionImagenes.Dock = DockStyle.Top
+        btnGestionImagenes.FlatStyle = FlatStyle.System
+        btnGestionImagenes.Location = New Point(3, 166)
+        btnGestionImagenes.Margin = New Padding(3, 2, 3, 2)
+        btnGestionImagenes.Name = "btnGestionImagenes"
+        btnGestionImagenes.Size = New Size(188, 46)
+        btnGestionImagenes.TabIndex = 31
+        btnGestionImagenes.Text = "Gestionar Imagenes"
+        btnGestionImagenes.UseVisualStyleBackColor = True
+        ' 
         ' Button1
         ' 
         Button1.Dock = DockStyle.Top
@@ -531,18 +543,6 @@ Partial Class Home
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 30
         PictureBox1.TabStop = False
-        ' 
-        ' btnGestionImagenes
-        ' 
-        btnGestionImagenes.Dock = DockStyle.Top
-        btnGestionImagenes.FlatStyle = FlatStyle.System
-        btnGestionImagenes.Location = New Point(3, 166)
-        btnGestionImagenes.Margin = New Padding(3, 2, 3, 2)
-        btnGestionImagenes.Name = "btnGestionImagenes"
-        btnGestionImagenes.Size = New Size(188, 46)
-        btnGestionImagenes.TabIndex = 31
-        btnGestionImagenes.Text = "Gestionar Imagenes"
-        btnGestionImagenes.UseVisualStyleBackColor = True
         ' 
         ' Home
         ' 

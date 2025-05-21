@@ -334,7 +334,7 @@ Partial Class FormClientesVisualizar
         Controls.Add(dgvClientes)
         MinimumSize = New Size(1017, 523)
         Name = "FormClientesVisualizar"
-        Text = "AltaClientes"
+        Text = "Gestor de Clientes"
         TableLayoutPanel2.ResumeLayout(False)
         CType(dgvClientes, ComponentModel.ISupportInitialize).EndInit()
         TableLayoutPanel3.ResumeLayout(False)

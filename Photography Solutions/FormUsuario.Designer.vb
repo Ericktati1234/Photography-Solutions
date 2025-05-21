@@ -87,7 +87,7 @@ Partial Class FormEmpleado
         AltasyBajas.AutoSize = True
         AltasyBajas.Location = New Point(50, 26)
         AltasyBajas.Name = "AltasyBajas"
-        AltasyBajas.Size = New Size(146, 15)
+        AltasyBajas.Size = New Size(145, 15)
         AltasyBajas.TabIndex = 15
         AltasyBajas.Text = "USUARIO Y CONTRASEÑA"
         ' 
