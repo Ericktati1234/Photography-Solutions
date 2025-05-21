@@ -3,6 +3,9 @@ Imports System.Globalization
 
 Module Modulo
 
+    'Sesion'
+    Public idSesion As Integer
+
     'Paquete'
     Public IdPaquete As Integer
     Public NombrePaquete As String

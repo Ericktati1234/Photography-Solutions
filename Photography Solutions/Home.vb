@@ -86,7 +86,33 @@ Public Class Home
     End Sub
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        FormAltaClientes.Show()
+        FormClientesVisualizar.Show()
         Me.Enabled = False
+    End Sub
+
+    Private Sub DgvFinalizados_SelectionChanged(sender As Object, e As EventArgs) Handles DgvFinalizados.SelectionChanged
+        If DgvFinalizados.CurrentRow IsNot Nothing Then
+            Dim NombreCliente As String = DgvFinalizados.CurrentRow.Cells(2).Value.ToString
+            Dim Paquete As String = DgvFinalizados.CurrentRow.Cells(3).Value.ToString
+            Dim FechaRealizacion As String = DgvFinalizados.CurrentRow.Cells(6).Value.ToString
+            Dim FechaEntrega As String = DgvFinalizados.CurrentRow.Cells(7).Value.ToString
+            Dim Faltante As Double = DgvFinalizados.CurrentRow.Cells(9).Value
+
+            lblCliente.Text = NombreCliente
+            lblPaquete.Text = Paquete
+            lblRealizacion.Text = Convert.ToDateTime(FechaRealizacion).ToString("yyyy-MM-dd")
+            lblEntrega.Text = Convert.ToDateTime(FechaEntrega).ToString("yyyy-MM-dd")
+            lblFaltante.Text = Faltante
+        End If
+    End Sub
+
+    Private Sub btnGestionarSesion_Click(sender As Object, e As EventArgs) Handles btnGestionarSesion.Click
+        idSesion = DgvFinalizados.CurrentRow.Cells(0).Value
+
+    End Sub
+
+    Private Sub btnGestionImagenes_Click(sender As Object, e As EventArgs) Handles btnGestionImagenes.Click
+        Me.Enabled = False
+        GestorImagenesForm.Show()
     End Sub
 End Class

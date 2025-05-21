@@ -1,8 +1,17 @@
 ﻿Public Class FormClienteALTA
+    Sub reiniciar()
+        txtNombre.Text = ""
+        txtCorreo.Text = ""
+        numTelefono.Value = 1000000000
+        lblFecha.Text = "default"
+    End Sub
+
     Private Sub FormClienteALTA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         CalendarioNacimiento.MaxDate = Today
         numTelefono.Minimum = 1000000000
         numTelefono.Maximum = 10000000000
+        reiniciar()
     End Sub
 
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
@@ -19,18 +28,15 @@
                 sqldrDatos.Close()
                 MessageBox.Show("Se ha dado de alta al cliente con Exito!", "EXITO")
                 Me.Hide()
-                LlenaGrid(sqlConexion, FormAltaClientes.dgvClientes, "sp_BusquedaClientes 1,NULL")
-                FormAltaClientes.Enabled = True
+                LlenaGrid(sqlConexion, FormClientesVisualizar.dgvClientes, "sp_BusquedaClientes 1,NULL")
+                FormClientesVisualizar.Enabled = True
             End If
         End If
     End Sub
 
     Private Sub btnReiniciar_Click(sender As Object, e As EventArgs) Handles btnReiniciar.Click
         If MessageBox.Show("Quieres reiniciar todos los campos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            txtNombre.Text = ""
-            txtCorreo.Text = ""
-            numTelefono.Value = 1000000000
-            lblFecha.Text = "default"
+            reiniciar()
             txtNombre.Focus()
         End If
 
