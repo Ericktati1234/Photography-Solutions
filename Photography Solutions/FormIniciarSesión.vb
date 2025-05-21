@@ -1,6 +1,5 @@
-﻿
-
-
+﻿Imports System.Data.SqlClient
+Imports System.Net
 Public Class FormIniciarSesión
     Private Sub LimpiarVentana()
         Me.TxtUsuario.ResetText()
