@@ -6,6 +6,18 @@
 
     Private Sub FormBusquedaPaquetes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenaGrid(sqlConexion, dgvBusqueda, "sp_BusquedaPaquetes 1,''")
+
+        dgvBusqueda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        dgvBusqueda.DefaultCellStyle.Font = New Font("Arial", 11)
+        dgvBusqueda.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 12, FontStyle.Bold)
+
+        dgvBusqueda.RowsDefaultCellStyle.BackColor = Color.White
+        dgvBusqueda.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
+
+        dgvBusqueda.EnableHeadersVisualStyles = False
+        dgvBusqueda.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy
+        dgvBusqueda.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        dgvBusqueda.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 13, FontStyle.Bold)
     End Sub
 
     Private Sub btnDefault_Click(sender As Object, e As EventArgs) Handles btnDefault.Click
@@ -28,5 +40,12 @@
         FormCotizaciones.lblPrecio.Text = precioPaquete
         FormCotizaciones.Enabled = True
         FormCotizaciones.layoutFecha.Enabled = True
+        FormCotizaciones.lblTotalAnticipo.Text = precioPaquete
+        FormCotizaciones.numAnticipo.Value = 0
+        FormCotizaciones.numAnticipoExtra.Value = 0
+        FormCotizaciones.numExtras.Value = 0
+        FormCotizaciones.lblFaltanteAnticipo.Text = (Convert.ToInt32(FormCotizaciones.lblPrecio.Text) - FormCotizaciones.numAnticipo.Value).ToString()
+        MessageBox.Show("Selecciona una fecha para la sesion del cliente", "Atencion")
+        FormCotizaciones.CalendarioFechasLibres.Focus()
     End Sub
 End Class

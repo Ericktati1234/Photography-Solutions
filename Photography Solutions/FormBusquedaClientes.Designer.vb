@@ -39,7 +39,7 @@ Partial Class FormBusquedaClientes
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.Controls.Add(btnBusqueda, 0, 0)
         TableLayoutPanel1.Controls.Add(btnDefault, 1, 0)
-        TableLayoutPanel1.Location = New Point(252, 103)
+        TableLayoutPanel1.Location = New Point(268, 106)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 1
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
@@ -49,6 +49,7 @@ Partial Class FormBusquedaClientes
         ' btnBusqueda
         ' 
         btnBusqueda.Dock = DockStyle.Fill
+        btnBusqueda.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnBusqueda.Location = New Point(3, 3)
         btnBusqueda.Name = "btnBusqueda"
         btnBusqueda.Size = New Size(122, 33)
@@ -59,6 +60,7 @@ Partial Class FormBusquedaClientes
         ' btnDefault
         ' 
         btnDefault.Dock = DockStyle.Fill
+        btnDefault.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnDefault.Location = New Point(131, 3)
         btnDefault.Name = "btnDefault"
         btnDefault.Size = New Size(123, 33)
@@ -68,6 +70,7 @@ Partial Class FormBusquedaClientes
         ' 
         ' dgvBusqueda
         ' 
+        dgvBusqueda.BackgroundColor = Color.White
         dgvBusqueda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvBusqueda.EditMode = DataGridViewEditMode.EditProgrammatically
         dgvBusqueda.Location = New Point(58, 158)
@@ -81,15 +84,16 @@ Partial Class FormBusquedaClientes
         ' lblTitulo
         ' 
         lblTitulo.AutoSize = True
-        lblTitulo.Location = New Point(315, 32)
+        lblTitulo.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        lblTitulo.Location = New Point(291, 33)
         lblTitulo.Name = "lblTitulo"
-        lblTitulo.Size = New Size(127, 15)
+        lblTitulo.Size = New Size(203, 25)
         lblTitulo.TabIndex = 7
         lblTitulo.Text = "Busqueda por Nombre"
         ' 
         ' txtBusqueda
         ' 
-        txtBusqueda.Location = New Point(58, 63)
+        txtBusqueda.Location = New Point(58, 71)
         txtBusqueda.Name = "txtBusqueda"
         txtBusqueda.Size = New Size(672, 23)
         txtBusqueda.TabIndex = 6
@@ -98,6 +102,7 @@ Partial Class FormBusquedaClientes
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(790, 444)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(dgvBusqueda)

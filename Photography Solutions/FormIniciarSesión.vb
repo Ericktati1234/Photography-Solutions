@@ -1,6 +1,5 @@
 ﻿
-Imports System.Net
-Imports System.Security.Cryptography.X509Certificates
+
 
 Public Class FormIniciarSesión
     Private Sub LimpiarVentana()

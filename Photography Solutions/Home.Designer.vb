@@ -22,7 +22,7 @@ Partial Class Home
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         MenuStrip1 = New MenuStrip()
         TSMIHome = New ToolStripMenuItem()
         OptUsuarios = New ToolStripMenuItem()
@@ -33,9 +33,6 @@ Partial Class Home
         DgvAgendados = New DataGridView()
         DgvFinalizados = New DataGridView()
         Lb_Sesiones_Pendientes = New Label()
-        lblTitleUsuario = New Label()
-        TableLayoutPanel1 = New TableLayoutPanel()
-        lblUsuario = New Label()
         TableLayoutPanel2 = New TableLayoutPanel()
         Label7 = New Label()
         Label8 = New Label()
@@ -56,19 +53,23 @@ Partial Class Home
         Label12 = New Label()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         TableLayoutPanel5 = New TableLayoutPanel()
+        lblUsuario = New Label()
         TableLayoutPanel6 = New TableLayoutPanel()
         TableLayoutPanel7 = New TableLayoutPanel()
-        ContextMenuStrip1 = New ContextMenuStrip(components)
+        TableLayoutPanel1 = New TableLayoutPanel()
+        Button1 = New Button()
+        PictureBox1 = New PictureBox()
         MenuStrip1.SuspendLayout()
         CType(DgvAgendados, ComponentModel.ISupportInitialize).BeginInit()
         CType(DgvFinalizados, ComponentModel.ISupportInitialize).BeginInit()
-        TableLayoutPanel1.SuspendLayout()
         TableLayoutPanel2.SuspendLayout()
         TableLayoutPanel4.SuspendLayout()
         TableLayoutPanel3.SuspendLayout()
         TableLayoutPanel5.SuspendLayout()
         TableLayoutPanel6.SuspendLayout()
         TableLayoutPanel7.SuspendLayout()
+        TableLayoutPanel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -93,54 +94,55 @@ Partial Class Home
         ' OptUsuarios
         ' 
         OptUsuarios.Name = "OptUsuarios"
-        OptUsuarios.Size = New Size(122, 22)
+        OptUsuarios.Size = New Size(180, 22)
         OptUsuarios.Text = "Usuarios"
         ' 
         ' OptPaquetes
         ' 
         OptPaquetes.Name = "OptPaquetes"
-        OptPaquetes.Size = New Size(122, 22)
+        OptPaquetes.Size = New Size(180, 22)
         OptPaquetes.Text = "Paquetes"
         ' 
         ' OptReportes
         ' 
         OptReportes.Name = "OptReportes"
-        OptReportes.Size = New Size(122, 22)
+        OptReportes.Size = New Size(180, 22)
         OptReportes.Text = "Reportes"
         ' 
         ' ClientesToolStripMenuItem
         ' 
         ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        ClientesToolStripMenuItem.Size = New Size(122, 22)
+        ClientesToolStripMenuItem.Size = New Size(180, 22)
         ClientesToolStripMenuItem.Text = "Clientes"
         ' 
         ' Lb_Sesiones_Pasadas
         ' 
         Lb_Sesiones_Pasadas.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Lb_Sesiones_Pasadas.AutoSize = True
-        Lb_Sesiones_Pasadas.BackColor = SystemColors.AppWorkspace
-        Lb_Sesiones_Pasadas.Font = New Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
+        Lb_Sesiones_Pasadas.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Lb_Sesiones_Pasadas.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         Lb_Sesiones_Pasadas.ForeColor = Color.White
-        Lb_Sesiones_Pasadas.Location = New Point(3, 241)
+        Lb_Sesiones_Pasadas.Location = New Point(3, 227)
         Lb_Sesiones_Pasadas.Name = "Lb_Sesiones_Pasadas"
-        Lb_Sesiones_Pasadas.Size = New Size(1283, 38)
+        Lb_Sesiones_Pasadas.Size = New Size(1072, 36)
         Lb_Sesiones_Pasadas.TabIndex = 5
         Lb_Sesiones_Pasadas.Text = "SESIONES POR FINALIZAR"
-        Lb_Sesiones_Pasadas.TextAlign = ContentAlignment.MiddleCenter
+        Lb_Sesiones_Pasadas.TextAlign = ContentAlignment.BottomLeft
         ' 
         ' DgvAgendados
         ' 
         DgvAgendados.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DgvAgendados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DgvAgendados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DgvAgendados.BackgroundColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         DgvAgendados.BorderStyle = BorderStyle.Fixed3D
         DgvAgendados.CellBorderStyle = DataGridViewCellBorderStyle.Sunken
         DgvAgendados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvAgendados.Location = New Point(3, 41)
+        DgvAgendados.Location = New Point(3, 39)
         DgvAgendados.Name = "DgvAgendados"
         DgvAgendados.RowHeadersWidth = 51
         DgvAgendados.RowTemplate.Height = 25
-        DgvAgendados.Size = New Size(1283, 197)
+        DgvAgendados.Size = New Size(1072, 176)
         DgvAgendados.TabIndex = 6
         ' 
         ' DgvFinalizados
@@ -148,71 +150,30 @@ Partial Class Home
         DgvFinalizados.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         DgvFinalizados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         DgvFinalizados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DgvFinalizados.BackgroundColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         DgvFinalizados.BorderStyle = BorderStyle.Fixed3D
         DgvFinalizados.CellBorderStyle = DataGridViewCellBorderStyle.Sunken
         DgvFinalizados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DgvFinalizados.Location = New Point(3, 282)
+        DgvFinalizados.Location = New Point(3, 266)
         DgvFinalizados.Name = "DgvFinalizados"
         DgvFinalizados.RowHeadersWidth = 51
         DgvFinalizados.RowTemplate.Height = 25
-        DgvFinalizados.Size = New Size(1283, 200)
+        DgvFinalizados.Size = New Size(1072, 188)
         DgvFinalizados.TabIndex = 7
         ' 
         ' Lb_Sesiones_Pendientes
         ' 
         Lb_Sesiones_Pendientes.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Lb_Sesiones_Pendientes.AutoSize = True
-        Lb_Sesiones_Pendientes.BackColor = SystemColors.AppWorkspace
-        Lb_Sesiones_Pendientes.Font = New Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
+        Lb_Sesiones_Pendientes.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Lb_Sesiones_Pendientes.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
         Lb_Sesiones_Pendientes.ForeColor = Color.White
         Lb_Sesiones_Pendientes.Location = New Point(3, 0)
         Lb_Sesiones_Pendientes.Name = "Lb_Sesiones_Pendientes"
-        Lb_Sesiones_Pendientes.Size = New Size(1283, 38)
+        Lb_Sesiones_Pendientes.Size = New Size(1072, 36)
         Lb_Sesiones_Pendientes.TabIndex = 8
         Lb_Sesiones_Pendientes.Text = "SESIONES AGENDADAS"
-        Lb_Sesiones_Pendientes.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' lblTitleUsuario
-        ' 
-        lblTitleUsuario.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        lblTitleUsuario.AutoSize = True
-        lblTitleUsuario.BackColor = SystemColors.Control
-        lblTitleUsuario.Location = New Point(3, 0)
-        lblTitleUsuario.Name = "lblTitleUsuario"
-        lblTitleUsuario.Size = New Size(187, 32)
-        lblTitleUsuario.TabIndex = 10
-        lblTitleUsuario.Text = "BIENVENIDO"
-        lblTitleUsuario.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' TableLayoutPanel1
-        ' 
-        TableLayoutPanel1.AutoSize = True
-        TableLayoutPanel1.BackColor = Color.Transparent
-        TableLayoutPanel1.ColumnCount = 2
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 30F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70F))
-        TableLayoutPanel1.Controls.Add(lblTitleUsuario, 0, 0)
-        TableLayoutPanel1.Controls.Add(lblUsuario, 1, 0)
-        TableLayoutPanel1.Dock = DockStyle.Fill
-        TableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.AddColumns
-        TableLayoutPanel1.Location = New Point(3, 3)
-        TableLayoutPanel1.Name = "TableLayoutPanel1"
-        TableLayoutPanel1.RowCount = 1
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.Size = New Size(645, 32)
-        TableLayoutPanel1.TabIndex = 16
-        ' 
-        ' lblUsuario
-        ' 
-        lblUsuario.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        lblUsuario.AutoSize = True
-        lblUsuario.BackColor = SystemColors.Control
-        lblUsuario.Location = New Point(196, 0)
-        lblUsuario.Name = "lblUsuario"
-        lblUsuario.Size = New Size(446, 32)
-        lblUsuario.TabIndex = 13
-        lblUsuario.Text = "Usuario"
-        lblUsuario.TextAlign = ContentAlignment.MiddleLeft
+        Lb_Sesiones_Pendientes.TextAlign = ContentAlignment.BottomLeft
         ' 
         ' TableLayoutPanel2
         ' 
@@ -255,37 +216,40 @@ Partial Class Home
         TableLayoutPanel4.ColumnCount = 1
         TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         TableLayoutPanel4.Controls.Add(Lb_Sesiones_Pendientes, 0, 0)
-        TableLayoutPanel4.Controls.Add(DgvFinalizados, 0, 3)
-        TableLayoutPanel4.Controls.Add(Lb_Sesiones_Pasadas, 0, 2)
+        TableLayoutPanel4.Controls.Add(DgvFinalizados, 0, 4)
+        TableLayoutPanel4.Controls.Add(Lb_Sesiones_Pasadas, 0, 3)
         TableLayoutPanel4.Controls.Add(DgvAgendados, 0, 1)
         TableLayoutPanel4.Location = New Point(3, 3)
         TableLayoutPanel4.Name = "TableLayoutPanel4"
-        TableLayoutPanel4.RowCount = 4
+        TableLayoutPanel4.RowCount = 5
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 8F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 2F))
         TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 8F))
         TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 42F))
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 8F))
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 42F))
-        TableLayoutPanel4.Size = New Size(1289, 485)
+        TableLayoutPanel4.Size = New Size(1078, 457)
         TableLayoutPanel4.TabIndex = 20
         ' 
         ' btnCotizacionNueva
         ' 
-        btnCotizacionNueva.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        btnCotizacionNueva.Location = New Point(654, 2)
+        btnCotizacionNueva.Dock = DockStyle.Top
+        btnCotizacionNueva.FlatStyle = FlatStyle.System
+        btnCotizacionNueva.Location = New Point(3, 2)
         btnCotizacionNueva.Margin = New Padding(3, 2, 3, 2)
         btnCotizacionNueva.Name = "btnCotizacionNueva"
-        btnCotizacionNueva.Size = New Size(274, 33)
+        btnCotizacionNueva.Size = New Size(188, 46)
         btnCotizacionNueva.TabIndex = 21
         btnCotizacionNueva.Text = "Crear Cotizacion"
         btnCotizacionNueva.UseVisualStyleBackColor = True
         ' 
         ' btnSalir
         ' 
-        btnSalir.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnSalir.Location = New Point(1295, 9)
+        btnSalir.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        btnSalir.FlatStyle = FlatStyle.System
+        btnSalir.Location = New Point(65, 561)
         btnSalir.Margin = New Padding(3, 2, 3, 2)
         btnSalir.Name = "btnSalir"
-        btnSalir.Size = New Size(62, 29)
+        btnSalir.Size = New Size(123, 43)
         btnSalir.TabIndex = 22
         btnSalir.Text = "Salir"
         btnSalir.UseVisualStyleBackColor = True
@@ -293,10 +257,11 @@ Partial Class Home
         ' Button3
         ' 
         Button3.Dock = DockStyle.Fill
-        Button3.Location = New Point(1034, 2)
+        Button3.FlatStyle = FlatStyle.System
+        Button3.Location = New Point(865, 2)
         Button3.Margin = New Padding(3, 2, 3, 2)
         Button3.Name = "Button3"
-        Button3.Size = New Size(252, 47)
+        Button3.Size = New Size(210, 44)
         Button3.TabIndex = 23
         Button3.Text = "Gestionar Sesion seleccionada"
         Button3.UseVisualStyleBackColor = True
@@ -326,98 +291,138 @@ Partial Class Home
         TableLayoutPanel3.RowCount = 2
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel3.Size = New Size(1025, 47)
+        TableLayoutPanel3.Size = New Size(856, 44)
         TableLayoutPanel3.TabIndex = 24
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label1.Dock = DockStyle.Fill
+        Label1.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(3, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(41, 15)
+        Label1.Size = New Size(208, 22)
         Label1.TabIndex = 0
         Label1.Text = "Label1"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(259, 0)
+        Label2.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label2.Dock = DockStyle.Fill
+        Label2.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(217, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(41, 15)
+        Label2.Size = New Size(208, 22)
         Label2.TabIndex = 1
         Label2.Text = "Label2"
+        Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(515, 0)
+        Label3.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label3.Dock = DockStyle.Fill
+        Label3.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label3.Location = New Point(431, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(41, 15)
+        Label3.Size = New Size(165, 22)
         Label3.TabIndex = 2
         Label3.Text = "Label3"
+        Label3.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(720, 0)
+        Label4.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label4.Dock = DockStyle.Fill
+        Label4.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label4.Location = New Point(602, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(41, 15)
+        Label4.Size = New Size(165, 22)
         Label4.TabIndex = 3
         Label4.Text = "Label4"
+        Label4.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(925, 0)
+        Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label5.Dock = DockStyle.Fill
+        Label5.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(773, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(41, 15)
+        Label5.Size = New Size(80, 22)
         Label5.TabIndex = 4
         Label5.Text = "Label5"
+        Label5.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(3, 23)
+        Label6.BackColor = Color.White
+        Label6.Dock = DockStyle.Fill
+        Label6.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label6.Location = New Point(3, 22)
         Label6.Name = "Label6"
-        Label6.Size = New Size(41, 15)
+        Label6.Size = New Size(208, 22)
         Label6.TabIndex = 5
         Label6.Text = "Label6"
+        Label6.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(259, 23)
+        Label9.BackColor = Color.White
+        Label9.Dock = DockStyle.Fill
+        Label9.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.Location = New Point(217, 22)
         Label9.Name = "Label9"
-        Label9.Size = New Size(41, 15)
+        Label9.Size = New Size(208, 22)
         Label9.TabIndex = 6
         Label9.Text = "Label9"
+        Label9.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(515, 23)
+        Label10.BackColor = Color.White
+        Label10.Dock = DockStyle.Fill
+        Label10.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label10.Location = New Point(431, 22)
         Label10.Name = "Label10"
-        Label10.Size = New Size(47, 15)
+        Label10.Size = New Size(165, 22)
         Label10.TabIndex = 7
         Label10.Text = "Label10"
+        Label10.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Location = New Point(720, 23)
+        Label11.BackColor = Color.White
+        Label11.Dock = DockStyle.Fill
+        Label11.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label11.Location = New Point(602, 22)
         Label11.Name = "Label11"
-        Label11.Size = New Size(47, 15)
+        Label11.Size = New Size(165, 22)
         Label11.TabIndex = 8
         Label11.Text = "Label11"
+        Label11.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Location = New Point(925, 23)
+        Label12.BackColor = Color.White
+        Label12.Dock = DockStyle.Fill
+        Label12.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label12.Location = New Point(773, 22)
         Label12.Name = "Label12"
-        Label12.Size = New Size(47, 15)
+        Label12.Size = New Size(80, 22)
         Label12.TabIndex = 9
         Label12.Text = "Label12"
+        Label12.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' FlowLayoutPanel1
         ' 
@@ -429,18 +434,29 @@ Partial Class Home
         ' 
         ' TableLayoutPanel5
         ' 
-        TableLayoutPanel5.ColumnCount = 2
+        TableLayoutPanel5.ColumnCount = 1
         TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 70F))
-        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 30F))
-        TableLayoutPanel5.Controls.Add(TableLayoutPanel1, 0, 0)
-        TableLayoutPanel5.Controls.Add(btnCotizacionNueva, 1, 0)
-        TableLayoutPanel5.Location = New Point(42, 28)
+        TableLayoutPanel5.Controls.Add(lblUsuario, 0, 0)
+        TableLayoutPanel5.Location = New Point(42, 38)
         TableLayoutPanel5.Margin = New Padding(3, 2, 3, 2)
         TableLayoutPanel5.Name = "TableLayoutPanel5"
         TableLayoutPanel5.RowCount = 1
         TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel5.Size = New Size(931, 38)
+        TableLayoutPanel5.Size = New Size(931, 30)
         TableLayoutPanel5.TabIndex = 26
+        ' 
+        ' lblUsuario
+        ' 
+        lblUsuario.AutoSize = True
+        lblUsuario.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblUsuario.Dock = DockStyle.Left
+        lblUsuario.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        lblUsuario.Location = New Point(3, 0)
+        lblUsuario.Name = "lblUsuario"
+        lblUsuario.Size = New Size(64, 30)
+        lblUsuario.TabIndex = 13
+        lblUsuario.Text = "Usuario"
+        lblUsuario.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' TableLayoutPanel6
         ' 
@@ -450,12 +466,12 @@ Partial Class Home
         TableLayoutPanel6.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel6.Controls.Add(TableLayoutPanel3, 0, 0)
         TableLayoutPanel6.Controls.Add(Button3, 1, 0)
-        TableLayoutPanel6.Location = New Point(3, 493)
+        TableLayoutPanel6.Location = New Point(3, 465)
         TableLayoutPanel6.Margin = New Padding(3, 2, 3, 2)
         TableLayoutPanel6.Name = "TableLayoutPanel6"
         TableLayoutPanel6.RowCount = 1
         TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel6.Size = New Size(1289, 51)
+        TableLayoutPanel6.Size = New Size(1078, 48)
         TableLayoutPanel6.TabIndex = 27
         ' 
         ' TableLayoutPanel7
@@ -465,27 +481,61 @@ Partial Class Home
         TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         TableLayoutPanel7.Controls.Add(TableLayoutPanel4, 0, 0)
         TableLayoutPanel7.Controls.Add(TableLayoutPanel6, 0, 1)
-        TableLayoutPanel7.Location = New Point(42, 79)
+        TableLayoutPanel7.Location = New Point(253, 89)
         TableLayoutPanel7.Margin = New Padding(3, 2, 3, 2)
         TableLayoutPanel7.Name = "TableLayoutPanel7"
         TableLayoutPanel7.RowCount = 2
         TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 90F))
         TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
-        TableLayoutPanel7.Size = New Size(1295, 546)
+        TableLayoutPanel7.Size = New Size(1084, 515)
         TableLayoutPanel7.TabIndex = 28
         ' 
-        ' ContextMenuStrip1
+        ' TableLayoutPanel1
         ' 
-        ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(61, 4)
+        TableLayoutPanel1.ColumnCount = 1
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Controls.Add(Button1, 0, 1)
+        TableLayoutPanel1.Controls.Add(btnCotizacionNueva, 0, 0)
+        TableLayoutPanel1.Location = New Point(31, 106)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 2
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(194, 176)
+        TableLayoutPanel1.TabIndex = 29
+        ' 
+        ' Button1
+        ' 
+        Button1.Dock = DockStyle.Top
+        Button1.FlatStyle = FlatStyle.System
+        Button1.Location = New Point(3, 90)
+        Button1.Margin = New Padding(3, 2, 3, 2)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(188, 46)
+        Button1.TabIndex = 22
+        Button1.Text = "Crear Cotizacion"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(31, 358)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(200, 160)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 30
+        PictureBox1.TabStop = False
         ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.Control
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(1368, 652)
         ControlBox = False
+        Controls.Add(PictureBox1)
+        Controls.Add(TableLayoutPanel1)
         Controls.Add(TableLayoutPanel7)
         Controls.Add(TableLayoutPanel5)
         Controls.Add(FlowLayoutPanel1)
@@ -502,8 +552,6 @@ Partial Class Home
         MenuStrip1.PerformLayout()
         CType(DgvAgendados, ComponentModel.ISupportInitialize).EndInit()
         CType(DgvFinalizados, ComponentModel.ISupportInitialize).EndInit()
-        TableLayoutPanel1.ResumeLayout(False)
-        TableLayoutPanel1.PerformLayout()
         TableLayoutPanel2.ResumeLayout(False)
         TableLayoutPanel2.PerformLayout()
         TableLayoutPanel4.ResumeLayout(False)
@@ -514,6 +562,8 @@ Partial Class Home
         TableLayoutPanel5.PerformLayout()
         TableLayoutPanel6.ResumeLayout(False)
         TableLayoutPanel7.ResumeLayout(False)
+        TableLayoutPanel1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -526,13 +576,10 @@ Partial Class Home
     Friend WithEvents DgvAgendados As DataGridView
     Friend WithEvents DgvFinalizados As DataGridView
     Friend WithEvents Lb_Sesiones_Pendientes As Label
-    Friend WithEvents lblTitleUsuario As Label
     Friend WithEvents OptReportes As ToolStripMenuItem
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents lblUsuario As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents btnCotizacionNueva As Button
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
@@ -552,5 +599,8 @@ Partial Class Home
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents lblUsuario As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

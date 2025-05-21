@@ -87,7 +87,7 @@ Partial Class FormEmpleado
         AltasyBajas.AutoSize = True
         AltasyBajas.Location = New Point(50, 26)
         AltasyBajas.Name = "AltasyBajas"
-        AltasyBajas.Size = New Size(145, 15)
+        AltasyBajas.Size = New Size(146, 15)
         AltasyBajas.TabIndex = 15
         AltasyBajas.Text = "USUARIO Y CONTRASEÑA"
         ' 
@@ -114,12 +114,12 @@ Partial Class FormEmpleado
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(248, 236)
+        ClientSize = New Size(248, 234)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(AltasyBajas)
         Controls.Add(Verificar)
-        MaximumSize = New Size(264, 276)
-        MinimumSize = New Size(264, 275)
+        MaximumSize = New Size(264, 274)
+        MinimumSize = New Size(264, 273)
         Name = "FormEmpleado"
         Text = "Form1"
         TableLayoutPanel1.ResumeLayout(False)

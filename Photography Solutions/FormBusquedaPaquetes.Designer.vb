@@ -42,15 +42,17 @@ Partial Class FormBusquedaPaquetes
         ' lblTitulo
         ' 
         lblTitulo.AutoSize = True
-        lblTitulo.Location = New Point(315, 32)
+        lblTitulo.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        lblTitulo.Location = New Point(283, 24)
         lblTitulo.Name = "lblTitulo"
-        lblTitulo.Size = New Size(127, 15)
+        lblTitulo.Size = New Size(203, 25)
         lblTitulo.TabIndex = 1
         lblTitulo.Text = "Busqueda por Nombre"
         ' 
         ' btnBusqueda
         ' 
         btnBusqueda.Dock = DockStyle.Fill
+        btnBusqueda.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnBusqueda.Location = New Point(3, 3)
         btnBusqueda.Name = "btnBusqueda"
         btnBusqueda.Size = New Size(122, 33)
@@ -61,6 +63,7 @@ Partial Class FormBusquedaPaquetes
         ' btnDefault
         ' 
         btnDefault.Dock = DockStyle.Fill
+        btnDefault.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnDefault.Location = New Point(131, 3)
         btnDefault.Name = "btnDefault"
         btnDefault.Size = New Size(123, 33)
@@ -70,6 +73,7 @@ Partial Class FormBusquedaPaquetes
         ' 
         ' dgvBusqueda
         ' 
+        dgvBusqueda.BackgroundColor = Color.White
         dgvBusqueda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvBusqueda.EditMode = DataGridViewEditMode.EditProgrammatically
         dgvBusqueda.Location = New Point(58, 158)
@@ -98,6 +102,7 @@ Partial Class FormBusquedaPaquetes
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(792, 442)
         Controls.Add(TableLayoutPanel1)
         Controls.Add(dgvBusqueda)

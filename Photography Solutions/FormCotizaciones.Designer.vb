@@ -22,14 +22,11 @@ Partial Class FormCotizaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        lblTituloUsuario = New Label()
-        lblTituloCliente = New Label()
         NombreSearch = New Button()
-        EliminarSelección = New Button()
-        FaltanteAnticipo = New Label()
+        btnConfirmarOrden = New Button()
+        lblFaltanteAnticipo = New Label()
         lblUsuario = New Label()
         lblCliente = New Label()
-        TableLayoutPanel1 = New TableLayoutPanel()
         TableLayoutPanel2 = New TableLayoutPanel()
         Label3 = New Label()
         Label4 = New Label()
@@ -38,7 +35,7 @@ Partial Class FormCotizaciones
         Label5 = New Label()
         lblTotalAnticipo = New Label()
         Label8 = New Label()
-        txtAnticipo = New TextBox()
+        numAnticipo = New NumericUpDown()
         Label9 = New Label()
         TableLayoutPanel5 = New TableLayoutPanel()
         lblDescripcion = New Label()
@@ -49,11 +46,11 @@ Partial Class FormCotizaciones
         lblNumPaquete = New Label()
         lblTituloNombrePaquete = New Label()
         lblTituloPaquete = New Label()
-        RichTextBox1 = New RichTextBox()
+        txtConsideraciones = New RichTextBox()
         Label10 = New Label()
-        TableLayoutPanel6 = New TableLayoutPanel()
+        LayoutConsideraciones = New TableLayoutPanel()
         TableLayoutPanel4 = New TableLayoutPanel()
-        Button1 = New Button()
+        btnImprimirNota = New Button()
         Label19 = New Label()
         TableLayoutPanel7 = New TableLayoutPanel()
         CalendarioFechasLibres = New MonthCalendar()
@@ -79,27 +76,29 @@ Partial Class FormCotizaciones
         Label32 = New Label()
         TextBox3 = New TextBox()
         Label33 = New Label()
-        TableLayoutPanel14 = New TableLayoutPanel()
+        layoutExtras = New TableLayoutPanel()
         Label34 = New Label()
         TableLayoutPanel15 = New TableLayoutPanel()
         Label35 = New Label()
         Label36 = New Label()
         Label38 = New Label()
-        txtAnticipoExtra = New TextBox()
         lblFaltanteExtra = New Label()
-        txtTotalExtra = New TextBox()
-        TableLayoutPanel16 = New TableLayoutPanel()
-        TableLayoutPanel17 = New TableLayoutPanel()
+        numAnticipoExtra = New NumericUpDown()
+        numExtras = New NumericUpDown()
+        layoutTitulo = New TableLayoutPanel()
+        btnreinicio = New Button()
+        layoutCliente = New TableLayoutPanel()
         btnCambiarCliente = New Button()
         layoutDetalles = New TableLayoutPanel()
         LayoutPagos = New TableLayoutPanel()
         TableLayoutPanel20 = New TableLayoutPanel()
         LayoutGeneral = New TableLayoutPanel()
-        TableLayoutPanel1.SuspendLayout()
+        Label1 = New Label()
         TableLayoutPanel2.SuspendLayout()
         TableLayoutPanel3.SuspendLayout()
+        CType(numAnticipo, ComponentModel.ISupportInitialize).BeginInit()
         TableLayoutPanel5.SuspendLayout()
-        TableLayoutPanel6.SuspendLayout()
+        LayoutConsideraciones.SuspendLayout()
         TableLayoutPanel4.SuspendLayout()
         TableLayoutPanel7.SuspendLayout()
         TableLayoutPanel8.SuspendLayout()
@@ -108,104 +107,81 @@ Partial Class FormCotizaciones
         TableLayoutPanel11.SuspendLayout()
         TableLayoutPanel12.SuspendLayout()
         TableLayoutPanel13.SuspendLayout()
-        TableLayoutPanel14.SuspendLayout()
+        layoutExtras.SuspendLayout()
         TableLayoutPanel15.SuspendLayout()
-        TableLayoutPanel16.SuspendLayout()
-        TableLayoutPanel17.SuspendLayout()
+        CType(numAnticipoExtra, ComponentModel.ISupportInitialize).BeginInit()
+        CType(numExtras, ComponentModel.ISupportInitialize).BeginInit()
+        layoutTitulo.SuspendLayout()
+        layoutCliente.SuspendLayout()
         layoutDetalles.SuspendLayout()
         LayoutPagos.SuspendLayout()
         TableLayoutPanel20.SuspendLayout()
         LayoutGeneral.SuspendLayout()
         SuspendLayout()
         ' 
-        ' lblTituloUsuario
-        ' 
-        lblTituloUsuario.AutoSize = True
-        lblTituloUsuario.Location = New Point(503, 0)
-        lblTituloUsuario.Name = "lblTituloUsuario"
-        lblTituloUsuario.Size = New Size(56, 15)
-        lblTituloUsuario.TabIndex = 0
-        lblTituloUsuario.Text = "USUARIO"
-        lblTituloUsuario.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' lblTituloCliente
-        ' 
-        lblTituloCliente.AutoSize = True
-        lblTituloCliente.Dock = DockStyle.Fill
-        lblTituloCliente.Location = New Point(3, 0)
-        lblTituloCliente.Name = "lblTituloCliente"
-        lblTituloCliente.Size = New Size(143, 64)
-        lblTituloCliente.TabIndex = 1
-        lblTituloCliente.Text = "CLIENTE"
-        lblTituloCliente.TextAlign = ContentAlignment.MiddleLeft
-        ' 
         ' NombreSearch
         ' 
-        NombreSearch.Location = New Point(1004, 2)
+        NombreSearch.Dock = DockStyle.Fill
+        NombreSearch.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        NombreSearch.Location = New Point(1003, 2)
         NombreSearch.Margin = New Padding(3, 2, 3, 2)
         NombreSearch.Name = "NombreSearch"
-        NombreSearch.Size = New Size(245, 66)
+        NombreSearch.Size = New Size(245, 30)
         NombreSearch.TabIndex = 5
-        NombreSearch.Text = "SELECCIONAR PAQUETE"
+        NombreSearch.Text = "Seleccionar Paquete"
         NombreSearch.UseVisualStyleBackColor = True
         ' 
-        ' EliminarSelección
+        ' btnConfirmarOrden
         ' 
-        EliminarSelección.Dock = DockStyle.Fill
-        EliminarSelección.Location = New Point(3, 2)
-        EliminarSelección.Margin = New Padding(3, 2, 3, 2)
-        EliminarSelección.Name = "EliminarSelección"
-        EliminarSelección.Size = New Size(304, 54)
-        EliminarSelección.TabIndex = 6
-        EliminarSelección.Text = "CONFIRMAR ORDEN"
-        EliminarSelección.UseVisualStyleBackColor = True
+        btnConfirmarOrden.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        btnConfirmarOrden.Dock = DockStyle.Fill
+        btnConfirmarOrden.Enabled = False
+        btnConfirmarOrden.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnConfirmarOrden.Location = New Point(3, 2)
+        btnConfirmarOrden.Margin = New Padding(3, 2, 3, 2)
+        btnConfirmarOrden.Name = "btnConfirmarOrden"
+        btnConfirmarOrden.Size = New Size(303, 59)
+        btnConfirmarOrden.TabIndex = 6
+        btnConfirmarOrden.Text = "CONFIRMAR ORDEN"
+        btnConfirmarOrden.UseVisualStyleBackColor = False
         ' 
-        ' FaltanteAnticipo
+        ' lblFaltanteAnticipo
         ' 
-        FaltanteAnticipo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        FaltanteAnticipo.AutoSize = True
-        FaltanteAnticipo.Location = New Point(87, 54)
-        FaltanteAnticipo.Name = "FaltanteAnticipo"
-        FaltanteAnticipo.Size = New Size(193, 38)
-        FaltanteAnticipo.TabIndex = 12
-        FaltanteAnticipo.Text = "0"
+        lblFaltanteAnticipo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lblFaltanteAnticipo.AutoSize = True
+        lblFaltanteAnticipo.BackColor = Color.White
+        lblFaltanteAnticipo.Location = New Point(87, 46)
+        lblFaltanteAnticipo.Name = "lblFaltanteAnticipo"
+        lblFaltanteAnticipo.Size = New Size(193, 33)
+        lblFaltanteAnticipo.TabIndex = 12
+        lblFaltanteAnticipo.Text = "0"
+        lblFaltanteAnticipo.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' lblUsuario
         ' 
         lblUsuario.AutoSize = True
-        lblUsuario.Location = New Point(753, 0)
+        lblUsuario.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblUsuario.Dock = DockStyle.Right
+        lblUsuario.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        lblUsuario.Location = New Point(1180, 0)
         lblUsuario.Name = "lblUsuario"
-        lblUsuario.Size = New Size(45, 15)
+        lblUsuario.Size = New Size(67, 48)
         lblUsuario.TabIndex = 17
         lblUsuario.Text = "Default"
-        lblUsuario.TextAlign = ContentAlignment.MiddleLeft
+        lblUsuario.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' lblCliente
         ' 
         lblCliente.AutoSize = True
-        lblCliente.Dock = DockStyle.Fill
-        lblCliente.Location = New Point(152, 0)
+        lblCliente.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblCliente.Dock = DockStyle.Left
+        lblCliente.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        lblCliente.Location = New Point(3, 0)
         lblCliente.Name = "lblCliente"
-        lblCliente.Size = New Size(590, 64)
+        lblCliente.Size = New Size(73, 34)
         lblCliente.TabIndex = 18
         lblCliente.Text = "Default"
         lblCliente.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' TableLayoutPanel1
-        ' 
-        TableLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel1.ColumnCount = 2
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 80F))
-        TableLayoutPanel1.Controls.Add(lblTituloCliente, 0, 0)
-        TableLayoutPanel1.Controls.Add(lblCliente, 1, 0)
-        TableLayoutPanel1.Location = New Point(3, 3)
-        TableLayoutPanel1.Name = "TableLayoutPanel1"
-        TableLayoutPanel1.RowCount = 1
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.Size = New Size(745, 64)
-        TableLayoutPanel1.TabIndex = 19
         ' 
         ' TableLayoutPanel2
         ' 
@@ -247,25 +223,26 @@ Partial Class FormCotizaciones
         TableLayoutPanel3.Controls.Add(Label5, 0, 0)
         TableLayoutPanel3.Controls.Add(lblTotalAnticipo, 1, 0)
         TableLayoutPanel3.Controls.Add(Label8, 0, 1)
-        TableLayoutPanel3.Controls.Add(txtAnticipo, 1, 1)
-        TableLayoutPanel3.Controls.Add(FaltanteAnticipo, 1, 2)
+        TableLayoutPanel3.Controls.Add(lblFaltanteAnticipo, 1, 2)
+        TableLayoutPanel3.Controls.Add(numAnticipo, 1, 1)
         TableLayoutPanel3.Dock = DockStyle.Fill
-        TableLayoutPanel3.Location = New Point(3, 20)
+        TableLayoutPanel3.Location = New Point(3, 18)
         TableLayoutPanel3.Name = "TableLayoutPanel3"
         TableLayoutPanel3.RowCount = 3
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 30F))
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 30F))
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
-        TableLayoutPanel3.Size = New Size(283, 92)
+        TableLayoutPanel3.Size = New Size(283, 79)
         TableLayoutPanel3.TabIndex = 20
         ' 
         ' Label6
         ' 
         Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label6.AutoSize = True
-        Label6.Location = New Point(3, 54)
+        Label6.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label6.Location = New Point(3, 46)
         Label6.Name = "Label6"
-        Label6.Size = New Size(78, 38)
+        Label6.Size = New Size(78, 33)
         Label6.TabIndex = 19
         Label6.Text = "FALTANTE"
         Label6.TextAlign = ContentAlignment.MiddleLeft
@@ -273,10 +250,11 @@ Partial Class FormCotizaciones
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         Label5.Dock = DockStyle.Fill
         Label5.Location = New Point(3, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(78, 27)
+        Label5.Size = New Size(78, 23)
         Label5.TabIndex = 0
         Label5.Text = "TOTAL"
         Label5.TextAlign = ContentAlignment.MiddleLeft
@@ -284,10 +262,11 @@ Partial Class FormCotizaciones
         ' lblTotalAnticipo
         ' 
         lblTotalAnticipo.AutoSize = True
+        lblTotalAnticipo.BackColor = Color.White
         lblTotalAnticipo.Dock = DockStyle.Fill
         lblTotalAnticipo.Location = New Point(87, 0)
         lblTotalAnticipo.Name = "lblTotalAnticipo"
-        lblTotalAnticipo.Size = New Size(193, 27)
+        lblTotalAnticipo.Size = New Size(193, 23)
         lblTotalAnticipo.TabIndex = 17
         lblTotalAnticipo.Text = "0"
         lblTotalAnticipo.TextAlign = ContentAlignment.MiddleLeft
@@ -295,29 +274,35 @@ Partial Class FormCotizaciones
         ' Label8
         ' 
         Label8.AutoSize = True
+        Label8.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
         Label8.Dock = DockStyle.Fill
-        Label8.Location = New Point(3, 27)
+        Label8.Location = New Point(3, 23)
         Label8.Name = "Label8"
-        Label8.Size = New Size(78, 27)
+        Label8.Size = New Size(78, 23)
         Label8.TabIndex = 1
         Label8.Text = "ANTICIPO"
         Label8.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' txtAnticipo
+        ' numAnticipo
         ' 
-        txtAnticipo.Dock = DockStyle.Fill
-        txtAnticipo.Location = New Point(87, 30)
-        txtAnticipo.Name = "txtAnticipo"
-        txtAnticipo.Size = New Size(193, 23)
-        txtAnticipo.TabIndex = 18
+        numAnticipo.BackColor = SystemColors.Menu
+        numAnticipo.Dock = DockStyle.Fill
+        numAnticipo.Location = New Point(87, 25)
+        numAnticipo.Margin = New Padding(3, 2, 3, 2)
+        numAnticipo.Name = "numAnticipo"
+        numAnticipo.Size = New Size(193, 23)
+        numAnticipo.TabIndex = 20
         ' 
         ' Label9
         ' 
-        Label9.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Label9.AutoSize = True
+        Label9.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label9.Dock = DockStyle.Left
+        Label9.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.ForeColor = Color.White
         Label9.Location = New Point(3, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(494, 15)
+        Label9.Size = New Size(375, 48)
         Label9.TabIndex = 28
         Label9.Text = "COTIZACION DE EVENTO"
         ' 
@@ -335,7 +320,7 @@ Partial Class FormCotizaciones
         TableLayoutPanel5.Controls.Add(lblTituloNombrePaquete, 0, 1)
         TableLayoutPanel5.Controls.Add(lblTituloPaquete, 0, 0)
         TableLayoutPanel5.Dock = DockStyle.Fill
-        TableLayoutPanel5.Location = New Point(3, 3)
+        TableLayoutPanel5.Location = New Point(3, 48)
         TableLayoutPanel5.Name = "TableLayoutPanel5"
         TableLayoutPanel5.RowCount = 4
         TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
@@ -343,16 +328,17 @@ Partial Class FormCotizaciones
         TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
         TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel5.Size = New Size(602, 163)
+        TableLayoutPanel5.Size = New Size(602, 176)
         TableLayoutPanel5.TabIndex = 29
         ' 
         ' lblDescripcion
         ' 
         lblDescripcion.AutoSize = True
+        lblDescripcion.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblDescripcion.Dock = DockStyle.Fill
-        lblDescripcion.Location = New Point(93, 96)
+        lblDescripcion.Location = New Point(93, 105)
         lblDescripcion.Name = "lblDescripcion"
-        lblDescripcion.Size = New Size(506, 67)
+        lblDescripcion.Size = New Size(506, 71)
         lblDescripcion.TabIndex = 32
         lblDescripcion.Text = "Default"
         lblDescripcion.TextAlign = ContentAlignment.MiddleLeft
@@ -360,10 +346,11 @@ Partial Class FormCotizaciones
         ' lblPrecio
         ' 
         lblPrecio.AutoSize = True
+        lblPrecio.BackColor = Color.White
         lblPrecio.Dock = DockStyle.Fill
-        lblPrecio.Location = New Point(93, 64)
+        lblPrecio.Location = New Point(93, 70)
         lblPrecio.Name = "lblPrecio"
-        lblPrecio.Size = New Size(506, 32)
+        lblPrecio.Size = New Size(506, 35)
         lblPrecio.TabIndex = 31
         lblPrecio.Text = "Default"
         lblPrecio.TextAlign = ContentAlignment.MiddleLeft
@@ -371,10 +358,11 @@ Partial Class FormCotizaciones
         ' lblTituloDescripcion
         ' 
         lblTituloDescripcion.AutoSize = True
+        lblTituloDescripcion.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblTituloDescripcion.Dock = DockStyle.Fill
-        lblTituloDescripcion.Location = New Point(3, 96)
+        lblTituloDescripcion.Location = New Point(3, 105)
         lblTituloDescripcion.Name = "lblTituloDescripcion"
-        lblTituloDescripcion.Size = New Size(84, 67)
+        lblTituloDescripcion.Size = New Size(84, 71)
         lblTituloDescripcion.TabIndex = 31
         lblTituloDescripcion.Text = "DESCRIPCION"
         lblTituloDescripcion.TextAlign = ContentAlignment.MiddleLeft
@@ -382,10 +370,11 @@ Partial Class FormCotizaciones
         ' lblTituloPrecio
         ' 
         lblTituloPrecio.AutoSize = True
+        lblTituloPrecio.BackColor = Color.White
         lblTituloPrecio.Dock = DockStyle.Fill
-        lblTituloPrecio.Location = New Point(3, 64)
+        lblTituloPrecio.Location = New Point(3, 70)
         lblTituloPrecio.Name = "lblTituloPrecio"
-        lblTituloPrecio.Size = New Size(84, 32)
+        lblTituloPrecio.Size = New Size(84, 35)
         lblTituloPrecio.TabIndex = 31
         lblTituloPrecio.Text = "PRECIO MXN"
         lblTituloPrecio.TextAlign = ContentAlignment.MiddleLeft
@@ -393,10 +382,11 @@ Partial Class FormCotizaciones
         ' lblNombre
         ' 
         lblNombre.AutoSize = True
+        lblNombre.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblNombre.Dock = DockStyle.Fill
-        lblNombre.Location = New Point(93, 32)
+        lblNombre.Location = New Point(93, 35)
         lblNombre.Name = "lblNombre"
-        lblNombre.Size = New Size(506, 32)
+        lblNombre.Size = New Size(506, 35)
         lblNombre.TabIndex = 31
         lblNombre.Text = "Default"
         lblNombre.TextAlign = ContentAlignment.MiddleLeft
@@ -404,10 +394,11 @@ Partial Class FormCotizaciones
         ' lblNumPaquete
         ' 
         lblNumPaquete.AutoSize = True
+        lblNumPaquete.BackColor = Color.White
         lblNumPaquete.Dock = DockStyle.Fill
         lblNumPaquete.Location = New Point(93, 0)
         lblNumPaquete.Name = "lblNumPaquete"
-        lblNumPaquete.Size = New Size(506, 32)
+        lblNumPaquete.Size = New Size(506, 35)
         lblNumPaquete.TabIndex = 31
         lblNumPaquete.Text = "Default"
         lblNumPaquete.TextAlign = ContentAlignment.MiddleLeft
@@ -415,10 +406,11 @@ Partial Class FormCotizaciones
         ' lblTituloNombrePaquete
         ' 
         lblTituloNombrePaquete.AutoSize = True
+        lblTituloNombrePaquete.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblTituloNombrePaquete.Dock = DockStyle.Fill
-        lblTituloNombrePaquete.Location = New Point(3, 32)
+        lblTituloNombrePaquete.Location = New Point(3, 35)
         lblTituloNombrePaquete.Name = "lblTituloNombrePaquete"
-        lblTituloNombrePaquete.Size = New Size(84, 32)
+        lblTituloNombrePaquete.Size = New Size(84, 35)
         lblTituloNombrePaquete.TabIndex = 31
         lblTituloNombrePaquete.Text = "NOMBRE "
         lblTituloNombrePaquete.TextAlign = ContentAlignment.MiddleLeft
@@ -426,48 +418,54 @@ Partial Class FormCotizaciones
         ' lblTituloPaquete
         ' 
         lblTituloPaquete.AutoSize = True
+        lblTituloPaquete.BackColor = Color.White
         lblTituloPaquete.Dock = DockStyle.Fill
         lblTituloPaquete.Location = New Point(3, 0)
         lblTituloPaquete.Name = "lblTituloPaquete"
-        lblTituloPaquete.Size = New Size(84, 32)
+        lblTituloPaquete.Size = New Size(84, 35)
         lblTituloPaquete.TabIndex = 31
         lblTituloPaquete.Text = "PAQUETE #"
         lblTituloPaquete.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' RichTextBox1
+        ' txtConsideraciones
         ' 
-        RichTextBox1.Dock = DockStyle.Fill
-        RichTextBox1.Location = New Point(3, 38)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(614, 313)
-        RichTextBox1.TabIndex = 30
-        RichTextBox1.Text = ""
+        txtConsideraciones.BackColor = SystemColors.InactiveBorder
+        txtConsideraciones.Dock = DockStyle.Fill
+        txtConsideraciones.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        txtConsideraciones.Location = New Point(3, 41)
+        txtConsideraciones.Name = "txtConsideraciones"
+        txtConsideraciones.Size = New Size(613, 336)
+        txtConsideraciones.TabIndex = 30
+        txtConsideraciones.Text = ""
         ' 
         ' Label10
         ' 
         Label10.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label10.AutoSize = True
+        Label10.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label10.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label10.ForeColor = Color.White
         Label10.Location = New Point(3, 0)
         Label10.Name = "Label10"
-        Label10.Size = New Size(614, 35)
+        Label10.Size = New Size(613, 38)
         Label10.TabIndex = 31
-        Label10.Text = "Consideraciones especiales"
+        Label10.Text = "CONSIDERACIONES ESPECIALES"
         Label10.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' TableLayoutPanel6
+        ' LayoutConsideraciones
         ' 
-        TableLayoutPanel6.ColumnCount = 1
-        TableLayoutPanel6.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel6.Controls.Add(Label10, 0, 0)
-        TableLayoutPanel6.Controls.Add(RichTextBox1, 0, 1)
-        TableLayoutPanel6.Dock = DockStyle.Fill
-        TableLayoutPanel6.Location = New Point(3, 3)
-        TableLayoutPanel6.Name = "TableLayoutPanel6"
-        TableLayoutPanel6.RowCount = 2
-        TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
-        TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 90F))
-        TableLayoutPanel6.Size = New Size(620, 354)
-        TableLayoutPanel6.TabIndex = 32
+        LayoutConsideraciones.ColumnCount = 1
+        LayoutConsideraciones.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        LayoutConsideraciones.Controls.Add(Label10, 0, 0)
+        LayoutConsideraciones.Controls.Add(txtConsideraciones, 0, 1)
+        LayoutConsideraciones.Dock = DockStyle.Fill
+        LayoutConsideraciones.Location = New Point(3, 3)
+        LayoutConsideraciones.Name = "LayoutConsideraciones"
+        LayoutConsideraciones.RowCount = 2
+        LayoutConsideraciones.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
+        LayoutConsideraciones.RowStyles.Add(New RowStyle(SizeType.Percent, 90F))
+        LayoutConsideraciones.Size = New Size(619, 380)
+        LayoutConsideraciones.TabIndex = 32
         ' 
         ' TableLayoutPanel4
         ' 
@@ -475,33 +473,39 @@ Partial Class FormCotizaciones
         TableLayoutPanel4.ColumnCount = 2
         TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TableLayoutPanel4.Controls.Add(Button1, 1, 0)
-        TableLayoutPanel4.Controls.Add(EliminarSelección, 0, 0)
-        TableLayoutPanel4.Location = New Point(3, 363)
+        TableLayoutPanel4.Controls.Add(btnImprimirNota, 1, 0)
+        TableLayoutPanel4.Controls.Add(btnConfirmarOrden, 0, 0)
+        TableLayoutPanel4.Location = New Point(3, 389)
         TableLayoutPanel4.Name = "TableLayoutPanel4"
         TableLayoutPanel4.RowCount = 1
         TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel4.Size = New Size(620, 58)
+        TableLayoutPanel4.Size = New Size(619, 63)
         TableLayoutPanel4.TabIndex = 33
         ' 
-        ' Button1
+        ' btnImprimirNota
         ' 
-        Button1.Dock = DockStyle.Fill
-        Button1.Location = New Point(313, 2)
-        Button1.Margin = New Padding(3, 2, 3, 2)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(304, 54)
-        Button1.TabIndex = 8
-        Button1.Text = "IMPRIMIR NOTA"
-        Button1.UseVisualStyleBackColor = True
+        btnImprimirNota.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        btnImprimirNota.Dock = DockStyle.Fill
+        btnImprimirNota.Enabled = False
+        btnImprimirNota.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        btnImprimirNota.Location = New Point(312, 2)
+        btnImprimirNota.Margin = New Padding(3, 2, 3, 2)
+        btnImprimirNota.Name = "btnImprimirNota"
+        btnImprimirNota.Size = New Size(304, 59)
+        btnImprimirNota.TabIndex = 8
+        btnImprimirNota.Text = "IMPRIMIR NOTA"
+        btnImprimirNota.UseVisualStyleBackColor = False
         ' 
         ' Label19
         ' 
         Label19.AutoSize = True
+        Label19.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
         Label19.Dock = DockStyle.Fill
+        Label19.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label19.ForeColor = Color.White
         Label19.Location = New Point(3, 0)
         Label19.Name = "Label19"
-        Label19.Size = New Size(283, 17)
+        Label19.Size = New Size(283, 15)
         Label19.TabIndex = 34
         Label19.Text = "ANTICIPO"
         Label19.TextAlign = ContentAlignment.MiddleCenter
@@ -519,7 +523,7 @@ Partial Class FormCotizaciones
         TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
         TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
         TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel7.Size = New Size(289, 115)
+        TableLayoutPanel7.Size = New Size(289, 100)
         TableLayoutPanel7.TabIndex = 35
         ' 
         ' CalendarioFechasLibres
@@ -535,11 +539,13 @@ Partial Class FormCotizaciones
         ' 
         lblTituloFecha.AutoSize = True
         lblTituloFecha.Dock = DockStyle.Fill
+        lblTituloFecha.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         lblTituloFecha.Location = New Point(3, 0)
         lblTituloFecha.Name = "lblTituloFecha"
-        lblTituloFecha.Size = New Size(51, 43)
+        lblTituloFecha.Size = New Size(51, 38)
         lblTituloFecha.TabIndex = 37
         lblTituloFecha.Text = "Fecha"
+        lblTituloFecha.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' TableLayoutPanel8
         ' 
@@ -549,29 +555,32 @@ Partial Class FormCotizaciones
         TableLayoutPanel8.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 80F))
         TableLayoutPanel8.Controls.Add(lblFecha, 1, 0)
         TableLayoutPanel8.Controls.Add(lblTituloFecha, 0, 0)
-        TableLayoutPanel8.Location = New Point(3, 197)
+        TableLayoutPanel8.Location = New Point(3, 175)
         TableLayoutPanel8.Name = "TableLayoutPanel8"
         TableLayoutPanel8.RowCount = 1
         TableLayoutPanel8.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel8.Size = New Size(289, 43)
+        TableLayoutPanel8.Size = New Size(289, 38)
         TableLayoutPanel8.TabIndex = 38
         ' 
         ' lblFecha
         ' 
         lblFecha.AutoSize = True
         lblFecha.Dock = DockStyle.Fill
+        lblFecha.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblFecha.Location = New Point(60, 0)
         lblFecha.Name = "lblFecha"
-        lblFecha.Size = New Size(226, 43)
+        lblFecha.Size = New Size(226, 38)
         lblFecha.TabIndex = 39
         lblFecha.Text = "Fecha"
+        lblFecha.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' layoutFecha
         ' 
+        layoutFecha.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         layoutFecha.ColumnCount = 1
         layoutFecha.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        layoutFecha.Controls.Add(CalendarioFechasLibres, 0, 0)
         layoutFecha.Controls.Add(TableLayoutPanel8, 0, 1)
+        layoutFecha.Controls.Add(CalendarioFechasLibres, 0, 0)
         layoutFecha.Dock = DockStyle.Fill
         layoutFecha.Enabled = False
         layoutFecha.Location = New Point(3, 3)
@@ -579,7 +588,7 @@ Partial Class FormCotizaciones
         layoutFecha.RowCount = 2
         layoutFecha.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
         layoutFecha.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
-        layoutFecha.Size = New Size(295, 243)
+        layoutFecha.Size = New Size(295, 216)
         layoutFecha.TabIndex = 39
         ' 
         ' TableLayoutPanel10
@@ -794,29 +803,33 @@ Partial Class FormCotizaciones
         Label33.TabIndex = 12
         Label33.Text = "0"
         ' 
-        ' TableLayoutPanel14
+        ' layoutExtras
         ' 
-        TableLayoutPanel14.ColumnCount = 1
-        TableLayoutPanel14.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel14.Controls.Add(Label34, 0, 0)
-        TableLayoutPanel14.Controls.Add(TableLayoutPanel15, 0, 1)
-        TableLayoutPanel14.Dock = DockStyle.Fill
-        TableLayoutPanel14.Location = New Point(3, 124)
-        TableLayoutPanel14.Name = "TableLayoutPanel14"
-        TableLayoutPanel14.RowCount = 2
-        TableLayoutPanel14.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
-        TableLayoutPanel14.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
-        TableLayoutPanel14.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel14.Size = New Size(289, 116)
-        TableLayoutPanel14.TabIndex = 40
+        layoutExtras.ColumnCount = 1
+        layoutExtras.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        layoutExtras.Controls.Add(Label34, 0, 0)
+        layoutExtras.Controls.Add(TableLayoutPanel15, 0, 1)
+        layoutExtras.Dock = DockStyle.Fill
+        layoutExtras.Enabled = False
+        layoutExtras.Location = New Point(3, 109)
+        layoutExtras.Name = "layoutExtras"
+        layoutExtras.RowCount = 2
+        layoutExtras.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
+        layoutExtras.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
+        layoutExtras.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        layoutExtras.Size = New Size(289, 104)
+        layoutExtras.TabIndex = 40
         ' 
         ' Label34
         ' 
         Label34.AutoSize = True
+        Label34.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
         Label34.Dock = DockStyle.Fill
+        Label34.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label34.ForeColor = Color.White
         Label34.Location = New Point(3, 0)
         Label34.Name = "Label34"
-        Label34.Size = New Size(283, 17)
+        Label34.Size = New Size(283, 15)
         Label34.TabIndex = 34
         Label34.Text = "EXTRAS"
         Label34.TextAlign = ContentAlignment.MiddleCenter
@@ -829,26 +842,27 @@ Partial Class FormCotizaciones
         TableLayoutPanel15.Controls.Add(Label35, 0, 2)
         TableLayoutPanel15.Controls.Add(Label36, 0, 0)
         TableLayoutPanel15.Controls.Add(Label38, 0, 1)
-        TableLayoutPanel15.Controls.Add(txtAnticipoExtra, 1, 1)
         TableLayoutPanel15.Controls.Add(lblFaltanteExtra, 1, 2)
-        TableLayoutPanel15.Controls.Add(txtTotalExtra, 1, 0)
+        TableLayoutPanel15.Controls.Add(numAnticipoExtra, 1, 1)
+        TableLayoutPanel15.Controls.Add(numExtras, 1, 0)
         TableLayoutPanel15.Dock = DockStyle.Fill
-        TableLayoutPanel15.Location = New Point(3, 20)
+        TableLayoutPanel15.Location = New Point(3, 18)
         TableLayoutPanel15.Name = "TableLayoutPanel15"
         TableLayoutPanel15.RowCount = 3
         TableLayoutPanel15.RowStyles.Add(New RowStyle(SizeType.Percent, 30F))
         TableLayoutPanel15.RowStyles.Add(New RowStyle(SizeType.Percent, 30F))
         TableLayoutPanel15.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
-        TableLayoutPanel15.Size = New Size(283, 93)
+        TableLayoutPanel15.Size = New Size(283, 83)
         TableLayoutPanel15.TabIndex = 20
         ' 
         ' Label35
         ' 
         Label35.AutoSize = True
+        Label35.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         Label35.Dock = DockStyle.Fill
-        Label35.Location = New Point(3, 54)
+        Label35.Location = New Point(3, 48)
         Label35.Name = "Label35"
-        Label35.Size = New Size(78, 39)
+        Label35.Size = New Size(78, 35)
         Label35.TabIndex = 19
         Label35.Text = "FALTANTE"
         Label35.TextAlign = ContentAlignment.MiddleLeft
@@ -856,10 +870,11 @@ Partial Class FormCotizaciones
         ' Label36
         ' 
         Label36.AutoSize = True
+        Label36.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         Label36.Dock = DockStyle.Fill
         Label36.Location = New Point(3, 0)
         Label36.Name = "Label36"
-        Label36.Size = New Size(78, 27)
+        Label36.Size = New Size(78, 24)
         Label36.TabIndex = 0
         Label36.Text = "TOTAL"
         Label36.TextAlign = ContentAlignment.MiddleLeft
@@ -867,80 +882,101 @@ Partial Class FormCotizaciones
         ' Label38
         ' 
         Label38.AutoSize = True
+        Label38.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
         Label38.Dock = DockStyle.Fill
-        Label38.Location = New Point(3, 27)
+        Label38.Location = New Point(3, 24)
         Label38.Name = "Label38"
-        Label38.Size = New Size(78, 27)
+        Label38.Size = New Size(78, 24)
         Label38.TabIndex = 1
         Label38.Text = "ANTICIPO"
         Label38.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' txtAnticipoExtra
-        ' 
-        txtAnticipoExtra.Dock = DockStyle.Fill
-        txtAnticipoExtra.Location = New Point(87, 30)
-        txtAnticipoExtra.Name = "txtAnticipoExtra"
-        txtAnticipoExtra.Size = New Size(193, 23)
-        txtAnticipoExtra.TabIndex = 18
-        ' 
         ' lblFaltanteExtra
         ' 
         lblFaltanteExtra.AutoSize = True
+        lblFaltanteExtra.BackColor = Color.White
         lblFaltanteExtra.Dock = DockStyle.Fill
-        lblFaltanteExtra.Location = New Point(87, 54)
+        lblFaltanteExtra.Location = New Point(87, 48)
         lblFaltanteExtra.Name = "lblFaltanteExtra"
-        lblFaltanteExtra.Size = New Size(193, 39)
+        lblFaltanteExtra.Size = New Size(193, 35)
         lblFaltanteExtra.TabIndex = 12
         lblFaltanteExtra.Text = "0"
+        lblFaltanteExtra.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' txtTotalExtra
+        ' numAnticipoExtra
         ' 
-        txtTotalExtra.Dock = DockStyle.Fill
-        txtTotalExtra.Location = New Point(87, 3)
-        txtTotalExtra.Name = "txtTotalExtra"
-        txtTotalExtra.Size = New Size(193, 23)
-        txtTotalExtra.TabIndex = 20
+        numAnticipoExtra.BackColor = SystemColors.Menu
+        numAnticipoExtra.Dock = DockStyle.Fill
+        numAnticipoExtra.Enabled = False
+        numAnticipoExtra.Location = New Point(87, 26)
+        numAnticipoExtra.Margin = New Padding(3, 2, 3, 2)
+        numAnticipoExtra.Name = "numAnticipoExtra"
+        numAnticipoExtra.Size = New Size(193, 23)
+        numAnticipoExtra.TabIndex = 21
         ' 
-        ' TableLayoutPanel16
+        ' numExtras
         ' 
-        TableLayoutPanel16.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel16.ColumnCount = 3
-        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
-        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel16.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
-        TableLayoutPanel16.Controls.Add(lblTituloUsuario, 1, 0)
-        TableLayoutPanel16.Controls.Add(lblUsuario, 2, 0)
-        TableLayoutPanel16.Controls.Add(Label9, 0, 0)
-        TableLayoutPanel16.Location = New Point(12, 12)
-        TableLayoutPanel16.Name = "TableLayoutPanel16"
-        TableLayoutPanel16.RowCount = 1
-        TableLayoutPanel16.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel16.Size = New Size(1251, 39)
-        TableLayoutPanel16.TabIndex = 41
+        numExtras.BackColor = SystemColors.Menu
+        numExtras.Dock = DockStyle.Fill
+        numExtras.Location = New Point(87, 2)
+        numExtras.Margin = New Padding(3, 2, 3, 2)
+        numExtras.Name = "numExtras"
+        numExtras.Size = New Size(193, 23)
+        numExtras.TabIndex = 22
         ' 
-        ' TableLayoutPanel17
+        ' layoutTitulo
         ' 
-        TableLayoutPanel17.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel17.ColumnCount = 3
-        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 60F))
-        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel17.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel17.Controls.Add(TableLayoutPanel1, 0, 0)
-        TableLayoutPanel17.Controls.Add(NombreSearch, 2, 0)
-        TableLayoutPanel17.Controls.Add(btnCambiarCliente, 1, 0)
-        TableLayoutPanel17.Location = New Point(12, 66)
-        TableLayoutPanel17.Name = "TableLayoutPanel17"
-        TableLayoutPanel17.RowCount = 1
-        TableLayoutPanel17.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel17.Size = New Size(1252, 70)
-        TableLayoutPanel17.TabIndex = 42
+        layoutTitulo.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        layoutTitulo.ColumnCount = 3
+        layoutTitulo.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        layoutTitulo.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        layoutTitulo.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        layoutTitulo.Controls.Add(btnreinicio, 1, 0)
+        layoutTitulo.Controls.Add(lblUsuario, 2, 0)
+        layoutTitulo.Controls.Add(Label9, 0, 0)
+        layoutTitulo.Location = New Point(12, 12)
+        layoutTitulo.Name = "layoutTitulo"
+        layoutTitulo.RowCount = 1
+        layoutTitulo.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
+        layoutTitulo.Size = New Size(1250, 48)
+        layoutTitulo.TabIndex = 41
+        ' 
+        ' btnreinicio
+        ' 
+        btnreinicio.Dock = DockStyle.Fill
+        btnreinicio.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnreinicio.Location = New Point(503, 3)
+        btnreinicio.Name = "btnreinicio"
+        btnreinicio.Size = New Size(244, 42)
+        btnreinicio.TabIndex = 47
+        btnreinicio.Text = "Reiniciar todo"
+        btnreinicio.UseVisualStyleBackColor = True
+        ' 
+        ' layoutCliente
+        ' 
+        layoutCliente.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        layoutCliente.ColumnCount = 3
+        layoutCliente.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 60F))
+        layoutCliente.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        layoutCliente.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        layoutCliente.Controls.Add(lblCliente, 0, 0)
+        layoutCliente.Controls.Add(NombreSearch, 2, 0)
+        layoutCliente.Controls.Add(btnCambiarCliente, 1, 0)
+        layoutCliente.Location = New Point(12, 76)
+        layoutCliente.Name = "layoutCliente"
+        layoutCliente.RowCount = 1
+        layoutCliente.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
+        layoutCliente.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        layoutCliente.Size = New Size(1251, 34)
+        layoutCliente.TabIndex = 42
         ' 
         ' btnCambiarCliente
         ' 
         btnCambiarCliente.Dock = DockStyle.Fill
-        btnCambiarCliente.Location = New Point(754, 3)
+        btnCambiarCliente.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btnCambiarCliente.Location = New Point(753, 3)
         btnCambiarCliente.Name = "btnCambiarCliente"
-        btnCambiarCliente.Size = New Size(244, 64)
+        btnCambiarCliente.Size = New Size(244, 28)
         btnCambiarCliente.TabIndex = 20
         btnCambiarCliente.Text = "Modificar Cliente"
         btnCambiarCliente.UseVisualStyleBackColor = True
@@ -950,15 +986,15 @@ Partial Class FormCotizaciones
         layoutDetalles.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         layoutDetalles.ColumnCount = 1
         layoutDetalles.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        layoutDetalles.Controls.Add(TableLayoutPanel6, 0, 0)
+        layoutDetalles.Controls.Add(LayoutConsideraciones, 0, 0)
         layoutDetalles.Controls.Add(TableLayoutPanel4, 0, 1)
         layoutDetalles.Enabled = False
-        layoutDetalles.Location = New Point(637, 155)
+        layoutDetalles.Location = New Point(637, 124)
         layoutDetalles.Name = "layoutDetalles"
         layoutDetalles.RowCount = 2
         layoutDetalles.RowStyles.Add(New RowStyle(SizeType.Percent, 85F))
         layoutDetalles.RowStyles.Add(New RowStyle(SizeType.Percent, 15F))
-        layoutDetalles.Size = New Size(626, 424)
+        layoutDetalles.Size = New Size(625, 455)
         layoutDetalles.TabIndex = 43
         ' 
         ' LayoutPagos
@@ -966,15 +1002,15 @@ Partial Class FormCotizaciones
         LayoutPagos.ColumnCount = 1
         LayoutPagos.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         LayoutPagos.Controls.Add(TableLayoutPanel7, 0, 0)
-        LayoutPagos.Controls.Add(TableLayoutPanel14, 0, 1)
+        LayoutPagos.Controls.Add(layoutExtras, 0, 1)
         LayoutPagos.Dock = DockStyle.Fill
         LayoutPagos.Enabled = False
         LayoutPagos.Location = New Point(304, 3)
         LayoutPagos.Name = "LayoutPagos"
         LayoutPagos.RowCount = 2
-        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        LayoutPagos.Size = New Size(295, 243)
+        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 49.3827171F))
+        LayoutPagos.RowStyles.Add(New RowStyle(SizeType.Percent, 50.6172829F))
+        LayoutPagos.Size = New Size(295, 216)
         LayoutPagos.TabIndex = 44
         ' 
         ' TableLayoutPanel20
@@ -985,11 +1021,11 @@ Partial Class FormCotizaciones
         TableLayoutPanel20.Controls.Add(layoutFecha, 0, 0)
         TableLayoutPanel20.Controls.Add(LayoutPagos, 1, 0)
         TableLayoutPanel20.Dock = DockStyle.Fill
-        TableLayoutPanel20.Location = New Point(3, 172)
+        TableLayoutPanel20.Location = New Point(3, 230)
         TableLayoutPanel20.Name = "TableLayoutPanel20"
         TableLayoutPanel20.RowCount = 1
         TableLayoutPanel20.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel20.Size = New Size(602, 249)
+        TableLayoutPanel20.Size = New Size(602, 222)
         TableLayoutPanel20.TabIndex = 45
         ' 
         ' LayoutGeneral
@@ -997,39 +1033,55 @@ Partial Class FormCotizaciones
         LayoutGeneral.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         LayoutGeneral.ColumnCount = 1
         LayoutGeneral.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        LayoutGeneral.Controls.Add(TableLayoutPanel5, 0, 0)
-        LayoutGeneral.Controls.Add(TableLayoutPanel20, 0, 1)
-        LayoutGeneral.Location = New Point(12, 155)
+        LayoutGeneral.Controls.Add(Label1, 0, 0)
+        LayoutGeneral.Controls.Add(TableLayoutPanel5, 0, 1)
+        LayoutGeneral.Controls.Add(TableLayoutPanel20, 0, 2)
+        LayoutGeneral.Location = New Point(12, 124)
         LayoutGeneral.Name = "LayoutGeneral"
-        LayoutGeneral.RowCount = 2
+        LayoutGeneral.RowCount = 3
+        LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 10F))
         LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 40F))
-        LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 60F))
-        LayoutGeneral.Size = New Size(608, 424)
+        LayoutGeneral.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        LayoutGeneral.Size = New Size(608, 455)
         LayoutGeneral.TabIndex = 46
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label1.Dock = DockStyle.Fill
+        Label1.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(3, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(602, 45)
+        Label1.TabIndex = 47
+        Label1.Text = "DETALLES DEL PAQUETE"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' FormCotizaciones
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1285, 610)
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
+        ClientSize = New Size(1284, 610)
         Controls.Add(LayoutGeneral)
         Controls.Add(layoutDetalles)
-        Controls.Add(TableLayoutPanel17)
-        Controls.Add(TableLayoutPanel16)
+        Controls.Add(layoutCliente)
+        Controls.Add(layoutTitulo)
         Margin = New Padding(3, 2, 3, 2)
-        MinimumSize = New Size(1301, 649)
+        MinimumSize = New Size(1300, 647)
         Name = "FormCotizaciones"
         Text = "Ventas"
-        TableLayoutPanel1.ResumeLayout(False)
-        TableLayoutPanel1.PerformLayout()
         TableLayoutPanel2.ResumeLayout(False)
         TableLayoutPanel2.PerformLayout()
         TableLayoutPanel3.ResumeLayout(False)
         TableLayoutPanel3.PerformLayout()
+        CType(numAnticipo, ComponentModel.ISupportInitialize).EndInit()
         TableLayoutPanel5.ResumeLayout(False)
         TableLayoutPanel5.PerformLayout()
-        TableLayoutPanel6.ResumeLayout(False)
-        TableLayoutPanel6.PerformLayout()
+        LayoutConsideraciones.ResumeLayout(False)
+        LayoutConsideraciones.PerformLayout()
         TableLayoutPanel4.ResumeLayout(False)
         TableLayoutPanel7.ResumeLayout(False)
         TableLayoutPanel7.PerformLayout()
@@ -1044,28 +1096,28 @@ Partial Class FormCotizaciones
         TableLayoutPanel12.PerformLayout()
         TableLayoutPanel13.ResumeLayout(False)
         TableLayoutPanel13.PerformLayout()
-        TableLayoutPanel14.ResumeLayout(False)
-        TableLayoutPanel14.PerformLayout()
+        layoutExtras.ResumeLayout(False)
+        layoutExtras.PerformLayout()
         TableLayoutPanel15.ResumeLayout(False)
         TableLayoutPanel15.PerformLayout()
-        TableLayoutPanel16.ResumeLayout(False)
-        TableLayoutPanel16.PerformLayout()
-        TableLayoutPanel17.ResumeLayout(False)
+        CType(numAnticipoExtra, ComponentModel.ISupportInitialize).EndInit()
+        CType(numExtras, ComponentModel.ISupportInitialize).EndInit()
+        layoutTitulo.ResumeLayout(False)
+        layoutTitulo.PerformLayout()
+        layoutCliente.ResumeLayout(False)
+        layoutCliente.PerformLayout()
         layoutDetalles.ResumeLayout(False)
         LayoutPagos.ResumeLayout(False)
         TableLayoutPanel20.ResumeLayout(False)
         LayoutGeneral.ResumeLayout(False)
+        LayoutGeneral.PerformLayout()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents lblTituloUsuario As Label
-    Friend WithEvents lblTituloCliente As Label
     Friend WithEvents NombreSearch As Button
-    Friend WithEvents EliminarSelección As Button
+    Friend WithEvents btnConfirmarOrden As Button
     Friend WithEvents MXN As Label
     Friend WithEvents lblUsuario As Label
     Friend WithEvents lblCliente As Label
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
@@ -1085,14 +1137,14 @@ Partial Class FormCotizaciones
     Friend WithEvents lblPrecio As Label
     Friend WithEvents lblTituloDescripcion As Label
     Friend WithEvents lblTituloPrecio As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents txtConsideraciones As RichTextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents LayoutConsideraciones As TableLayoutPanel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Label19 As Label
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
     Friend WithEvents CalendarioFechasLibres As MonthCalendar
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnImprimirNota As Button
     Friend WithEvents lblTituloFecha As Label
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents lblFecha As Label
@@ -1115,7 +1167,7 @@ Partial Class FormCotizaciones
     Friend WithEvents Label32 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label33 As Label
-    Friend WithEvents TableLayoutPanel14 As TableLayoutPanel
+    Friend WithEvents layoutExtras As TableLayoutPanel
     Friend WithEvents Label34 As Label
     Friend WithEvents TableLayoutPanel15 As TableLayoutPanel
     Friend WithEvents Label35 As Label
@@ -1124,17 +1176,19 @@ Partial Class FormCotizaciones
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label39 As Label
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TableLayoutPanel16 As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel17 As TableLayoutPanel
+    Friend WithEvents layoutTitulo As TableLayoutPanel
+    Friend WithEvents layoutCliente As TableLayoutPanel
     Friend WithEvents layoutDetalles As TableLayoutPanel
     Friend WithEvents LayoutPagos As TableLayoutPanel
     Friend WithEvents TableLayoutPanel20 As TableLayoutPanel
     Friend WithEvents LayoutGeneral As TableLayoutPanel
     Friend WithEvents btnCambiarCliente As Button
-    Friend WithEvents FaltanteAnticipo As Label
+    Friend WithEvents lblFaltanteAnticipo As Label
     Friend WithEvents lblTotalAnticipo As Label
-    Friend WithEvents txtAnticipo As TextBox
-    Friend WithEvents txtAnticipoExtra As TextBox
     Friend WithEvents lblFaltanteExtra As Label
-    Friend WithEvents txtTotalExtra As TextBox
+    Friend WithEvents numAnticipo As NumericUpDown
+    Friend WithEvents numAnticipoExtra As NumericUpDown
+    Friend WithEvents numExtras As NumericUpDown
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnreinicio As Button
 End Class

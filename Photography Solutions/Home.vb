@@ -8,41 +8,51 @@ Public Class Home
         TSMIHome.Visible = False
     End Sub
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Me.FormBorderStyle = FormBorderStyle.None  ' Elimina los bordes
-        Me.MaximizeBox = False  ' Deshabilita la opción de maximizar (aunque la ventana estará maximizada)
+        ' Deshabilita la opción de maximizar (aunque la ventana estará maximizada)
         Me.MinimizeBox = False  ' Deshabilita la opción de minimizar
         Me.ControlBox = False  ' Deshabilita el cuadro de control (minimizar, maximizar, cerrar)
         Me.StartPosition = FormStartPosition.CenterScreen  ' Centra la ventana en la pantalla
+        Dim pantalla As Screen = Screen.FromControl(Me)
+        Dim ancho As Integer = pantalla.Bounds.Width
+        Dim alto As Integer = pantalla.Bounds.Height
 
-        ' Asegura que la ventana esté maximizada al tamaño completo de la pantalla
-        Me.WindowState = FormWindowState.Maximized  ' Maximiza la ventana
-
-        ' Configura la ventana para que tenga el tamaño máximo disponible en la pantalla
-        Me.Bounds = Screen.PrimaryScreen.Bounds
+        Me.MinimumSize = New Size(ancho, alto)
 
         ' Se configura el Titulo de la Ventana del Home
         Me.Text = "BIENVENIDO " & NombreUsuario
+
+        lblUsuario.Text = "Hola " & NombreUsuario & "!"
 
         LlenaGrid(sqlConexion, DgvAgendados, "sp_ConsultasAvanzadas 2,''," & IdUsuario)
         LlenaGrid(sqlConexion, DgvFinalizados, "sp_ConsultasAvanzadas 1,''," & IdUsuario)
         'Configurar DataGridView(Ajuste automático de columnas y fuente)
         DgvAgendados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DgvAgendados.DefaultCellStyle.Font = New Font("Arial", 15)
-        DgvAgendados.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 16, FontStyle.Bold)
+        DgvAgendados.DefaultCellStyle.Font = New Font("Arial", 12)
+        DgvAgendados.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 13, FontStyle.Bold)
+
+        DgvAgendados.RowsDefaultCellStyle.BackColor = Color.White
+        DgvAgendados.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
+
+        DgvAgendados.EnableHeadersVisualStyles = False
+        DgvAgendados.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy
+        DgvAgendados.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        DgvAgendados.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 14, FontStyle.Bold)
+
+
 
         DgvFinalizados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-        DgvFinalizados.DefaultCellStyle.Font = New Font("Arial", 15)
-        DgvFinalizados.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 16, FontStyle.Bold)
+        DgvFinalizados.DefaultCellStyle.Font = New Font("Arial", 12)
+        DgvFinalizados.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 13, FontStyle.Bold)
 
-        ' Ajustar columnas específicas al contenido del texto
-        'DgvAgendados.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        'DgvAgendados.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DgvFinalizados.RowsDefaultCellStyle.BackColor = Color.White
+        DgvFinalizados.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
 
-        'DgvFinalizados.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
-        'DgvFinalizados.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        DgvFinalizados.EnableHeadersVisualStyles = False
+        DgvFinalizados.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy
+        DgvFinalizados.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        DgvFinalizados.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 14, FontStyle.Bold)
 
-        ' Ocultar la columna de input (columna de selección)
+
         DgvAgendados.RowHeadersVisible = False
         DgvFinalizados.RowHeadersVisible = False
 
@@ -59,10 +69,6 @@ Public Class Home
         PausaVentana()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCotizacionNueva.Click
         PausaVentana()
         MessageBox.Show("Elige un cliente por favor", "Atencion")
@@ -73,5 +79,14 @@ Public Class Home
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         FormIniciarSesión.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        FormIniciarSesión.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        FormAltaClientes.Show()
+        Me.Enabled = False
     End Sub
 End Class
