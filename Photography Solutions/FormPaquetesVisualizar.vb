@@ -113,4 +113,8 @@
             End If
         End If
     End Sub
+
+    Private Sub FormPaquetesVisualizar_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Home.Enabled = True
+    End Sub
 End Class
