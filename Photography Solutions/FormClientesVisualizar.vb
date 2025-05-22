@@ -120,4 +120,8 @@
             End If
         End If
     End Sub
+
+    Private Sub FormClientesVisualizar_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Home.Enabled = True
+    End Sub
 End Class

@@ -114,7 +114,13 @@
         End If
     End Sub
 
-    Private Sub FormPaquetesVisualizar_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub FormPaquetesVisualizar_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         Home.Enabled = True
+    End Sub
+
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        FormPaquetesALTA.Show()
+        Me.Enabled = False
+
     End Sub
 End Class

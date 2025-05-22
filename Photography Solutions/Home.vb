@@ -65,7 +65,7 @@ Public Class Home
     End Sub
 
     Private Sub AltaDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptUsuarios.Click
-        NuevoUsuario.Show()
+        FormUsuariosVisualizar.Show()
         PausaVentana()
     End Sub
 

@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
-        If txtNombre.Text = "" Or txtCorreo.Text = "" Or numTelefono.Value = 100000000 Or lblFecha.Text = "default" Then
+        If String.IsNullOrWhiteSpace(txtNombre.Text) Or String.IsNullOrWhiteSpace(txtCorreo.Text) Or numTelefono.Value = 100000000 Or lblFecha.Text = "default" Then
             MessageBox.Show("Favor de rellenar todos los campos", "Atencion")
         Else
             If MessageBox.Show("Quieres dar de alta a este nuevo cliente? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -27,7 +27,7 @@
                 sqldrDatos.Read()
                 sqldrDatos.Close()
                 MessageBox.Show("Se ha dado de alta al cliente con Exito!", "EXITO")
-                Me.Hide()
+                Me.Close()
                 LlenaGrid(sqlConexion, FormClientesVisualizar.dgvClientes, "sp_BusquedaClientes 1,NULL")
                 FormClientesVisualizar.Enabled = True
             End If
@@ -46,22 +46,7 @@
         lblFecha.Text = e.Start.Date
     End Sub
 
-    Private Sub DatosPersonales_Click(sender As Object, e As EventArgs) Handles DatosPersonales.Click
-
-    End Sub
-
-    Private Sub CalendarioNacimiento_DateChanged(sender As Object, e As DateRangeEventArgs) Handles CalendarioNacimiento.DateChanged
-    End Sub
-
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-    End Sub
-
-    Private Sub lblFecha_Click(sender As Object, e As EventArgs) Handles lblFecha.Click
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+    Private Sub FormClienteALTA_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        FormClientesVisualizar.Enabled = True
     End Sub
 End Class

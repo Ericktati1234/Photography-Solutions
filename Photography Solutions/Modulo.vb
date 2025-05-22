@@ -17,6 +17,12 @@ Module Modulo
     Public IdUsuario As Integer
     Public Rol As Integer
 
+    'Usuario alta'
+    Public UsuarioALTA As String
+    Public ContraseñaALTA As String
+    Public RolALTA As String
+    Public idALTA As Integer
+
     'Cliente'
     Public IdCliente As Integer
     Public NombreCliente As String

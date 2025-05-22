@@ -27,14 +27,14 @@ Partial Class FormPaquetesALTA
         btnReiniciar = New Button()
         TableLayoutPanel1 = New TableLayoutPanel()
         Nombre = New Label()
-        numTelefono = New NumericUpDown()
+        numPrecio = New NumericUpDown()
         ApellidoMaterno = New Label()
         ApellidoPaterno = New Label()
-        txtCorreo = New TextBox()
-        RichTextBox1 = New RichTextBox()
+        txtNombre = New TextBox()
+        txtDescripcion = New RichTextBox()
         DatosPersonales = New Label()
         TableLayoutPanel1.SuspendLayout()
-        CType(numTelefono, ComponentModel.ISupportInitialize).BeginInit()
+        CType(numPrecio, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label3
@@ -74,11 +74,11 @@ Partial Class FormPaquetesALTA
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 65F))
         TableLayoutPanel1.Controls.Add(Nombre, 0, 0)
-        TableLayoutPanel1.Controls.Add(numTelefono, 1, 2)
+        TableLayoutPanel1.Controls.Add(numPrecio, 1, 2)
         TableLayoutPanel1.Controls.Add(ApellidoMaterno, 0, 2)
         TableLayoutPanel1.Controls.Add(ApellidoPaterno, 0, 1)
-        TableLayoutPanel1.Controls.Add(txtCorreo, 1, 0)
-        TableLayoutPanel1.Controls.Add(RichTextBox1, 1, 1)
+        TableLayoutPanel1.Controls.Add(txtNombre, 1, 0)
+        TableLayoutPanel1.Controls.Add(txtDescripcion, 1, 1)
         TableLayoutPanel1.Location = New Point(30, 119)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 3
@@ -101,12 +101,12 @@ Partial Class FormPaquetesALTA
         Nombre.Text = "Nombre"
         Nombre.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' numTelefono
+        ' numPrecio
         ' 
-        numTelefono.Location = New Point(141, 99)
-        numTelefono.Name = "numTelefono"
-        numTelefono.Size = New Size(253, 23)
-        numTelefono.TabIndex = 26
+        numPrecio.Location = New Point(141, 99)
+        numPrecio.Name = "numPrecio"
+        numPrecio.Size = New Size(253, 23)
+        numPrecio.TabIndex = 26
         ' 
         ' ApellidoMaterno
         ' 
@@ -134,23 +134,23 @@ Partial Class FormPaquetesALTA
         ApellidoPaterno.Text = "Descripcion"
         ApellidoPaterno.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' txtCorreo
+        ' txtNombre
         ' 
-        txtCorreo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtCorreo.Location = New Point(141, 2)
-        txtCorreo.Margin = New Padding(3, 2, 3, 2)
-        txtCorreo.Name = "txtCorreo"
-        txtCorreo.Size = New Size(253, 23)
-        txtCorreo.TabIndex = 12
+        txtNombre.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtNombre.Location = New Point(141, 2)
+        txtNombre.Margin = New Padding(3, 2, 3, 2)
+        txtNombre.Name = "txtNombre"
+        txtNombre.Size = New Size(253, 23)
+        txtNombre.TabIndex = 12
         ' 
-        ' RichTextBox1
+        ' txtDescripcion
         ' 
-        RichTextBox1.Dock = DockStyle.Fill
-        RichTextBox1.Location = New Point(141, 35)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(253, 58)
-        RichTextBox1.TabIndex = 27
-        RichTextBox1.Text = ""
+        txtDescripcion.Dock = DockStyle.Fill
+        txtDescripcion.Location = New Point(141, 35)
+        txtDescripcion.Name = "txtDescripcion"
+        txtDescripcion.Size = New Size(253, 58)
+        txtDescripcion.TabIndex = 27
+        txtDescripcion.Text = ""
         ' 
         ' DatosPersonales
         ' 
@@ -177,7 +177,7 @@ Partial Class FormPaquetesALTA
         Text = "FormPaquetesALTA"
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
-        CType(numTelefono, ComponentModel.ISupportInitialize).EndInit()
+        CType(numPrecio, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -187,10 +187,10 @@ Partial Class FormPaquetesALTA
     Friend WithEvents btnReiniciar As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Nombre As Label
-    Friend WithEvents numTelefono As NumericUpDown
+    Friend WithEvents numPrecio As NumericUpDown
     Friend WithEvents ApellidoMaterno As Label
     Friend WithEvents ApellidoPaterno As Label
-    Friend WithEvents txtCorreo As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents DatosPersonales As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents txtDescripcion As RichTextBox
 End Class

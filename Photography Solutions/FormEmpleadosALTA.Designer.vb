@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class NuevoUsuario
+Partial Class formEmpleadosALTA
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -26,24 +26,27 @@ Partial Class NuevoUsuario
         Nombre = New Label()
         ApellidoPaterno = New Label()
         ApellidoMaterno = New Label()
-        NameTxBx = New TextBox()
-        Paterno = New TextBox()
-        Materno = New TextBox()
-        Alta = New Button()
-        AdministradorChBx = New CheckBox()
-        FotógrafoChBx = New CheckBox()
-        ContadorChBx = New CheckBox()
+        txtNombreEmpleado = New TextBox()
+        txtApellidoPa = New TextBox()
+        txtApellidoMa = New TextBox()
+        btnAlta = New Button()
         TableLayoutPanel1 = New TableLayoutPanel()
-        TextBox1 = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
-        TextBox2 = New TextBox()
-        CambiarUsuario = New Button()
+        txtCorreo = New TextBox()
+        numTelefono = New NumericUpDown()
+        btnCambiarUsuario = New Button()
         Label3 = New Label()
         Label4 = New Label()
-        Label5 = New Label()
+        lblNombreUsuario = New Label()
         TableLayoutPanel2 = New TableLayoutPanel()
+        lblFecha = New Label()
+        Label5 = New Label()
+        CalendarioNacimiento = New MonthCalendar()
+        btnReiniciar = New Button()
+        btnEditar = New Button()
         TableLayoutPanel1.SuspendLayout()
+        CType(numTelefono, ComponentModel.ISupportInitialize).BeginInit()
         TableLayoutPanel2.SuspendLayout()
         SuspendLayout()
         ' 
@@ -86,91 +89,58 @@ Partial Class NuevoUsuario
         ApellidoMaterno.TabIndex = 9
         ApellidoMaterno.Text = "Apellido Materno"
         ' 
-        ' NameTxBx
+        ' txtNombreEmpleado
         ' 
-        NameTxBx.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        NameTxBx.Location = New Point(141, 2)
-        NameTxBx.Margin = New Padding(3, 2, 3, 2)
-        NameTxBx.Name = "NameTxBx"
-        NameTxBx.Size = New Size(253, 23)
-        NameTxBx.TabIndex = 10
+        txtNombreEmpleado.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtNombreEmpleado.Location = New Point(141, 2)
+        txtNombreEmpleado.Margin = New Padding(3, 2, 3, 2)
+        txtNombreEmpleado.Name = "txtNombreEmpleado"
+        txtNombreEmpleado.Size = New Size(253, 23)
+        txtNombreEmpleado.TabIndex = 10
         ' 
-        ' Paterno
+        ' txtApellidoPa
         ' 
-        Paterno.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Paterno.Location = New Point(141, 30)
-        Paterno.Margin = New Padding(3, 2, 3, 2)
-        Paterno.Name = "Paterno"
-        Paterno.Size = New Size(253, 23)
-        Paterno.TabIndex = 11
+        txtApellidoPa.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtApellidoPa.Location = New Point(141, 30)
+        txtApellidoPa.Margin = New Padding(3, 2, 3, 2)
+        txtApellidoPa.Name = "txtApellidoPa"
+        txtApellidoPa.Size = New Size(253, 23)
+        txtApellidoPa.TabIndex = 11
         ' 
-        ' Materno
+        ' txtApellidoMa
         ' 
-        Materno.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Materno.Location = New Point(141, 58)
-        Materno.Margin = New Padding(3, 2, 3, 2)
-        Materno.Name = "Materno"
-        Materno.Size = New Size(253, 23)
-        Materno.TabIndex = 12
+        txtApellidoMa.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtApellidoMa.Location = New Point(141, 58)
+        txtApellidoMa.Margin = New Padding(3, 2, 3, 2)
+        txtApellidoMa.Name = "txtApellidoMa"
+        txtApellidoMa.Size = New Size(253, 23)
+        txtApellidoMa.TabIndex = 12
         ' 
-        ' Alta
+        ' btnAlta
         ' 
-        Alta.Location = New Point(75, 347)
-        Alta.Margin = New Padding(3, 2, 3, 2)
-        Alta.Name = "Alta"
-        Alta.Size = New Size(296, 59)
-        Alta.TabIndex = 15
-        Alta.Text = "DAR DE ALTA EMPLEADO"
-        Alta.UseVisualStyleBackColor = True
-        ' 
-        ' AdministradorChBx
-        ' 
-        AdministradorChBx.AutoSize = True
-        AdministradorChBx.Location = New Point(24, 309)
-        AdministradorChBx.Margin = New Padding(3, 2, 3, 2)
-        AdministradorChBx.Name = "AdministradorChBx"
-        AdministradorChBx.Size = New Size(102, 19)
-        AdministradorChBx.TabIndex = 16
-        AdministradorChBx.Text = "Administrador"
-        AdministradorChBx.UseVisualStyleBackColor = True
-        ' 
-        ' FotógrafoChBx
-        ' 
-        FotógrafoChBx.AutoSize = True
-        FotógrafoChBx.Location = New Point(141, 309)
-        FotógrafoChBx.Margin = New Padding(3, 2, 3, 2)
-        FotógrafoChBx.Name = "FotógrafoChBx"
-        FotógrafoChBx.Size = New Size(78, 19)
-        FotógrafoChBx.TabIndex = 17
-        FotógrafoChBx.Text = "Fotógrafo"
-        FotógrafoChBx.UseVisualStyleBackColor = True
-        ' 
-        ' ContadorChBx
-        ' 
-        ContadorChBx.AutoSize = True
-        ContadorChBx.Location = New Point(229, 309)
-        ContadorChBx.Margin = New Padding(3, 2, 3, 2)
-        ContadorChBx.Name = "ContadorChBx"
-        ContadorChBx.Size = New Size(76, 19)
-        ContadorChBx.TabIndex = 18
-        ContadorChBx.Text = "Contador"
-        ContadorChBx.UseVisualStyleBackColor = True
+        btnAlta.Location = New Point(300, 438)
+        btnAlta.Margin = New Padding(3, 2, 3, 2)
+        btnAlta.Name = "btnAlta"
+        btnAlta.Size = New Size(101, 36)
+        btnAlta.TabIndex = 15
+        btnAlta.Text = "CONFIRMAR"
+        btnAlta.UseVisualStyleBackColor = True
         ' 
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 2
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 65F))
-        TableLayoutPanel1.Controls.Add(TextBox1, 1, 3)
         TableLayoutPanel1.Controls.Add(Nombre, 0, 0)
-        TableLayoutPanel1.Controls.Add(NameTxBx, 1, 0)
+        TableLayoutPanel1.Controls.Add(txtNombreEmpleado, 1, 0)
         TableLayoutPanel1.Controls.Add(Label1, 0, 3)
         TableLayoutPanel1.Controls.Add(ApellidoPaterno, 0, 1)
-        TableLayoutPanel1.Controls.Add(Paterno, 1, 1)
-        TableLayoutPanel1.Controls.Add(Materno, 1, 2)
+        TableLayoutPanel1.Controls.Add(txtApellidoPa, 1, 1)
+        TableLayoutPanel1.Controls.Add(txtApellidoMa, 1, 2)
         TableLayoutPanel1.Controls.Add(ApellidoMaterno, 0, 2)
         TableLayoutPanel1.Controls.Add(Label2, 0, 4)
-        TableLayoutPanel1.Controls.Add(TextBox2, 1, 4)
+        TableLayoutPanel1.Controls.Add(txtCorreo, 1, 4)
+        TableLayoutPanel1.Controls.Add(numTelefono, 1, 3)
         TableLayoutPanel1.Location = New Point(21, 143)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 5
@@ -182,15 +152,6 @@ Partial Class NuevoUsuario
         TableLayoutPanel1.Size = New Size(397, 143)
         TableLayoutPanel1.TabIndex = 22
         ' 
-        ' TextBox1
-        ' 
-        TextBox1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox1.Location = New Point(141, 86)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(253, 23)
-        TextBox1.TabIndex = 23
-        ' 
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
@@ -199,7 +160,7 @@ Partial Class NuevoUsuario
         Label1.Name = "Label1"
         Label1.Size = New Size(132, 28)
         Label1.TabIndex = 23
-        Label1.Text = "Numero celular"
+        Label1.Text = "Telefono"
         ' 
         ' Label2
         ' 
@@ -211,24 +172,32 @@ Partial Class NuevoUsuario
         Label2.TabIndex = 24
         Label2.Text = "Correo electronico"
         ' 
-        ' TextBox2
+        ' txtCorreo
         ' 
-        TextBox2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        TextBox2.Location = New Point(141, 115)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(253, 23)
-        TextBox2.TabIndex = 25
+        txtCorreo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtCorreo.Location = New Point(141, 115)
+        txtCorreo.Name = "txtCorreo"
+        txtCorreo.Size = New Size(253, 23)
+        txtCorreo.TabIndex = 25
         ' 
-        ' CambiarUsuario
+        ' numTelefono
         ' 
-        CambiarUsuario.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        CambiarUsuario.Location = New Point(228, 2)
-        CambiarUsuario.Margin = New Padding(3, 2, 3, 2)
-        CambiarUsuario.Name = "CambiarUsuario"
-        CambiarUsuario.Size = New Size(145, 40)
-        CambiarUsuario.TabIndex = 23
-        CambiarUsuario.Text = "Cambiar Usuario"
-        CambiarUsuario.UseVisualStyleBackColor = True
+        numTelefono.Dock = DockStyle.Fill
+        numTelefono.Location = New Point(141, 87)
+        numTelefono.Name = "numTelefono"
+        numTelefono.Size = New Size(253, 23)
+        numTelefono.TabIndex = 26
+        ' 
+        ' btnCambiarUsuario
+        ' 
+        btnCambiarUsuario.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        btnCambiarUsuario.Location = New Point(228, 2)
+        btnCambiarUsuario.Margin = New Padding(3, 2, 3, 2)
+        btnCambiarUsuario.Name = "btnCambiarUsuario"
+        btnCambiarUsuario.Size = New Size(145, 40)
+        btnCambiarUsuario.TabIndex = 23
+        btnCambiarUsuario.Text = "Cambiar Usuario"
+        btnCambiarUsuario.UseVisualStyleBackColor = True
         ' 
         ' Label3
         ' 
@@ -248,16 +217,18 @@ Partial Class NuevoUsuario
         Label4.Size = New Size(88, 44)
         Label4.TabIndex = 25
         Label4.Text = "Usuario:"
+        Label4.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label5
+        ' lblNombreUsuario
         ' 
-        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Label5.AutoSize = True
-        Label5.Location = New Point(97, 0)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(125, 44)
-        Label5.TabIndex = 26
-        Label5.Text = "Usuario"
+        lblNombreUsuario.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lblNombreUsuario.AutoSize = True
+        lblNombreUsuario.Location = New Point(97, 0)
+        lblNombreUsuario.Name = "lblNombreUsuario"
+        lblNombreUsuario.Size = New Size(125, 44)
+        lblNombreUsuario.TabIndex = 26
+        lblNombreUsuario.Text = "default"
+        lblNombreUsuario.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' TableLayoutPanel2
         ' 
@@ -266,8 +237,8 @@ Partial Class NuevoUsuario
         TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 35F))
         TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
         TableLayoutPanel2.Controls.Add(Label4, 0, 0)
-        TableLayoutPanel2.Controls.Add(Label5, 1, 0)
-        TableLayoutPanel2.Controls.Add(CambiarUsuario, 2, 0)
+        TableLayoutPanel2.Controls.Add(lblNombreUsuario, 1, 0)
+        TableLayoutPanel2.Controls.Add(btnCambiarUsuario, 2, 0)
         TableLayoutPanel2.Location = New Point(39, 56)
         TableLayoutPanel2.Name = "TableLayoutPanel2"
         TableLayoutPanel2.RowCount = 1
@@ -275,24 +246,75 @@ Partial Class NuevoUsuario
         TableLayoutPanel2.Size = New Size(376, 44)
         TableLayoutPanel2.TabIndex = 27
         ' 
-        ' NuevoUsuario
+        ' lblFecha
+        ' 
+        lblFecha.AutoSize = True
+        lblFecha.BackColor = Color.White
+        lblFecha.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblFecha.Location = New Point(324, 351)
+        lblFecha.Name = "lblFecha"
+        lblFecha.Size = New Size(48, 17)
+        lblFecha.TabIndex = 32
+        lblFecha.Text = "default"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label5.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(278, 312)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(149, 20)
+        Label5.TabIndex = 31
+        Label5.Text = "Fecha de Nacimiento"
+        ' 
+        ' CalendarioNacimiento
+        ' 
+        CalendarioNacimiento.Location = New Point(18, 312)
+        CalendarioNacimiento.Name = "CalendarioNacimiento"
+        CalendarioNacimiento.TabIndex = 30
+        ' 
+        ' btnReiniciar
+        ' 
+        btnReiniciar.Location = New Point(300, 389)
+        btnReiniciar.Margin = New Padding(3, 2, 3, 2)
+        btnReiniciar.Name = "btnReiniciar"
+        btnReiniciar.Size = New Size(101, 36)
+        btnReiniciar.TabIndex = 33
+        btnReiniciar.Text = "Reiniciar"
+        btnReiniciar.UseVisualStyleBackColor = True
+        ' 
+        ' btnEditar
+        ' 
+        btnEditar.Location = New Point(300, 438)
+        btnEditar.Margin = New Padding(3, 2, 3, 2)
+        btnEditar.Name = "btnEditar"
+        btnEditar.Size = New Size(101, 36)
+        btnEditar.TabIndex = 34
+        btnEditar.Text = "EDITAR"
+        btnEditar.UseVisualStyleBackColor = True
+        ' 
+        ' formEmpleadosALTA
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(445, 417)
+        ClientSize = New Size(457, 511)
+        Controls.Add(btnEditar)
+        Controls.Add(btnReiniciar)
+        Controls.Add(lblFecha)
+        Controls.Add(Label5)
+        Controls.Add(CalendarioNacimiento)
         Controls.Add(TableLayoutPanel2)
         Controls.Add(Label3)
         Controls.Add(TableLayoutPanel1)
-        Controls.Add(ContadorChBx)
-        Controls.Add(FotógrafoChBx)
-        Controls.Add(AdministradorChBx)
-        Controls.Add(Alta)
+        Controls.Add(btnAlta)
         Controls.Add(DatosPersonales)
         Margin = New Padding(3, 2, 3, 2)
-        Name = "NuevoUsuario"
+        Name = "formEmpleadosALTA"
         Text = "EMPLEADOS"
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
+        CType(numTelefono, ComponentModel.ISupportInitialize).EndInit()
         TableLayoutPanel2.ResumeLayout(False)
         TableLayoutPanel2.PerformLayout()
         ResumeLayout(False)
@@ -302,21 +324,27 @@ Partial Class NuevoUsuario
     Friend WithEvents Nombre As Label
     Friend WithEvents ApellidoPaterno As Label
     Friend WithEvents ApellidoMaterno As Label
-    Friend WithEvents NameTxBx As TextBox
-    Friend WithEvents Paterno As TextBox
-    Friend WithEvents Materno As TextBox
-    Friend WithEvents Alta As Button
+    Friend WithEvents txtNombreEmpleado As TextBox
+    Friend WithEvents txtApellidoPa As TextBox
+    Friend WithEvents txtApellidoMa As TextBox
+    Friend WithEvents btnAlta As Button
     Friend WithEvents AdministradorChBx As CheckBox
     Friend WithEvents FotógrafoChBx As CheckBox
     Friend WithEvents ContadorChBx As CheckBox
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents CambiarUsuario As Button
+    Friend WithEvents btnCambiarUsuario As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtCorreo As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblNombreUsuario As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents numTelefono As NumericUpDown
+    Friend WithEvents lblFecha As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents CalendarioNacimiento As MonthCalendar
+    Friend WithEvents btnReiniciar As Button
+    Friend WithEvents btnEditar As Button
 End Class
