@@ -9,7 +9,7 @@
 
     Private Sub FormBusquedaClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenaGrid(sqlConexion, dgvBusqueda, "sp_BusquedaClientes 1,''")
-
+        txtBusqueda.Text = ""
         dgvBusqueda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgvBusqueda.DefaultCellStyle.Font = New Font("Arial", 11)
         dgvBusqueda.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 12, FontStyle.Bold)
@@ -29,7 +29,7 @@
         FechaNacimientoCliente = dgvBusqueda.CurrentRow.Cells(2).Value
         NumeroTelefonicoCliente = dgvBusqueda.CurrentRow.Cells(3).Value
         CorreoCliente = dgvBusqueda.CurrentRow.Cells(4).Value.ToString
-        Me.Hide()
+        Me.Close()
         FormCotizaciones.Show()
         FormCotizaciones.lblUsuario.Text = "Usuario fotografo a cargo: " & NombreUsuario
         FormCotizaciones.lblCliente.Text = "Sesion para el cliente: " & NombreCliente

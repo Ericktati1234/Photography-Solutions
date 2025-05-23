@@ -59,6 +59,7 @@ Partial Class FormBusquedaClientes
         ' 
         ' btnDefault
         ' 
+        btnDefault.BackColor = Color.Gainsboro
         btnDefault.Dock = DockStyle.Fill
         btnDefault.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnDefault.Location = New Point(131, 3)
@@ -66,7 +67,7 @@ Partial Class FormBusquedaClientes
         btnDefault.Size = New Size(123, 33)
         btnDefault.TabIndex = 3
         btnDefault.Text = "TODOS"
-        btnDefault.UseVisualStyleBackColor = True
+        btnDefault.UseVisualStyleBackColor = False
         ' 
         ' dgvBusqueda
         ' 
@@ -84,6 +85,7 @@ Partial Class FormBusquedaClientes
         ' lblTitulo
         ' 
         lblTitulo.AutoSize = True
+        lblTitulo.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblTitulo.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblTitulo.Location = New Point(291, 33)
         lblTitulo.Name = "lblTitulo"
@@ -108,8 +110,10 @@ Partial Class FormBusquedaClientes
         Controls.Add(dgvBusqueda)
         Controls.Add(lblTitulo)
         Controls.Add(txtBusqueda)
+        MaximumSize = New Size(806, 483)
+        MinimumSize = New Size(806, 483)
         Name = "FormBusquedaClientes"
-        Text = "FormBusquedaClientes"
+        Text = "Busqueda de clientes"
         TableLayoutPanel1.ResumeLayout(False)
         CType(dgvBusqueda, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

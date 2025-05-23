@@ -167,6 +167,7 @@ Partial Class FormPaquetesALTA
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(468, 344)
         Controls.Add(Label3)
         Controls.Add(btnConfirmar)
@@ -174,7 +175,7 @@ Partial Class FormPaquetesALTA
         Controls.Add(TableLayoutPanel1)
         Controls.Add(DatosPersonales)
         Name = "FormPaquetesALTA"
-        Text = "FormPaquetesALTA"
+        Text = "Alta de paquetes"
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
         CType(numPrecio, ComponentModel.ISupportInitialize).EndInit()

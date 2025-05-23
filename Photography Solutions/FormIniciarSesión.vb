@@ -33,6 +33,9 @@ Public Class FormIniciarSesión
             ElseIf Rol = 2 Then
                 MessageBox.Show("Bienvenido " & NombreUsuario & ", " & Mensaje, "ATENCION")
                 Home.Show()
+                Home.TSMIHome.Visible = True
+                Home.TSMIHome.DropDownItems(0).Visible = False
+                Home.TSMIHome.DropDownItems(2).Visible = False
                 LimpiarVentana()
                 Me.Hide()
             ElseIf Rol = 3 Then
@@ -42,6 +45,9 @@ Public Class FormIniciarSesión
                 Home.TSMIHome.Visible = True
                 Home.TSMIHome.DropDownItems(0).Visible = False
                 Home.TSMIHome.DropDownItems(1).Visible = False
+                Home.TSMIHome.DropDownItems(3).Visible = False
+                Home.layoutGenerales.Enabled = False
+                Home.layoutBotones.Enabled = False
                 Me.Hide()
             End If
         Else
@@ -50,7 +56,9 @@ Public Class FormIniciarSesión
 
     End Sub
 
-    Private Sub FormIniciarSesión_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+    Private Sub FormIniciarSesión_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         System.Environment.Exit(0)
     End Sub
+
+
 End Class

@@ -42,6 +42,7 @@ Partial Class FormBusquedaPaquetes
         ' lblTitulo
         ' 
         lblTitulo.AutoSize = True
+        lblTitulo.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         lblTitulo.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblTitulo.Location = New Point(283, 24)
         lblTitulo.Name = "lblTitulo"
@@ -62,6 +63,7 @@ Partial Class FormBusquedaPaquetes
         ' 
         ' btnDefault
         ' 
+        btnDefault.BackColor = Color.Gainsboro
         btnDefault.Dock = DockStyle.Fill
         btnDefault.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         btnDefault.Location = New Point(131, 3)
@@ -69,7 +71,7 @@ Partial Class FormBusquedaPaquetes
         btnDefault.Size = New Size(123, 33)
         btnDefault.TabIndex = 3
         btnDefault.Text = "TODOS"
-        btnDefault.UseVisualStyleBackColor = True
+        btnDefault.UseVisualStyleBackColor = False
         ' 
         ' dgvBusqueda
         ' 
@@ -109,6 +111,8 @@ Partial Class FormBusquedaPaquetes
         Controls.Add(lblTitulo)
         Controls.Add(txtBusqueda)
         Margin = New Padding(3, 2, 3, 2)
+        MaximumSize = New Size(808, 481)
+        MinimumSize = New Size(808, 481)
         Name = "FormBusquedaPaquetes"
         Text = "Busqueda Paquetes"
         CType(dgvBusqueda, ComponentModel.ISupportInitialize).EndInit()

@@ -123,7 +123,7 @@ Partial Class FormClientesVisualizar
         ' 
         ' btnCancelar
         ' 
-        btnCancelar.BackColor = Color.White
+        btnCancelar.BackColor = Color.Gainsboro
         btnCancelar.Dock = DockStyle.Fill
         btnCancelar.Enabled = False
         btnCancelar.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)

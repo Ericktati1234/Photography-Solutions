@@ -7,6 +7,7 @@
     Private Sub FormBusquedaPaquetes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenaGrid(sqlConexion, dgvBusqueda, "sp_BusquedaPaquetes 1,''")
 
+        txtBusqueda.Text = ""
         dgvBusqueda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgvBusqueda.DefaultCellStyle.Font = New Font("Arial", 11)
         dgvBusqueda.ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 12, FontStyle.Bold)
@@ -33,7 +34,7 @@
         NombrePaquete = dgvBusqueda.CurrentRow.Cells(1).Value.ToString
         DescripcionPaquete = dgvBusqueda.CurrentRow.Cells(2).Value.ToString
         precioPaquete = dgvBusqueda.CurrentRow.Cells(3).Value
-        Me.Hide()
+        Me.Close()
         FormCotizaciones.lblNumPaquete.Text = IdPaquete
         FormCotizaciones.lblNombre.Text = NombrePaquete
         FormCotizaciones.lblDescripcion.Text = DescripcionPaquete

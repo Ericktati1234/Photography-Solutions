@@ -11,7 +11,7 @@ Public Class FormCotizaciones
         LayoutConsideraciones.Enabled = False
         btnConfirmarOrden.Enabled = False
         btnImprimirNota.Enabled = True
-        btnImprimirNota.Focus()
+
     End Sub
 
     Private Sub NombreSearch_Click(sender As Object, e As EventArgs) Handles NombreSearch.Click
@@ -124,6 +124,9 @@ Public Class FormCotizaciones
                                 btnConfirmarOrden.Enabled = False
                                 btnImprimirNota.Enabled = True
                                 PrepararImpresion()
+                                Home.Enabled = True
+                                Home.llenadoGrid()
+                                btnImprimirNota.Focus()
                             Else
                                 MessageBox.Show("Cotizacion interrumpida", "Error")
                             End If
@@ -143,6 +146,9 @@ Public Class FormCotizaciones
                             btnConfirmarOrden.Enabled = False
                             btnImprimirNota.Enabled = True
                             PrepararImpresion()
+                            Home.Enabled = True
+                            Home.llenadoGrid()
+                            btnImprimirNota.Focus()
                         Else
                             MessageBox.Show("Cotizacion interrumpida", "Error")
                         End If

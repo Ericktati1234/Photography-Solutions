@@ -38,18 +38,22 @@ Partial Class FormUsuariosALTA
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(79, 77)
+        Label1.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(70, 72)
         Label1.Name = "Label1"
-        Label1.Size = New Size(47, 15)
+        Label1.Size = New Size(64, 21)
         Label1.TabIndex = 0
         Label1.Text = "Usuario"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(69, 157)
+        Label2.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(60, 152)
         Label2.Name = "Label2"
-        Label2.Size = New Size(67, 15)
+        Label2.Size = New Size(89, 21)
         Label2.TabIndex = 1
         Label2.Text = "Contraseña"
         ' 
@@ -128,17 +132,19 @@ Partial Class FormUsuariosALTA
         ' 
         ' btnReiniciar
         ' 
+        btnReiniciar.BackColor = Color.Gainsboro
         btnReiniciar.Location = New Point(48, 244)
         btnReiniciar.Name = "btnReiniciar"
         btnReiniciar.Size = New Size(123, 42)
         btnReiniciar.TabIndex = 44
         btnReiniciar.Text = "Reiniciar"
-        btnReiniciar.UseVisualStyleBackColor = True
+        btnReiniciar.UseVisualStyleBackColor = False
         ' 
         ' FormUsuariosALTA
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(397, 328)
         Controls.Add(btnReiniciar)
         Controls.Add(Label4)

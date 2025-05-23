@@ -5,6 +5,7 @@ Module Modulo
 
     'Sesion'
     Public idSesion As Integer
+    Public Faltante As Double
 
     'Paquete'
     Public IdPaquete As Integer

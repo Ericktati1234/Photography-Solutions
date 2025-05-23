@@ -66,7 +66,7 @@ Partial Class FormUsuariosVisualizar
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
-        Label3.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.ForeColor = Color.White
         Label3.Location = New Point(-19, 27)
         Label3.Name = "Label3"
@@ -78,15 +78,15 @@ Partial Class FormUsuariosVisualizar
         ' 
         TableLayoutPanel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         TableLayoutPanel2.ColumnCount = 1
-        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100.0F))
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         TableLayoutPanel2.Location = New Point(-19, 80)
         TableLayoutPanel2.Name = "TableLayoutPanel2"
         TableLayoutPanel2.RowCount = 5
-        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel2.Size = New Size(115, 398)
         TableLayoutPanel2.TabIndex = 36
         ' 
@@ -94,16 +94,16 @@ Partial Class FormUsuariosVisualizar
         ' 
         TableLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         TableLayoutPanel1.ColumnCount = 4
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel1.Controls.Add(txtNombrePaquete, 1, 1)
         TableLayoutPanel1.Location = New Point(0, 0)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 2
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
         TableLayoutPanel1.Size = New Size(200, 100)
         TableLayoutPanel1.TabIndex = 0
         ' 
@@ -133,7 +133,7 @@ Partial Class FormUsuariosVisualizar
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
-        Label2.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = Color.White
         Label2.Location = New Point(35, 41)
         Label2.Name = "Label2"
@@ -145,7 +145,7 @@ Partial Class FormUsuariosVisualizar
         ' 
         TableLayoutPanel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left
         TableLayoutPanel3.ColumnCount = 1
-        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100.0F))
+        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         TableLayoutPanel3.Controls.Add(btnNuevo, 0, 0)
         TableLayoutPanel3.Controls.Add(btnEditar, 0, 1)
         TableLayoutPanel3.Controls.Add(btnGuardar, 0, 2)
@@ -154,11 +154,11 @@ Partial Class FormUsuariosVisualizar
         TableLayoutPanel3.Location = New Point(35, 94)
         TableLayoutPanel3.Name = "TableLayoutPanel3"
         TableLayoutPanel3.RowCount = 5
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel3.Size = New Size(115, 398)
         TableLayoutPanel3.TabIndex = 36
         ' 
@@ -221,10 +221,10 @@ Partial Class FormUsuariosVisualizar
         ' 
         TableLayoutPanel4.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         TableLayoutPanel4.ColumnCount = 4
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10.0F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45.0F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
         TableLayoutPanel4.Controls.Add(txtUsuario, 1, 1)
         TableLayoutPanel4.Controls.Add(Label4, 3, 0)
         TableLayoutPanel4.Controls.Add(txtEmpleado, 2, 1)
@@ -236,8 +236,8 @@ Partial Class FormUsuariosVisualizar
         TableLayoutPanel4.Location = New Point(175, 427)
         TableLayoutPanel4.Name = "TableLayoutPanel4"
         TableLayoutPanel4.RowCount = 2
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
-        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel4.Size = New Size(984, 50)
         TableLayoutPanel4.TabIndex = 35
         ' 
@@ -347,8 +347,9 @@ Partial Class FormUsuariosVisualizar
         ' 
         ' FormUsuariosVisualizar
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(1207, 543)
         Controls.Add(Label2)
         Controls.Add(TableLayoutPanel3)
@@ -356,7 +357,7 @@ Partial Class FormUsuariosVisualizar
         Controls.Add(dgvUsuariosEmpleados)
         MinimumSize = New Size(1037, 582)
         Name = "FormUsuariosVisualizar"
-        Text = "FormUsuariosVisualizar"
+        Text = "Usuarios"
         TableLayoutPanel1.ResumeLayout(False)
         TableLayoutPanel1.PerformLayout()
         TableLayoutPanel3.ResumeLayout(False)

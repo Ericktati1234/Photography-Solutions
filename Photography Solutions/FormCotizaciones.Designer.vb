@@ -1072,7 +1072,7 @@ Partial Class FormCotizaciones
         Margin = New Padding(3, 2, 3, 2)
         MinimumSize = New Size(1300, 647)
         Name = "FormCotizaciones"
-        Text = "Ventas"
+        Text = "Cotizaciones de eventos"
         TableLayoutPanel2.ResumeLayout(False)
         TableLayoutPanel2.PerformLayout()
         TableLayoutPanel3.ResumeLayout(False)

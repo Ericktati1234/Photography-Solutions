@@ -97,6 +97,7 @@ Partial Class FormPaquetesVisualizar
         ' btnCancelar
         ' 
         btnCancelar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        btnCancelar.BackColor = Color.Gainsboro
         btnCancelar.Enabled = False
         btnCancelar.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         btnCancelar.Location = New Point(3, 318)
@@ -105,7 +106,7 @@ Partial Class FormPaquetesVisualizar
         btnCancelar.Size = New Size(109, 78)
         btnCancelar.TabIndex = 4
         btnCancelar.Text = "Cancelar"
-        btnCancelar.UseVisualStyleBackColor = True
+        btnCancelar.UseVisualStyleBackColor = False
         ' 
         ' IDPack
         ' 

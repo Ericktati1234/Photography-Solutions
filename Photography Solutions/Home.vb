@@ -1,28 +1,8 @@
 ﻿Imports System.Net
 
 Public Class Home
-    Private Sub PausaVentana()
-        Me.Enabled = False
-    End Sub
-    Private Sub Reinicio()
-        TSMIHome.Visible = False
-    End Sub
-    Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Deshabilita la opción de maximizar (aunque la ventana estará maximizada)
-        Me.MinimizeBox = False  ' Deshabilita la opción de minimizar
-        Me.ControlBox = False  ' Deshabilita el cuadro de control (minimizar, maximizar, cerrar)
-        Me.StartPosition = FormStartPosition.CenterScreen  ' Centra la ventana en la pantalla
-        Dim pantalla As Screen = Screen.FromControl(Me)
-        Dim ancho As Integer = pantalla.Bounds.Width
-        Dim alto As Integer = pantalla.Bounds.Height
 
-        Me.MinimumSize = New Size(ancho, alto)
-
-        ' Se configura el Titulo de la Ventana del Home
-        Me.Text = "BIENVENIDO " & NombreUsuario
-
-        lblUsuario.Text = "Hola " & NombreUsuario & "!"
-
+    Sub llenadoGrid()
         LlenaGrid(sqlConexion, DgvAgendados, "sp_ConsultasAvanzadas 2,''," & IdUsuario)
         LlenaGrid(sqlConexion, DgvFinalizados, "sp_ConsultasAvanzadas 1,''," & IdUsuario)
         'Configurar DataGridView(Ajuste automático de columnas y fuente)
@@ -61,6 +41,31 @@ Public Class Home
 
         DgvAgendados.ReadOnly = True
         DgvFinalizados.ReadOnly = True
+    End Sub
+    Private Sub PausaVentana()
+        Me.Enabled = False
+    End Sub
+    Private Sub Reinicio()
+        TSMIHome.Visible = False
+    End Sub
+    Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Deshabilita la opción de maximizar (aunque la ventana estará maximizada)
+        Me.MinimizeBox = False  ' Deshabilita la opción de minimizar
+        Me.ControlBox = False  ' Deshabilita el cuadro de control (minimizar, maximizar, cerrar)
+        Me.StartPosition = FormStartPosition.CenterScreen  ' Centra la ventana en la pantalla
+        Dim pantalla As Screen = Screen.FromControl(Me)
+        Dim ancho As Integer = pantalla.Bounds.Width
+        Dim alto As Integer = pantalla.Bounds.Height
+
+        Me.MinimumSize = New Size(ancho, alto)
+
+        ' Se configura el Titulo de la Ventana del Home
+        Me.Text = "BIENVENIDO " & NombreUsuario
+
+        lblUsuario.Text = "Hola " & NombreUsuario & "!"
+
+        llenadoGrid()
+
 
     End Sub
 
@@ -78,7 +83,7 @@ Public Class Home
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         FormIniciarSesión.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub Home_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
@@ -92,12 +97,14 @@ Public Class Home
 
     Private Sub DgvFinalizados_SelectionChanged(sender As Object, e As EventArgs) Handles DgvFinalizados.SelectionChanged
         If DgvFinalizados.CurrentRow IsNot Nothing Then
+            Dim IdCliente As Integer = DgvFinalizados.CurrentRow.Cells(0).Value
             Dim NombreCliente As String = DgvFinalizados.CurrentRow.Cells(2).Value.ToString
             Dim Paquete As String = DgvFinalizados.CurrentRow.Cells(3).Value.ToString
             Dim FechaRealizacion As String = DgvFinalizados.CurrentRow.Cells(6).Value.ToString
             Dim FechaEntrega As String = DgvFinalizados.CurrentRow.Cells(7).Value.ToString
             Dim Faltante As Double = DgvFinalizados.CurrentRow.Cells(9).Value
 
+            lblIDPago.Text = IdCliente
             lblCliente.Text = NombreCliente
             lblPaquete.Text = Paquete
             lblRealizacion.Text = Convert.ToDateTime(FechaRealizacion).ToString("yyyy-MM-dd")
@@ -106,8 +113,22 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub btnGestionarSesion_Click(sender As Object, e As EventArgs) Handles btnGestionarSesion.Click
-        idSesion = DgvFinalizados.CurrentRow.Cells(0).Value
+    Private Sub btnGestionarSesion_Click(sender As Object, e As EventArgs) Handles btnPagosSesion.Click
+
+        If lblIDPago.Text = "default" Then
+            MessageBox.Show("Selecciona una sesion para realizar el pago", "Atencion")
+        Else
+            If MessageBox.Show("Deseas realizar un pago a la sesion seleccionada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                idSesion = DgvFinalizados.CurrentRow.Cells(0).Value
+                Faltante = DgvFinalizados.CurrentRow.Cells(9).Value
+                Me.Enabled = False
+                FormPagos.Show()
+
+            Else
+                MessageBox.Show("Pago cancelada", "Atencion")
+            End If
+        End If
+
 
     End Sub
 
@@ -118,6 +139,50 @@ Public Class Home
 
     Private Sub OptPaquetes_Click(sender As Object, e As EventArgs) Handles OptPaquetes.Click
         FormPaquetesVisualizar.Show()
+        Me.Enabled = False
+    End Sub
+
+    Private Sub btnEliminarSesionAgendada_Click(sender As Object, e As EventArgs) Handles btnEliminarSesionAgendada.Click
+        If lblIdEditar.Text = "default" Then
+            MessageBox.Show("Selecciona una sesion para eliminar", "Atencion")
+        Else
+            If MessageBox.Show("Estas seguro de eliminar esa sesion asignada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim sqlcmdComando As New SqlClient.SqlCommand
+                sqlcmdComando.CommandText = "sp_Cotizaciones_ABM 3," & lblIdEditar.Text & ",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL"
+                sqlcmdComando.Connection = sqlConexion
+                Dim sqldrDatos As SqlClient.SqlDataReader
+                sqldrDatos = sqlcmdComando.ExecuteReader
+                sqldrDatos.Read()
+                sqldrDatos.Close()
+                MessageBox.Show("ELIMINACION REALIZADA CON EXITO", "EXITO")
+                llenadoGrid()
+            Else
+                MessageBox.Show("Eliminacion cancelada", "Atencion")
+            End If
+        End If
+
+    End Sub
+
+    Private Sub DgvAgendados_SelectionChanged(sender As Object, e As EventArgs) Handles DgvAgendados.SelectionChanged
+        If DgvAgendados.CurrentRow IsNot Nothing Then
+            Dim IdCliente As Integer = DgvAgendados.CurrentRow.Cells(0).Value
+            Dim NombreCliente As String = DgvAgendados.CurrentRow.Cells(2).Value.ToString
+            Dim Paquete As String = DgvAgendados.CurrentRow.Cells(3).Value.ToString
+            Dim FechaRealizacion As String = DgvAgendados.CurrentRow.Cells(6).Value.ToString
+            Dim FechaEntrega As String = DgvAgendados.CurrentRow.Cells(7).Value.ToString
+            Dim Faltante As Double = DgvAgendados.CurrentRow.Cells(9).Value
+
+            lblIdEditar.Text = IdCliente
+            lblClienteEditar.Text = NombreCliente
+            lblPaqueteEditar.Text = Paquete
+            lblRealizadoEditar.Text = Convert.ToDateTime(FechaRealizacion).ToString("yyyy-MM-dd")
+            lblEntregaEditar.Text = Convert.ToDateTime(FechaEntrega).ToString("yyyy-MM-dd")
+            lblFaltanteEditar.Text = Faltante
+        End If
+    End Sub
+
+    Private Sub OptReportes_Click(sender As Object, e As EventArgs) Handles OptReportes.Click
+        FormReportes.Show()
         Me.Enabled = False
     End Sub
 End Class

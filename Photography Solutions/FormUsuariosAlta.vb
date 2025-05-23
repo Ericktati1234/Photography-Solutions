@@ -78,4 +78,8 @@
             CheckAdmin.Enabled = True
         End If
     End Sub
+
+    Private Sub FormUsuariosALTA_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        FormUsuariosVisualizar.Enabled = True
+    End Sub
 End Class
