@@ -13,29 +13,39 @@
     End Sub
 
     Private Sub btnVerificar_Click(sender As Object, e As EventArgs) Handles btnVerificar.Click
-        Dim sqlcmdComando As New SqlClient.SqlCommand
-        sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
-        sqlcmdComando.Connection = sqlConexion
-        Dim sqldrDatos As SqlClient.SqlDataReader
-        sqldrDatos = sqlcmdComando.ExecuteReader
-        sqldrDatos.Read()
 
-        Dim Resultado = sqldrDatos.GetValue(0)
-
-        If Resultado = 1 Then
-            MessageBox.Show("El nombre de usuario ya existe", "Error")
+        If String.IsNullOrWhiteSpace(txtUsuario.Text) Then
+            MessageBox.Show("Favor de rellenar todos los campos", "Error")
         Else
-            If MessageBox.Show("El usuario '" & txtUsuario.Text & "' Esta disponible, ¿Quieres elegirlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                txtContraseña.Enabled = True
-                txtUsuario.Enabled = False
-                btnVerificar.Enabled = False
-                btnConfirmar.Enabled = True
-                CheckAdmin.Enabled = True
-                CheckContador.Enabled = True
+            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & ". Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim sqlcmdComando As New SqlClient.SqlCommand
+                sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
+                sqlcmdComando.Connection = sqlConexion
+                Dim sqldrDatos As SqlClient.SqlDataReader
+                sqldrDatos = sqlcmdComando.ExecuteReader
+                sqldrDatos.Read()
 
+                Dim Resultado = sqldrDatos.GetValue(0)
+
+                If Resultado = 1 Then
+                    MessageBox.Show("El nombre de usuario ya existe", "Error")
+                Else
+                    If MessageBox.Show("El usuario '" & txtUsuario.Text & "' Esta disponible, ¿Quieres elegirlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                        txtContraseña.Enabled = True
+                        txtUsuario.Enabled = False
+                        btnVerificar.Enabled = False
+                        btnConfirmar.Enabled = True
+                        CheckAdmin.Enabled = True
+                        CheckContador.Enabled = True
+
+                    End If
+                End If
+                sqldrDatos.Close()
             End If
         End If
-        sqldrDatos.Close()
+
+
+
 
     End Sub
 
@@ -53,7 +63,7 @@
         If String.IsNullOrWhiteSpace(txtContraseña.Text) Then
             MessageBox.Show("Favor de rellenar todos los campos", "Error")
         Else
-            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "' y tu Contraseña: '" & txtContraseña.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 UsuarioALTA = txtUsuario.Text
                 ContraseñaALTA = txtContraseña.Text
                 If CheckContador.Checked Then
@@ -93,28 +103,32 @@
     End Sub
 
     Private Sub btnVerificarEditado_Click(sender As Object, e As EventArgs) Handles btnVerificarEditado.Click
-        Dim sqlcmdComando As New SqlClient.SqlCommand
-        sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 7,NULL," & idALTA & ",NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
-        sqlcmdComando.Connection = sqlConexion
-        Dim sqldrDatos As SqlClient.SqlDataReader
-        sqldrDatos = sqlcmdComando.ExecuteReader
-        sqldrDatos.Read()
-
-        Dim Resultado = sqldrDatos.GetValue(0)
-
-        If Resultado = 1 Then
-            MessageBox.Show("El nombre de usuario ya existe", "Error")
+        If String.IsNullOrWhiteSpace(txtUsuario.Text) Then
+            MessageBox.Show("Favor de rellenar todos los campos", "Error")
         Else
-            If MessageBox.Show("El usuario '" & txtUsuario.Text & "' Esta disponible, ¿Quieres elegirlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                txtContraseña.Enabled = True
-                txtUsuario.Enabled = False
-                btnVerificar.Enabled = False
-                btnConfirmar.Enabled = True
-                CheckAdmin.Enabled = True
-                CheckContador.Enabled = True
+            Dim sqlcmdComando As New SqlClient.SqlCommand
+            sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 7,NULL," & idALTA & ",NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
+            sqlcmdComando.Connection = sqlConexion
+            Dim sqldrDatos As SqlClient.SqlDataReader
+            sqldrDatos = sqlcmdComando.ExecuteReader
+            sqldrDatos.Read()
 
+            Dim Resultado = sqldrDatos.GetValue(0)
+
+            If Resultado = 1 Then
+                MessageBox.Show("El nombre de usuario ya existe", "Error")
+            Else
+                If MessageBox.Show("El usuario '" & txtUsuario.Text & "' Esta disponible, ¿Quieres elegirlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    txtContraseña.Enabled = True
+                    txtUsuario.Enabled = False
+                    btnVerificar.Enabled = False
+                    btnConfirmar.Enabled = True
+                    CheckAdmin.Enabled = True
+                    CheckContador.Enabled = True
+
+                End If
             End If
+            sqldrDatos.Close()
         End If
-        sqldrDatos.Close()
     End Sub
 End Class
