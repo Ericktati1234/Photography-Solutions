@@ -56,15 +56,15 @@
         If String.IsNullOrWhiteSpace(txtNombreEmpleado.Text) Or String.IsNullOrWhiteSpace(txtApellidoPa.Text) Or String.IsNullOrWhiteSpace(txtApellidoMa.Text) Or numTelefono.Value = 0 Or lblFecha.Text = "default" Then
             MessageBox.Show("Favor de rellenar todos los campos", "Atencion")
         Else
-            If MessageBox.Show("Quieres dar de alta el nuevo empleado? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show("Quieres editar a este empleado? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Dim sqlcmdComando As New SqlClient.SqlCommand
-                sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 2,NULL," & idALTA & ",'" & txtNombreEmpleado.Text & "','" & txtApellidoPa.Text & "  " & txtApellidoMa.Text & "','" & RolALTA & "','" & Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") & "','" & txtCorreo.Text & "','" & UsuarioALTA & "','" & ContraseñaALTA & "'"
+                sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 2," & idEmpleado & "," & idALTA & ",'" & txtNombreEmpleado.Text & "','" & txtApellidoPa.Text & "  " & txtApellidoMa.Text & "','" & RolALTA & "','" & Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") & "'," & numTelefono.Value & ",'" & txtCorreo.Text & "','" & UsuarioALTA & "','" & ContraseñaALTA & "'"
                 sqlcmdComando.Connection = sqlConexion
                 Dim sqldrDatos As SqlClient.SqlDataReader
                 sqldrDatos = sqlcmdComando.ExecuteReader
                 sqldrDatos.Read()
                 sqldrDatos.Close()
-                MessageBox.Show("Se ha dado de alta el Empleado y su usuario con Exito!", "EXITO")
+                MessageBox.Show("Se ha modificado el usuario con exito!", "EXITO")
                 Me.Close()
                 LlenaGrid(sqlConexion, FormUsuariosVisualizar.dgvUsuariosEmpleados, "sp_Empleados_Usuarios_ABM 6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL")
                 FormUsuariosVisualizar.Enabled = True

@@ -130,7 +130,7 @@ Public Class GestorImagenesForm
                         End If
                     Next
                 Next
-                MessageBox.Show("Archivos exportados exitosamente desde Carpeta B.", "Exito")
+                MessageBox.Show("Archivos exportados exitosamente desde la carpeta RAW.", "Exito")
             End If
         End Using
     End Sub

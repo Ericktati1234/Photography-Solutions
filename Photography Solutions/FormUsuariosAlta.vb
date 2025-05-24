@@ -5,7 +5,10 @@
         txtContraseña.Enabled = False
         txtContraseña.Text = ""
         CheckAdmin.Enabled = False
+        CheckAdmin.Checked = False
         CheckContador.Enabled = False
+        CheckContador.Checked = False
+        btnVerificar.Enabled = True
         btnConfirmar.Enabled = False
     End Sub
 
@@ -47,20 +50,26 @@
     End Sub
 
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
-        If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "' y tu Contraseña: '" & txtContraseña.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            UsuarioALTA = txtUsuario.Text
-            ContraseñaALTA = txtContraseña.Text
-            If CheckContador.Checked Then
-                RolALTA = "Contador"
-            ElseIf CheckAdmin.Checked Then
-                RolALTA = "Administrador"
-            Else
-                RolALTA = "Fotógrafo"
+        If String.IsNullOrWhiteSpace(txtContraseña.Text) Then
+            MessageBox.Show("Favor de rellenar todos los campos", "Error")
+        Else
+            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "' y tu Contraseña: '" & txtContraseña.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                UsuarioALTA = txtUsuario.Text
+                ContraseñaALTA = txtContraseña.Text
+                If CheckContador.Checked Then
+                    RolALTA = "Contador"
+                ElseIf CheckAdmin.Checked Then
+                    RolALTA = "Administrador"
+                Else
+                    RolALTA = "Fotógrafo"
+                End If
+                formEmpleadosALTA.Show()
+                formEmpleadosALTA.lblNombreUsuario.Text = txtUsuario.Text
+                Me.Close()
             End If
-            formEmpleadosALTA.Show()
-            formEmpleadosALTA.lblNombreUsuario.Text = txtUsuario.Text
-            Me.Close()
         End If
+
+
     End Sub
 
     Private Sub CheckAdmin_CheckedChanged(sender As Object, e As EventArgs) Handles CheckAdmin.CheckedChanged
@@ -81,5 +90,31 @@
 
     Private Sub FormUsuariosALTA_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         FormUsuariosVisualizar.Enabled = True
+    End Sub
+
+    Private Sub btnVerificarEditado_Click(sender As Object, e As EventArgs) Handles btnVerificarEditado.Click
+        Dim sqlcmdComando As New SqlClient.SqlCommand
+        sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 7,NULL," & idALTA & ",NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
+        sqlcmdComando.Connection = sqlConexion
+        Dim sqldrDatos As SqlClient.SqlDataReader
+        sqldrDatos = sqlcmdComando.ExecuteReader
+        sqldrDatos.Read()
+
+        Dim Resultado = sqldrDatos.GetValue(0)
+
+        If Resultado = 1 Then
+            MessageBox.Show("El nombre de usuario ya existe", "Error")
+        Else
+            If MessageBox.Show("El usuario '" & txtUsuario.Text & "' Esta disponible, ¿Quieres elegirlo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                txtContraseña.Enabled = True
+                txtUsuario.Enabled = False
+                btnVerificar.Enabled = False
+                btnConfirmar.Enabled = True
+                CheckAdmin.Enabled = True
+                CheckContador.Enabled = True
+
+            End If
+        End If
+        sqldrDatos.Close()
     End Sub
 End Class

@@ -23,6 +23,7 @@ Module Modulo
     Public ContraseñaALTA As String
     Public RolALTA As String
     Public idALTA As Integer
+    Public idEmpleado As Integer
 
     'Cliente'
     Public IdCliente As Integer

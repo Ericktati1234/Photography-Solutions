@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class FormCotizaciones
     Private Sub FormCotizaciones_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
@@ -232,5 +233,40 @@ Public Class FormCotizaciones
             MessageBox.Show("Reinicio cancelado", "Atencion")
         End If
 
+    End Sub
+
+    Private Sub btnImprimirNota_Click(sender As Object, e As EventArgs) Handles btnImprimirNota.Click
+        Dim nombreArchivo As String = $"Cotizacion_{lblFecha.Text}_{lblCliente.Text}.txt"
+
+        Using sfd As New SaveFileDialog()
+            sfd.FileName = nombreArchivo
+            sfd.Filter = "Archivo de texto (*.txt)|*.txt"
+            sfd.Title = "Guardar Cotizacion como..."
+
+            If sfd.ShowDialog() = DialogResult.OK Then
+                Using writer As New StreamWriter(sfd.FileName, False, System.Text.Encoding.UTF8)
+                    writer.WriteLine("===============================================")
+                    writer.WriteLine("=== COTIZACION REALIZADA CON EXITO Y PAGADA ===")
+                    writer.WriteLine("===============================================")
+                    writer.WriteLine("Cliente: " & lblCliente.Text)
+                    writer.WriteLine("Empleado: " & lblUsuario.Text)
+                    writer.WriteLine("Paquete: " & lblNombre.Text)
+                    writer.WriteLine("Precio: " & lblPrecio.Text)
+                    writer.WriteLine("Fecha de la sesión: " & lblFecha.Text)
+                    writer.WriteLine("===============================================")
+                    writer.WriteLine("Consideraciones: " & txtConsideraciones.Text)
+                    writer.WriteLine("===============================================")
+                    writer.WriteLine("Anticipo Pagado: " & numAnticipo.Value)
+                    writer.WriteLine("Extras Considerados: " & numExtras.Value)
+                    writer.WriteLine("Anticipo Extra Pagado: " & numAnticipoExtra.Value)
+                    writer.WriteLine()
+                    writer.WriteLine("Fecha de generación: " & DateTime.Now.ToString("dd/MM/yyyy HH:mm"))
+                End Using
+                MessageBox.Show("Archivo exportado exitosamente.", "Exportación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
+                Home.Enabled = True
+                Home.llenadoGrid()
+            End If
+        End Using
     End Sub
 End Class

@@ -20,16 +20,26 @@
         Else
             If MessageBox.Show("Quieres dar de alta a este nuevo cliente? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Dim sqlcmdComando As New SqlClient.SqlCommand
-                sqlcmdComando.CommandText = "sp_Clientes_ABM 1,NULL,'" & txtNombre.Text & "','" & Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") & "'," & numTelefono.Value & ",'" & txtCorreo.Text & "'"
+                sqlcmdComando.CommandText = "sp_BuscarCorreo '" & txtCorreo.Text & "'"
                 sqlcmdComando.Connection = sqlConexion
                 Dim sqldrDatos As SqlClient.SqlDataReader
                 sqldrDatos = sqlcmdComando.ExecuteReader
                 sqldrDatos.Read()
-                sqldrDatos.Close()
-                MessageBox.Show("Se ha dado de alta al cliente con Exito!", "EXITO")
-                Me.Close()
-                LlenaGrid(sqlConexion, FormClientesVisualizar.dgvClientes, "sp_BusquedaClientes 1,NULL")
-                FormClientesVisualizar.Enabled = True
+                If sqldrDatos.GetValue(0) = 1 Then
+                    MessageBox.Show("El correo ya existe favor de elegir uno nuevo", "Atencion")
+                    txtCorreo.Focus()
+                Else
+                    sqlcmdComando.CommandText = "sp_Clientes_ABM 1,NULL,'" & txtNombre.Text & "','" & Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") & "'," & numTelefono.Value & ",'" & txtCorreo.Text & "'"
+                    sqlcmdComando.Connection = sqlConexion
+                    sqldrDatos = sqlcmdComando.ExecuteReader
+                    sqldrDatos.Read()
+                    sqldrDatos.Close()
+                    MessageBox.Show("Se ha dado de alta al cliente con Exito!", "EXITO")
+                    Me.Close()
+                    LlenaGrid(sqlConexion, FormClientesVisualizar.dgvClientes, "sp_BusquedaClientes 1,NULL")
+                    FormClientesVisualizar.Enabled = True
+                End If
+
             End If
         End If
     End Sub

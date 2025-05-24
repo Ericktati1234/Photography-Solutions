@@ -33,6 +33,7 @@ Partial Class FormUsuariosALTA
         CheckAdmin = New CheckBox()
         Label4 = New Label()
         btnReiniciar = New Button()
+        btnVerificarEditado = New Button()
         SuspendLayout()
         ' 
         ' Label1
@@ -140,12 +141,22 @@ Partial Class FormUsuariosALTA
         btnReiniciar.Text = "Reiniciar"
         btnReiniciar.UseVisualStyleBackColor = False
         ' 
+        ' btnVerificarEditado
+        ' 
+        btnVerificarEditado.Location = New Point(190, 105)
+        btnVerificarEditado.Name = "btnVerificarEditado"
+        btnVerificarEditado.Size = New Size(130, 23)
+        btnVerificarEditado.TabIndex = 45
+        btnVerificarEditado.Text = "Verificar Usuario"
+        btnVerificarEditado.UseVisualStyleBackColor = True
+        ' 
         ' FormUsuariosALTA
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(397, 328)
+        Controls.Add(btnVerificarEditado)
         Controls.Add(btnReiniciar)
         Controls.Add(Label4)
         Controls.Add(CheckAdmin)
@@ -174,4 +185,5 @@ Partial Class FormUsuariosALTA
     Friend WithEvents CheckAdmin As CheckBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnReiniciar As Button
+    Friend WithEvents btnVerificarEditado As Button
 End Class

@@ -36,6 +36,8 @@ Partial Class FormUsuariosVisualizar
         btnEliminar = New Button()
         btnCancelar = New Button()
         TableLayoutPanel4 = New TableLayoutPanel()
+        lblIDEmpleado = New Label()
+        Label1 = New Label()
         txtUsuario = New TextBox()
         Label4 = New Label()
         txtEmpleado = New TextBox()
@@ -219,20 +221,23 @@ Partial Class FormUsuariosVisualizar
         ' 
         ' TableLayoutPanel4
         ' 
-        TableLayoutPanel4.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        TableLayoutPanel4.ColumnCount = 4
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 45F))
-        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
-        TableLayoutPanel4.Controls.Add(txtUsuario, 1, 1)
-        TableLayoutPanel4.Controls.Add(Label4, 3, 0)
-        TableLayoutPanel4.Controls.Add(txtEmpleado, 2, 1)
-        TableLayoutPanel4.Controls.Add(txtNacimiento, 3, 1)
-        TableLayoutPanel4.Controls.Add(IDPack, 0, 0)
-        TableLayoutPanel4.Controls.Add(Label5, 1, 0)
-        TableLayoutPanel4.Controls.Add(Cliente, 2, 0)
-        TableLayoutPanel4.Controls.Add(lblIdUsuario, 0, 1)
+        TableLayoutPanel4.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        TableLayoutPanel4.ColumnCount = 5
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 9.090909F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 9.090909F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 22.727272F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40.9090919F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 18.181818F))
+        TableLayoutPanel4.Controls.Add(lblIDEmpleado, 0, 1)
+        TableLayoutPanel4.Controls.Add(Label1, 0, 0)
+        TableLayoutPanel4.Controls.Add(txtUsuario, 2, 1)
+        TableLayoutPanel4.Controls.Add(Label4, 4, 0)
+        TableLayoutPanel4.Controls.Add(txtEmpleado, 3, 1)
+        TableLayoutPanel4.Controls.Add(txtNacimiento, 4, 1)
+        TableLayoutPanel4.Controls.Add(IDPack, 1, 0)
+        TableLayoutPanel4.Controls.Add(Label5, 2, 0)
+        TableLayoutPanel4.Controls.Add(Cliente, 3, 0)
+        TableLayoutPanel4.Controls.Add(lblIdUsuario, 1, 1)
         TableLayoutPanel4.Location = New Point(175, 427)
         TableLayoutPanel4.Name = "TableLayoutPanel4"
         TableLayoutPanel4.RowCount = 2
@@ -241,24 +246,48 @@ Partial Class FormUsuariosVisualizar
         TableLayoutPanel4.Size = New Size(984, 50)
         TableLayoutPanel4.TabIndex = 35
         ' 
+        ' lblIDEmpleado
+        ' 
+        lblIDEmpleado.AutoSize = True
+        lblIDEmpleado.BackColor = Color.White
+        lblIDEmpleado.Dock = DockStyle.Fill
+        lblIDEmpleado.Location = New Point(3, 25)
+        lblIDEmpleado.Name = "lblIDEmpleado"
+        lblIDEmpleado.Size = New Size(83, 25)
+        lblIDEmpleado.TabIndex = 39
+        lblIDEmpleado.Text = "default"
+        lblIDEmpleado.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label1.Dock = DockStyle.Fill
+        Label1.Location = New Point(3, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(83, 25)
+        Label1.TabIndex = 38
+        Label1.Text = "ID Empleado"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' txtUsuario
         ' 
         txtUsuario.Dock = DockStyle.Fill
         txtUsuario.Enabled = False
-        txtUsuario.Location = New Point(101, 27)
+        txtUsuario.Location = New Point(181, 27)
         txtUsuario.Margin = New Padding(3, 2, 3, 2)
         txtUsuario.Name = "txtUsuario"
-        txtUsuario.Size = New Size(240, 23)
+        txtUsuario.Size = New Size(217, 23)
         txtUsuario.TabIndex = 7
         ' 
         ' Label4
         ' 
-        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
         Label4.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
-        Label4.Location = New Point(789, 0)
+        Label4.Dock = DockStyle.Fill
+        Label4.Location = New Point(806, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(192, 25)
+        Label4.Size = New Size(175, 25)
         Label4.TabIndex = 12
         Label4.Text = "Fecha Nacimiento"
         Label4.TextAlign = ContentAlignment.MiddleCenter
@@ -267,54 +296,54 @@ Partial Class FormUsuariosVisualizar
         ' 
         txtEmpleado.Dock = DockStyle.Fill
         txtEmpleado.Enabled = False
-        txtEmpleado.Location = New Point(347, 27)
+        txtEmpleado.Location = New Point(404, 27)
         txtEmpleado.Margin = New Padding(3, 2, 3, 2)
         txtEmpleado.Name = "txtEmpleado"
-        txtEmpleado.Size = New Size(436, 23)
+        txtEmpleado.Size = New Size(396, 23)
         txtEmpleado.TabIndex = 9
         ' 
         ' txtNacimiento
         ' 
         txtNacimiento.Dock = DockStyle.Fill
         txtNacimiento.Enabled = False
-        txtNacimiento.Location = New Point(789, 27)
+        txtNacimiento.Location = New Point(806, 27)
         txtNacimiento.Margin = New Padding(3, 2, 3, 2)
         txtNacimiento.Name = "txtNacimiento"
-        txtNacimiento.Size = New Size(192, 23)
+        txtNacimiento.Size = New Size(175, 23)
         txtNacimiento.TabIndex = 11
         ' 
         ' IDPack
         ' 
-        IDPack.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         IDPack.AutoSize = True
         IDPack.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
-        IDPack.Location = New Point(3, 0)
+        IDPack.Dock = DockStyle.Fill
+        IDPack.Location = New Point(92, 0)
         IDPack.Name = "IDPack"
-        IDPack.Size = New Size(92, 25)
+        IDPack.Size = New Size(83, 25)
         IDPack.TabIndex = 6
         IDPack.Text = "ID Usuario"
         IDPack.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label5
         ' 
-        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label5.AutoSize = True
         Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
-        Label5.Location = New Point(101, 0)
+        Label5.Dock = DockStyle.Fill
+        Label5.Location = New Point(181, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(240, 25)
+        Label5.Size = New Size(217, 25)
         Label5.TabIndex = 8
         Label5.Text = "Usuario"
         Label5.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Cliente
         ' 
-        Cliente.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Cliente.AutoSize = True
         Cliente.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
-        Cliente.Location = New Point(347, 0)
+        Cliente.Dock = DockStyle.Fill
+        Cliente.Location = New Point(404, 0)
         Cliente.Name = "Cliente"
-        Cliente.Size = New Size(436, 25)
+        Cliente.Size = New Size(396, 25)
         Cliente.TabIndex = 10
         Cliente.Text = "Nombre"
         Cliente.TextAlign = ContentAlignment.MiddleCenter
@@ -324,9 +353,9 @@ Partial Class FormUsuariosVisualizar
         lblIdUsuario.AutoSize = True
         lblIdUsuario.BackColor = Color.White
         lblIdUsuario.Dock = DockStyle.Fill
-        lblIdUsuario.Location = New Point(3, 25)
+        lblIdUsuario.Location = New Point(92, 25)
         lblIdUsuario.Name = "lblIdUsuario"
-        lblIdUsuario.Size = New Size(92, 25)
+        lblIdUsuario.Size = New Size(83, 25)
         lblIdUsuario.TabIndex = 13
         lblIdUsuario.Text = "default"
         lblIdUsuario.TextAlign = ContentAlignment.MiddleCenter
@@ -355,7 +384,7 @@ Partial Class FormUsuariosVisualizar
         Controls.Add(TableLayoutPanel3)
         Controls.Add(TableLayoutPanel4)
         Controls.Add(dgvUsuariosEmpleados)
-        MinimumSize = New Size(1037, 582)
+        MinimumSize = New Size(1223, 582)
         Name = "FormUsuariosVisualizar"
         Text = "Usuarios"
         TableLayoutPanel1.ResumeLayout(False)
@@ -391,4 +420,6 @@ Partial Class FormUsuariosVisualizar
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents lblIDEmpleado As Label
+    Friend WithEvents Label1 As Label
 End Class

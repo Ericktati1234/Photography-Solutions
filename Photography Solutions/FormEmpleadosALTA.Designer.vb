@@ -33,8 +33,8 @@ Partial Class formEmpleadosALTA
         TableLayoutPanel1 = New TableLayoutPanel()
         Label1 = New Label()
         Label2 = New Label()
-        txtCorreo = New TextBox()
         numTelefono = New NumericUpDown()
+        txtCorreo = New TextBox()
         btnCambiarUsuario = New Button()
         Label4 = New Label()
         lblNombreUsuario = New Label()
@@ -44,7 +44,7 @@ Partial Class formEmpleadosALTA
         CalendarioNacimiento = New MonthCalendar()
         btnReiniciar = New Button()
         btnEditar = New Button()
-        Label9 = New Label()
+        lblTitulo = New Label()
         TableLayoutPanel1.SuspendLayout()
         CType(numTelefono, ComponentModel.ISupportInitialize).BeginInit()
         TableLayoutPanel2.SuspendLayout()
@@ -55,7 +55,7 @@ Partial Class formEmpleadosALTA
         DatosPersonales.AutoSize = True
         DatosPersonales.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         DatosPersonales.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        DatosPersonales.Location = New Point(140, 142)
+        DatosPersonales.Location = New Point(139, 157)
         DatosPersonales.Name = "DatosPersonales"
         DatosPersonales.Size = New Size(155, 25)
         DatosPersonales.TabIndex = 6
@@ -123,7 +123,7 @@ Partial Class formEmpleadosALTA
         ' 
         ' btnAlta
         ' 
-        btnAlta.Location = New Point(305, 477)
+        btnAlta.Location = New Point(304, 492)
         btnAlta.Margin = New Padding(3, 2, 3, 2)
         btnAlta.Name = "btnAlta"
         btnAlta.Size = New Size(101, 36)
@@ -143,10 +143,10 @@ Partial Class formEmpleadosALTA
         TableLayoutPanel1.Controls.Add(txtApellidoMa, 1, 2)
         TableLayoutPanel1.Controls.Add(ApellidoMaterno, 0, 2)
         TableLayoutPanel1.Controls.Add(Label2, 0, 4)
-        TableLayoutPanel1.Controls.Add(txtCorreo, 1, 4)
         TableLayoutPanel1.Controls.Add(numTelefono, 1, 3)
         TableLayoutPanel1.Controls.Add(txtApellidoPa, 1, 1)
-        TableLayoutPanel1.Location = New Point(26, 182)
+        TableLayoutPanel1.Controls.Add(txtCorreo, 1, 4)
+        TableLayoutPanel1.Location = New Point(25, 197)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 5
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
@@ -179,14 +179,6 @@ Partial Class formEmpleadosALTA
         Label2.TabIndex = 24
         Label2.Text = "Correo electronico"
         ' 
-        ' txtCorreo
-        ' 
-        txtCorreo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtCorreo.Location = New Point(141, 115)
-        txtCorreo.Name = "txtCorreo"
-        txtCorreo.Size = New Size(253, 23)
-        txtCorreo.TabIndex = 25
-        ' 
         ' numTelefono
         ' 
         numTelefono.Dock = DockStyle.Fill
@@ -194,6 +186,14 @@ Partial Class formEmpleadosALTA
         numTelefono.Name = "numTelefono"
         numTelefono.Size = New Size(253, 23)
         numTelefono.TabIndex = 26
+        ' 
+        ' txtCorreo
+        ' 
+        txtCorreo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        txtCorreo.Location = New Point(141, 115)
+        txtCorreo.Name = "txtCorreo"
+        txtCorreo.Size = New Size(253, 23)
+        txtCorreo.TabIndex = 25
         ' 
         ' btnCambiarUsuario
         ' 
@@ -242,7 +242,7 @@ Partial Class formEmpleadosALTA
         TableLayoutPanel2.Controls.Add(lblNombreUsuario, 1, 0)
         TableLayoutPanel2.Controls.Add(Label4, 0, 0)
         TableLayoutPanel2.Controls.Add(btnCambiarUsuario, 2, 0)
-        TableLayoutPanel2.Location = New Point(42, 77)
+        TableLayoutPanel2.Location = New Point(41, 92)
         TableLayoutPanel2.Name = "TableLayoutPanel2"
         TableLayoutPanel2.RowCount = 1
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
@@ -254,7 +254,7 @@ Partial Class formEmpleadosALTA
         lblFecha.AutoSize = True
         lblFecha.BackColor = Color.White
         lblFecha.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        lblFecha.Location = New Point(329, 390)
+        lblFecha.Location = New Point(328, 405)
         lblFecha.Name = "lblFecha"
         lblFecha.Size = New Size(48, 17)
         lblFecha.TabIndex = 32
@@ -265,7 +265,7 @@ Partial Class formEmpleadosALTA
         Label5.AutoSize = True
         Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
         Label5.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.Location = New Point(283, 351)
+        Label5.Location = New Point(282, 366)
         Label5.Name = "Label5"
         Label5.Size = New Size(149, 20)
         Label5.TabIndex = 31
@@ -273,14 +273,14 @@ Partial Class formEmpleadosALTA
         ' 
         ' CalendarioNacimiento
         ' 
-        CalendarioNacimiento.Location = New Point(23, 351)
+        CalendarioNacimiento.Location = New Point(22, 366)
         CalendarioNacimiento.Name = "CalendarioNacimiento"
         CalendarioNacimiento.TabIndex = 30
         ' 
         ' btnReiniciar
         ' 
         btnReiniciar.BackColor = Color.Gainsboro
-        btnReiniciar.Location = New Point(305, 428)
+        btnReiniciar.Location = New Point(304, 443)
         btnReiniciar.Margin = New Padding(3, 2, 3, 2)
         btnReiniciar.Name = "btnReiniciar"
         btnReiniciar.Size = New Size(101, 36)
@@ -290,7 +290,7 @@ Partial Class formEmpleadosALTA
         ' 
         ' btnEditar
         ' 
-        btnEditar.Location = New Point(305, 477)
+        btnEditar.Location = New Point(304, 492)
         btnEditar.Margin = New Padding(3, 2, 3, 2)
         btnEditar.Name = "btnEditar"
         btnEditar.Size = New Size(101, 36)
@@ -298,17 +298,17 @@ Partial Class formEmpleadosALTA
         btnEditar.Text = "EDITAR"
         btnEditar.UseVisualStyleBackColor = True
         ' 
-        ' Label9
+        ' lblTitulo
         ' 
-        Label9.AutoSize = True
-        Label9.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
-        Label9.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
-        Label9.ForeColor = Color.White
-        Label9.Location = New Point(80, 9)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(295, 45)
-        Label9.TabIndex = 35
-        Label9.Text = "NUEVO EMPLEADO"
+        lblTitulo.AutoSize = True
+        lblTitulo.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        lblTitulo.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        lblTitulo.ForeColor = Color.White
+        lblTitulo.Location = New Point(79, 24)
+        lblTitulo.Name = "lblTitulo"
+        lblTitulo.Size = New Size(295, 45)
+        lblTitulo.TabIndex = 35
+        lblTitulo.Text = "NUEVO EMPLEADO"
         ' 
         ' formEmpleadosALTA
         ' 
@@ -316,7 +316,7 @@ Partial Class formEmpleadosALTA
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
         ClientSize = New Size(457, 559)
-        Controls.Add(Label9)
+        Controls.Add(lblTitulo)
         Controls.Add(btnEditar)
         Controls.Add(btnReiniciar)
         Controls.Add(lblFecha)
@@ -363,5 +363,5 @@ Partial Class formEmpleadosALTA
     Friend WithEvents CalendarioNacimiento As MonthCalendar
     Friend WithEvents btnReiniciar As Button
     Friend WithEvents btnEditar As Button
-    Friend WithEvents Label9 As Label
+    Friend WithEvents lblTitulo As Label
 End Class
