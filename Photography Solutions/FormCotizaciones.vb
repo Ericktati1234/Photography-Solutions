@@ -236,7 +236,7 @@ Public Class FormCotizaciones
     End Sub
 
     Private Sub btnImprimirNota_Click(sender As Object, e As EventArgs) Handles btnImprimirNota.Click
-        Dim nombreArchivo As String = $"Cotizacion_{lblFecha.Text}_{lblCliente.Text}.txt"
+        Dim nombreArchivo As String = $"Cotizacion_{lblUsuario}_{lblCliente.Text}.txt"
 
         Using sfd As New SaveFileDialog()
             sfd.FileName = nombreArchivo
