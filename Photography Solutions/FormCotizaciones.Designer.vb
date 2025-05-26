@@ -133,7 +133,7 @@ Partial Class FormCotizaciones
         ' 
         ' btnConfirmarOrden
         ' 
-        btnConfirmarOrden.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        btnConfirmarOrden.BackColor = Color.FromArgb(166, 185, 205)
         btnConfirmarOrden.Dock = DockStyle.Fill
         btnConfirmarOrden.Enabled = False
         btnConfirmarOrden.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
@@ -160,7 +160,7 @@ Partial Class FormCotizaciones
         ' lblUsuario
         ' 
         lblUsuario.AutoSize = True
-        lblUsuario.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblUsuario.BackColor = Color.FromArgb(238, 243, 248)
         lblUsuario.Dock = DockStyle.Right
         lblUsuario.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         lblUsuario.Location = New Point(1159, 0)
@@ -173,7 +173,7 @@ Partial Class FormCotizaciones
         ' lblCliente
         ' 
         lblCliente.AutoSize = True
-        lblCliente.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblCliente.BackColor = Color.FromArgb(238, 243, 248)
         lblCliente.Dock = DockStyle.Left
         lblCliente.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblCliente.Location = New Point(3, 0)
@@ -239,7 +239,7 @@ Partial Class FormCotizaciones
         ' 
         Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label6.AutoSize = True
-        Label6.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label6.BackColor = Color.FromArgb(238, 243, 248)
         Label6.Location = New Point(3, 44)
         Label6.Name = "Label6"
         Label6.Size = New Size(76, 32)
@@ -250,7 +250,7 @@ Partial Class FormCotizaciones
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label5.BackColor = Color.FromArgb(238, 243, 248)
         Label5.Dock = DockStyle.Fill
         Label5.Location = New Point(3, 0)
         Label5.Name = "Label5"
@@ -274,7 +274,7 @@ Partial Class FormCotizaciones
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        Label8.BackColor = Color.FromArgb(166, 185, 205)
         Label8.Dock = DockStyle.Fill
         Label8.Location = New Point(3, 22)
         Label8.Name = "Label8"
@@ -296,7 +296,7 @@ Partial Class FormCotizaciones
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label9.BackColor = Color.FromArgb(130, 151, 176)
         Label9.Dock = DockStyle.Left
         Label9.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
         Label9.ForeColor = Color.White
@@ -334,7 +334,7 @@ Partial Class FormCotizaciones
         ' lblDescripcion
         ' 
         lblDescripcion.AutoSize = True
-        lblDescripcion.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblDescripcion.BackColor = Color.FromArgb(238, 243, 248)
         lblDescripcion.Dock = DockStyle.Fill
         lblDescripcion.Location = New Point(91, 99)
         lblDescripcion.Name = "lblDescripcion"
@@ -358,7 +358,7 @@ Partial Class FormCotizaciones
         ' lblTituloDescripcion
         ' 
         lblTituloDescripcion.AutoSize = True
-        lblTituloDescripcion.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblTituloDescripcion.BackColor = Color.FromArgb(238, 243, 248)
         lblTituloDescripcion.Dock = DockStyle.Fill
         lblTituloDescripcion.Location = New Point(3, 99)
         lblTituloDescripcion.Name = "lblTituloDescripcion"
@@ -382,7 +382,7 @@ Partial Class FormCotizaciones
         ' lblNombre
         ' 
         lblNombre.AutoSize = True
-        lblNombre.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblNombre.BackColor = Color.FromArgb(238, 243, 248)
         lblNombre.Dock = DockStyle.Fill
         lblNombre.Location = New Point(91, 33)
         lblNombre.Name = "lblNombre"
@@ -406,7 +406,7 @@ Partial Class FormCotizaciones
         ' lblTituloNombrePaquete
         ' 
         lblTituloNombrePaquete.AutoSize = True
-        lblTituloNombrePaquete.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        lblTituloNombrePaquete.BackColor = Color.FromArgb(238, 243, 248)
         lblTituloNombrePaquete.Dock = DockStyle.Fill
         lblTituloNombrePaquete.Location = New Point(3, 33)
         lblTituloNombrePaquete.Name = "lblTituloNombrePaquete"
@@ -442,7 +442,7 @@ Partial Class FormCotizaciones
         ' 
         Label10.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label10.AutoSize = True
-        Label10.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label10.BackColor = Color.FromArgb(130, 151, 176)
         Label10.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         Label10.ForeColor = Color.White
         Label10.Location = New Point(3, 0)
@@ -484,7 +484,7 @@ Partial Class FormCotizaciones
         ' 
         ' btnImprimirNota
         ' 
-        btnImprimirNota.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        btnImprimirNota.BackColor = Color.FromArgb(166, 185, 205)
         btnImprimirNota.Dock = DockStyle.Fill
         btnImprimirNota.Enabled = False
         btnImprimirNota.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
@@ -499,7 +499,7 @@ Partial Class FormCotizaciones
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label19.BackColor = Color.FromArgb(130, 151, 176)
         Label19.Dock = DockStyle.Fill
         Label19.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label19.ForeColor = Color.White
@@ -576,7 +576,7 @@ Partial Class FormCotizaciones
         ' 
         ' layoutFecha
         ' 
-        layoutFecha.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        layoutFecha.BackColor = Color.FromArgb(238, 243, 248)
         layoutFecha.ColumnCount = 1
         layoutFecha.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         layoutFecha.Controls.Add(TableLayoutPanel8, 0, 1)
@@ -823,7 +823,7 @@ Partial Class FormCotizaciones
         ' Label34
         ' 
         Label34.AutoSize = True
-        Label34.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label34.BackColor = Color.FromArgb(130, 151, 176)
         Label34.Dock = DockStyle.Fill
         Label34.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Label34.ForeColor = Color.White
@@ -858,7 +858,7 @@ Partial Class FormCotizaciones
         ' Label35
         ' 
         Label35.AutoSize = True
-        Label35.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label35.BackColor = Color.FromArgb(238, 243, 248)
         Label35.Dock = DockStyle.Fill
         Label35.Location = New Point(3, 46)
         Label35.Name = "Label35"
@@ -870,7 +870,7 @@ Partial Class FormCotizaciones
         ' Label36
         ' 
         Label36.AutoSize = True
-        Label36.BackColor = Color.FromArgb(CByte(238), CByte(243), CByte(248))
+        Label36.BackColor = Color.FromArgb(238, 243, 248)
         Label36.Dock = DockStyle.Fill
         Label36.Location = New Point(3, 0)
         Label36.Name = "Label36"
@@ -882,7 +882,7 @@ Partial Class FormCotizaciones
         ' Label38
         ' 
         Label38.AutoSize = True
-        Label38.BackColor = Color.FromArgb(CByte(166), CByte(185), CByte(205))
+        Label38.BackColor = Color.FromArgb(166, 185, 205)
         Label38.Dock = DockStyle.Fill
         Label38.Location = New Point(3, 23)
         Label38.Name = "Label38"
@@ -1048,7 +1048,7 @@ Partial Class FormCotizaciones
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.FromArgb(CByte(130), CByte(151), CByte(176))
+        Label1.BackColor = Color.FromArgb(130, 151, 176)
         Label1.Dock = DockStyle.Fill
         Label1.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.ForeColor = Color.White
@@ -1063,7 +1063,7 @@ Partial Class FormCotizaciones
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(205), CByte(221), CByte(237))
+        BackColor = Color.FromArgb(205, 221, 237)
         ClientSize = New Size(1284, 610)
         Controls.Add(LayoutGeneral)
         Controls.Add(layoutDetalles)

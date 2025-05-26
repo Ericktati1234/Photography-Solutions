@@ -30,6 +30,7 @@
         NumeroTelefonicoCliente = dgvBusqueda.CurrentRow.Cells(3).Value
         CorreoCliente = dgvBusqueda.CurrentRow.Cells(4).Value.ToString
         Me.Close()
+        Home.Enabled = False
         FormCotizaciones.Show()
         FormCotizaciones.lblUsuario.Text = "Usuario fotografo a cargo: " & NombreUsuario
         FormCotizaciones.lblCliente.Text = "Sesion para el cliente: " & NombreCliente

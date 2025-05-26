@@ -12,7 +12,7 @@ Public Class FormCotizaciones
         LayoutConsideraciones.Enabled = False
         btnConfirmarOrden.Enabled = False
         btnImprimirNota.Enabled = True
-
+        btnreinicio.Enabled = False
     End Sub
 
     Private Sub NombreSearch_Click(sender As Object, e As EventArgs) Handles NombreSearch.Click
@@ -22,6 +22,7 @@ Public Class FormCotizaciones
 
     Private Sub FormCotizaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Enabled = False
+        Home.Enabled = False
         CalendarioFechasLibres.MinDate = Today.AddDays(1)
         Dim sqlcmdComando As New SqlClient.SqlCommand
         sqlcmdComando.CommandText = "sp_FechasOcupadas"
@@ -248,8 +249,8 @@ Public Class FormCotizaciones
                     writer.WriteLine("===============================================")
                     writer.WriteLine("=== COTIZACION REALIZADA CON EXITO Y PAGADA ===")
                     writer.WriteLine("===============================================")
-                    writer.WriteLine("Cliente: " & lblCliente.Text)
-                    writer.WriteLine("Empleado: " & lblUsuario.Text)
+                    writer.WriteLine("Cliente: " & NombreCliente)
+                    writer.WriteLine("Empleado: " & NombreUsuario)
                     writer.WriteLine("Paquete: " & lblNombre.Text)
                     writer.WriteLine("Precio: " & lblPrecio.Text)
                     writer.WriteLine("Fecha de la sesión: " & lblFecha.Text)
