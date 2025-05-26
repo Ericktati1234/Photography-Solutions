@@ -29,6 +29,7 @@
                     MessageBox.Show("El correo ya existe favor de elegir uno nuevo", "Atencion")
                     txtCorreo.Focus()
                 Else
+                    sqldrDatos.Close()
                     sqlcmdComando.CommandText = "sp_Clientes_ABM 1,NULL,'" & txtNombre.Text & "','" & Convert.ToDateTime(lblFecha.Text).ToString("yyyy-MM-dd") & "'," & numTelefono.Value & ",'" & txtCorreo.Text & "'"
                     sqlcmdComando.Connection = sqlConexion
                     sqldrDatos = sqlcmdComando.ExecuteReader
@@ -39,7 +40,6 @@
                     LlenaGrid(sqlConexion, FormClientesVisualizar.dgvClientes, "sp_BusquedaClientes 1,NULL")
                     FormClientesVisualizar.Enabled = True
                 End If
-
             End If
         End If
     End Sub

@@ -17,7 +17,7 @@
         If String.IsNullOrWhiteSpace(txtUsuario.Text) Then
             MessageBox.Show("Favor de rellenar todos los campos", "Error")
         Else
-            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & ". Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Dim sqlcmdComando As New SqlClient.SqlCommand
                 sqlcmdComando.CommandText = "sp_Empleados_Usuarios_ABM 5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'" & txtUsuario.Text & "',NULL"
                 sqlcmdComando.Connection = sqlConexion
@@ -63,7 +63,7 @@
         If String.IsNullOrWhiteSpace(txtContraseña.Text) Then
             MessageBox.Show("Favor de rellenar todos los campos", "Error")
         Else
-            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show("Tu Usuario va a ser: '" & txtUsuario.Text & "' y tu Contraseña: '" & txtContraseña.Text & "'. Estas seguro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 UsuarioALTA = txtUsuario.Text
                 ContraseñaALTA = txtContraseña.Text
                 If CheckContador.Checked Then
