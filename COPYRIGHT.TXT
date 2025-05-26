@@ -1,0 +1,7 @@
+© 2025 Erick Fernando Nevarez Avila. Todos los derechos reservados.
+
+Este proyecto ha sido desarrollado exclusivamente con fines didácticos y como parte de la evaluación de la asignatura Ingeniería de Software II. Su uso está restringido a propósitos académicos y educativos.
+
+Queda prohibida la reproducción, distribución, modificación o uso no autorizado total o parcial del contenido de este proyecto, incluyendo su código, diseño o idea original, sin el consentimiento expreso del autor.
+
+El uso indebido, apropiación del trabajo, o cualquier forma de plagio constituye una violación a los derechos de autor y puede derivar en acciones legales conforme a la legislación vigente.
